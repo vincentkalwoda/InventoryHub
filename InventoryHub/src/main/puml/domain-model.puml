@@ -5,51 +5,85 @@
 
 hide methods
 
-class Article {
+class Article <Entity> {
     - id: Long
     - name: String
     - description: String
     - category: Category
     - price: Float
+    - minStock: Integer
 }
 
-class Stock {
+class Stock <Entity> {
     - id: Long
     - article: Article
     - quantity: Integer
 }
 
-class Supplier {
+class Supplier <Entity> {
     - id: Long
     - name: String
     - address: String
+    - email: String
     - phone: String
 }
 
-class Order {
+class Address <ValueObject> <<(V, #FF7700) Embeddable >> {
+    - street: String
+    - city: String
+    - zip: String
+    - country: String
+}
+
+enum AddressType <Enum> {
+    BILLING
+    SHIPPING
+}
+
+class Country <Entity> {
+    - id: Long
+    - name: String
+    - iso2Code: String
+    - iso3Code: String
+    - areaCode: Integer
+}
+
+class Order <Entity> {
     - id: Long
     - supplier: Supplier
     - article: Article
     - quantity: Integer
     - orderDate: Date
     - deliveryDate: Date
+    - status: OrderStatus
+}
+
+enum OrderStatus <Enum> {
+    PENDING
+    SHIPPED
+    DELIVERED
+    CANCELLED
 }
 
 class Name <RichType> <<(R, #FF7700) embedded >> {
     - value: String
 }
 
-enum Category {
+enum Category <Enum> {
     ELECTRONICS
     CLOTHING
     FOOD
     FURNITURE
 }
 
-Article *-- Category
-Article .up. Name
-Stock *-- Article
+Article .up.> Category : < embedded
+Article .up.> Name : < embedded
+Stock *-left- Article
 Order *-- Supplier
 Order *-- Article
+Order .right.> OrderStatus : < embedded
+Supplier *-down- Address : > owns
+Address -right-> Country : references (FK)
+Address .left.> AddressType : < embedded
 
 @enduml
