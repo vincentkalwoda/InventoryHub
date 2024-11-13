@@ -1,13 +1,12 @@
-package com.example.moviemanagaement;
+package at.kalwodaknezevic.inventoryhub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MovieManagaementApplicationTests {
-
+class InventoryHubApplicationTests {
     @Test
     void contextLoads() {
-    }
 
+    }
 }

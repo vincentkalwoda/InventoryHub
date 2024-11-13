@@ -8,11 +8,11 @@
         <version>3.3.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>MovieManagement</artifactId>
+    <groupId>at.kalwodaknezevic</groupId>
+    <artifactId>InventoryHub</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MovieManagement</name>
-    <description>MovieManagement</description>
+    <name>InventoryHub</name>
+    <description>InventoryHub</description>
     <url/>
     <licenses>
         <license/>
@@ -53,6 +53,14 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 

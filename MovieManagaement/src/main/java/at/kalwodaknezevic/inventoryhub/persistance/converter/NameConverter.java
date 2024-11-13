@@ -1,6 +1,6 @@
-package at.kalwodaknezevic.moviemanagement.persistance.converter;
+package at.kalwodaknezevic.inventoryhub.persistance.converter;
 
-import at.kalwodaknezevic.moviemanagement.domain.Title;
+import at.kalwodaknezevic.inventoryhub.domain.Name;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
@@ -8,21 +8,21 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Converter(autoApply = true)
-public class TitleConverter implements AttributeConverter<Title, String> {
+public class NameConverter implements AttributeConverter<Name, String> {
 
     @Override
-    public String convertToDatabaseColumn(Title title) {
+    public String convertToDatabaseColumn(Name title) {
         return Optional.ofNullable(title)
-                .map(Title::titleValue)
+                .map(Name::nameValue)
                 .filter(Objects::nonNull)
                 .orElse(null);
     }
 
     @Override
-    public Title convertToEntityAttribute(String dbData) {
+    public Name convertToEntityAttribute(String dbData) {
         return switch (dbData) {
             case null -> null;
-            default -> new Title(dbData);
+            default -> new Name(dbData);
         };
     }
 }

@@ -1,79 +1,55 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+'Ein System zur Verwaltung des Inventars eines Unternehmens oder Lagers. Das System verfolgt Artikel, Bestände, Lieferanten und Bestellungen und kann helfen, das Inventar in Echtzeit zu überwachen und Bestände effizient aufzufüllen
+
 hide methods
 
-class Movie {
+class Article {
     - id: Long
-    - title: String
+    - name: String
     - description: String
-    - releaseDate: LocalDate
-    - duration: Integer
-    - genre: EnumSet<Genre>
-    - director: Director
-    - actors: List<Actor>
-    - reviews: List<Review>
-    - ratings: List<Rating>
-    - country: Country
-    - studio: Studio
+    - category: Category
+    - price: Float
 }
 
-class Title <RichType> <<(R, #FF7700) embedded >> {
+class Stock {
+    - id: Long
+    - article: Article
+    - quantity: Integer
+}
+
+class Supplier {
+    - id: Long
+    - name: String
+    - address: String
+    - phone: String
+}
+
+class Order {
+    - id: Long
+    - supplier: Supplier
+    - article: Article
+    - quantity: Integer
+    - orderDate: Date
+    - deliveryDate: Date
+}
+
+class Name <RichType> <<(R, #FF7700) embedded >> {
     - value: String
 }
 
-class Actor {
-    - id: Long
-    - firstname: String
-    - lastname: String
-    - birthDate: LocalDate
+enum Category {
+    ELECTRONICS
+    CLOTHING
+    FOOD
+    FURNITURE
 }
 
-class Director {
-    - id: Long
-    - firstname: String
-    - lastname: String
-    - birthDate: LocalDate
-}
-
-class Studio {
-    - id: Long
-    - name: String
-    - founded: LocalDate
-    - address: Address (embedded
-}
-
-class Review {
-    - id: Long
-    - title: String
-    - content: String
-    - rating: Integer
-    - movie: Movie
-}
-
-class Rating {
-    - id: Long
-    - score: Integer
-    - reviewer: Review
-    - date: LocalDate
-    - movie: Movie
-}
-
-class Country {
-    - id: Long
-    - name: String
-    - code: String
-}
-
-enum Genre {
-    ACTION
-    COMEDY
-    DRAMA
-    HORROR
-    ROMANCE
-}
-
-Movie *-- Genre
-Movie .up. Title
+Article *-- Category
+Article .up. Name
+Stock *-- Article
+Order *-- Supplier
+Order *-- Article
 
 @enduml

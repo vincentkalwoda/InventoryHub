@@ -1,4 +1,4 @@
-package at.kalwodaknezevic.moviemanagement.domain;
+package at.kalwodaknezevic.inventoryhub.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import java.time.LocalDate;
 
@@ -16,17 +15,17 @@ import java.time.LocalDate;
 @Builder
 
 @Entity
-@Table(name = "movies")
-public class Movie {
+@Table(name = "articles")
+public class Article {
     @EmbeddedId
-    private MovieId movieId;
+    private ArticleId articleId;
     @Embedded
-    private Title title;
+    private Name name;
     private String description;
     private LocalDate releaseDate;
     private int duration;
 
     @Embeddable
-    public record MovieId(@GeneratedValue @NotNull Long id) {
+    public record ArticleId(@GeneratedValue @NotNull Long id) {
     }
 }
