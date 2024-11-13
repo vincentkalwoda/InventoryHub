@@ -7,7 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -22,8 +21,8 @@ public class Article {
     @Embedded
     private Name name;
     private String description;
-    private LocalDate releaseDate;
-    private int duration;
+    private Category category;
+    private float price;
 
     @Embeddable
     public record ArticleId(@GeneratedValue @NotNull Long id) {

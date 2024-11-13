@@ -7,7 +7,7 @@ hide methods
 
 class Article <Entity> {
     - id: Long
-    - name: String
+    - name: Name
     - description: String
     - category: Category
     - price: Float
@@ -28,7 +28,27 @@ class Supplier <Entity> {
     - phone: String
 }
 
-class Address <ValueObject> <<(V, #FF7700) Embeddable >> {
+class Email <RichType> <<(R, #3498eb) embedded >> {
+    - value: String
+}
+
+class PhoneNumber <ValueObject> <<(V, #009c1d) Embeddable >> {
+    - countryCode: Integer
+    - areaCode: Integer
+    - serialNumber: String
+    - extension: Integer
+    - types: EnumSet<PhoneNumberType>
+}
+
+enum PhoneNumberType <Enum> {
+    HOME
+    MOBILE
+    WORK
+    FAX
+    OTHER
+}
+
+class Address <ValueObject> <<(V, #009c1d) Embeddable >> {
     - street: String
     - city: String
     - zip: String
@@ -65,7 +85,7 @@ enum OrderStatus <Enum> {
     CANCELLED
 }
 
-class Name <RichType> <<(R, #FF7700) embedded >> {
+class Name <RichType> <<(R, #3498eb) embedded >> {
     - value: String
 }
 
@@ -77,13 +97,16 @@ enum Category <Enum> {
 }
 
 Article .up.> Category : < embedded
-Article .up.> Name : < embedded
-Stock *-left- Article
-Order *-- Supplier
-Order *-- Article
-Order .right.> OrderStatus : < embedded
+Article .down.> Name : < embedded
+Stock *-left- Article : > owns
+Order *-right- Supplier : > owns
+Order *-- Article : > owns
+Order .left.> OrderStatus : < embedded
+Supplier .down.> Email : < embedded
+Supplier .right.> PhoneNumber : < embedded
+PhoneNumber -down-o PhoneNumberType : references
 Supplier *-down- Address : > owns
-Address -right-> Country : references (FK)
-Address .left.> AddressType : < embedded
+Address -down-> Country : references (FK)
+Address .down.> AddressType : < embedded
 
 @enduml
