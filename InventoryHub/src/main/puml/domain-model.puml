@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'Ein System zur Verwaltung des Inventars eines Unternehmens oder Lagers. Das System verfolgt Artikel, Bestände, Lieferanten und Bestellungen und kann helfen, das Inventar in Echtzeit zu überwachen und Bestände effizient aufzufüllen
+
+hide methods
+
+class Article {
+    - id: Long
+    - name: String
+    - description: String
+    - category: Category
+    - price: Float
+}
+
+class Stock {
+    - id: Long
+    - article: Article
+    - quantity: Integer
+}
+
+class Supplier {
+    - id: Long
+    - name: String
+    - address: String
+    - phone: String
+}
+
+class Order {
+    - id: Long
+    - supplier: Supplier
+    - article: Article
+    - quantity: Integer
+    - orderDate: Date
+    - deliveryDate: Date
+}
+
+class Name <RichType> <<(R, #FF7700) embedded >> {
+    - value: String
+}
+
+enum Category {
+    ELECTRONICS
+    CLOTHING
+    FOOD
+    FURNITURE
+}
+
+Article *-- Category
+Article .up. Name
+Stock *-- Article
+Order *-- Supplier
+Order *-- Article
+
+@enduml
