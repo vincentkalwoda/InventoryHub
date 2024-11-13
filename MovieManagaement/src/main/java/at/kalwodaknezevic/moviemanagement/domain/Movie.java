@@ -1,8 +1,7 @@
 package at.kalwodaknezevic.moviemanagement.domain;
 
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,10 +17,16 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "movies")
-public class Movie extends AbstractPersistable<Long> {
+public class Movie {
+    @EmbeddedId
+    private MovieId movieId;
     @Embedded
     private Title title;
     private String description;
     private LocalDate releaseDate;
     private int duration;
+
+    @Embeddable
+    public record MovieId(@GeneratedValue @NotNull Long id) {
+    }
 }

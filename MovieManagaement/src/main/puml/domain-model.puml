@@ -2,9 +2,69 @@
 'https://plantuml.com/class-diagram
 
 hide methods
-hide attributes
 
-class Movie
+class Movie {
+    - id: Long
+    - title: String
+    - description: String
+    - releaseDate: LocalDate
+    - duration: Integer
+    - genre: EnumSet<Genre>
+    - director: Director
+    - actors: List<Actor>
+    - reviews: List<Review>
+    - ratings: List<Rating>
+    - country: Country
+    - studio: Studio
+}
+
+class Title <RichType> <<(R, #FF7700) embedded >> {
+    - value: String
+}
+
+class Actor {
+    - id: Long
+    - firstname: String
+    - lastname: String
+    - birthDate: LocalDate
+}
+
+class Director {
+    - id: Long
+    - firstname: String
+    - lastname: String
+    - birthDate: LocalDate
+}
+
+class Studio {
+    - id: Long
+    - name: String
+    - founded: LocalDate
+    - address: Address (embedded
+}
+
+class Review {
+    - id: Long
+    - title: String
+    - content: String
+    - rating: Integer
+    - movie: Movie
+}
+
+class Rating {
+    - id: Long
+    - score: Integer
+    - reviewer: Review
+    - date: LocalDate
+    - movie: Movie
+}
+
+class Country {
+    - id: Long
+    - name: String
+    - code: String
+}
+
 enum Genre {
     ACTION
     COMEDY
@@ -14,5 +74,6 @@ enum Genre {
 }
 
 Movie *-- Genre
+Movie .up. Title
 
 @enduml

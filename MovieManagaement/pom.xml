@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>MovieManagaement</artifactId>
+    <artifactId>MovieManagement</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MovieManagaement</name>
-    <description>MovieManagaement</description>
+    <name>MovieManagement</name>
+    <description>MovieManagement</description>
     <url/>
     <licenses>
         <license/>
@@ -48,6 +48,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

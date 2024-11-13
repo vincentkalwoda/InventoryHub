@@ -24,7 +24,7 @@ class MovieRepositoryTest {
     @Test
     void can_save() {
         // expect
-        assertThat(movieRepository.saveAndFlush(movie).getId()).isNotNull();
+        assertThat(movieRepository.saveAndFlush(movie).getMovieId()).isNotNull();
     }
 
     @Test
