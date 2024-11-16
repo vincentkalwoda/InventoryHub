@@ -1,0 +1,112 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'Ein System zur Verwaltung des Inventars eines Unternehmens oder Lagers. Das System verfolgt Artikel, Bestände, Lieferanten und Bestellungen und kann helfen, das Inventar in Echtzeit zu überwachen und Bestände effizient aufzufüllen
+
+hide methods
+
+class Article <Entity> {
+    - id: Long
+    - name: Name
+    - description: String
+    - category: Category
+    - price: Float
+    - minStock: Integer
+}
+
+class Stock <Entity> {
+    - id: Long
+    - article: Article
+    - quantity: Integer
+}
+
+class Supplier <Entity> {
+    - id: Long
+    - name: String
+    - address: String
+    - email: String
+    - phone: String
+}
+
+class Email <RichType> <<(R, #3498eb) embedded >> {
+    - value: String
+}
+
+class PhoneNumber <ValueObject> <<(V, #009c1d) Embeddable >> {
+    - countryCode: Integer
+    - areaCode: Integer
+    - serialNumber: String
+    - extension: Integer
+    - types: EnumSet<PhoneNumberType>
+}
+
+enum PhoneNumberType <Enum> {
+    HOME
+    MOBILE
+    WORK
+    FAX
+    OTHER
+}
+
+class Address <ValueObject> <<(V, #009c1d) Embeddable >> {
+    - street: String
+    - city: String
+    - zip: String
+    - country: String
+}
+
+enum AddressType <Enum> {
+    BILLING
+    SHIPPING
+}
+
+class Country <Entity> {
+    - id: Long
+    - name: String
+    - iso2Code: String
+    - iso3Code: String
+    - areaCode: Integer
+}
+
+class Order <Entity> {
+    - id: Long
+    - supplier: Supplier
+    - article: Article
+    - quantity: Integer
+    - orderDate: Date
+    - deliveryDate: Date
+    - status: OrderStatus
+}
+
+enum OrderStatus <Enum> {
+    PENDING
+    SHIPPED
+    DELIVERED
+    CANCELLED
+}
+
+class Name <RichType> <<(R, #3498eb) embedded >> {
+    - value: String
+}
+
+enum Category <Enum> {
+    ELECTRONICS
+    CLOTHING
+    FOOD
+    FURNITURE
+}
+
+Article .up.> Category : < embedded
+Article .down.> Name : < embedded
+Stock *-left- Article : > owns
+Order *-right- Supplier : > owns
+Order *-- Article : > owns
+Order .left.> OrderStatus : < embedded
+Supplier .down.> Email : < embedded
+Supplier .right.> PhoneNumber : < embedded
+PhoneNumber -down-o PhoneNumberType : references
+Supplier *-down- Address : > owns
+Address -down-> Country : references (FK)
+Address .down.> AddressType : < embedded
+
+@enduml
