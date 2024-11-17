@@ -1,30 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="20d4f4d8-01a8-40fa-a8d3-dd47c1817cf8" name="Changes" comment="" />
+    <list default="true" id="20d4f4d8-01a8-40fa-a8d3-dd47c1817cf8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/InventoryHub/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/CountryConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventoryHub/src/test/java/at/kalwodaknezevic/inventoryhub/domain/CountryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventoryHub/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/CountryConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryHub/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryHub/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Country.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "vincentkalwoda"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;vincentkalwoda&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Die-Spengergasse/sj2425-4bhif-pos1-kalwoda-knezevic.git",
-    "accountId": "51c4d36e-4557-4ae8-bd13-3b6f585a2d54"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Die-Spengergasse/sj2425-4bhif-pos1-kalwoda-knezevic.git&quot;,
+    &quot;accountId&quot;: &quot;51c4d36e-4557-4ae8-bd13-3b6f585a2d54&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2oWTdjFNuOVqsDKcu8vKAaLWo0S" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -34,10 +51,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "#1 on main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vince/Documents/Schule/2024_2025/POS",
+    "last_opened_file_path": "C:/Users/delfy/Documents/GitHub/sj2425-4bhif-pos1-kalwoda-knezevic",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -58,10 +82,39 @@
       <option name="presentableId" value="Default" />
       <updated>1730984422097</updated>
       <workItem from="1730984424854" duration="128000" />
+      <workItem from="1731849133172" duration="69000" />
+      <workItem from="1731849206849" duration="1283000" />
+      <workItem from="1731851450602" duration="2239000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
