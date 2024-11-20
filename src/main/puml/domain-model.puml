@@ -1,9 +1,5 @@
 @startuml
-'https://plantuml.com/class-diagram
-
-'Ein System zur Verwaltung des Inventars eines Unternehmens oder Lagers. Das System verfolgt Artikel, Bestände, Lieferanten und Bestellungen und kann helfen, das Inventar in Echtzeit zu überwachen und Bestände effizient aufzufüllen
-
-hide methods
+'hide methods
 
 class Article <Entity> {
     - id: Long
@@ -14,8 +10,7 @@ class Article <Entity> {
     - minStock: Integer
 }
 
-class Stock <Entity> {
-    - id: Long
+class Stock <ValueObject> <<(V, #009c1d) Embeddable >> {
     - article: Article
     - quantity: Integer
 }
@@ -23,9 +18,21 @@ class Stock <Entity> {
 class Supplier <Entity> {
     - id: Long
     - name: String
-    - address: String
-    - email: String
-    - phone: String
+    - address: Address
+    - email: Email
+    - phone: PhoneNumber
+}
+
+class Employee <Entity> {
+    - id: Long
+    - position: String
+    - salary: Float
+}
+
+class Person {
+    - firstName: String
+    - lastName: String
+    - birthDate: Date
 }
 
 class Email <RichType> <<(R, #3498eb) embedded >> {
@@ -76,6 +83,7 @@ class Order <Entity> {
     - orderDate: Date
     - deliveryDate: Date
     - status: OrderStatus
+    - employee: Employee
 }
 
 enum OrderStatus <Enum> {
@@ -96,10 +104,11 @@ enum Category <Enum> {
     FURNITURE
 }
 
+Employee --> Person : inherits
 Article .up.> Category : < embedded
 Article .down.> Name : < embedded
 Stock *-left- Article : > owns
-Order *-right- Supplier : > owns
+Order -right-> Supplier : references (FK)
 Order *-- Article : > owns
 Order .left.> OrderStatus : < embedded
 Supplier .down.> Email : < embedded
@@ -108,5 +117,6 @@ PhoneNumber -down-o PhoneNumberType : references
 Supplier *-down- Address : > owns
 Address -down-> Country : references (FK)
 Address .down.> AddressType : < embedded
+Order .left.> Employee : "managed by"
 
 @enduml
