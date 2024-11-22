@@ -20,14 +20,14 @@ class CountryTest {
     void when_instantiated_with_invalid_iso2Code_throws_appropriate_CountryException() {
         assertThatThrownBy(() -> new Country("United States", "U", "USA", 123))
                 .isInstanceOf(Country.CountryException.class)
-                .hasMessage("ISO2 code must be exactly 2 characters");
+                .hasMessage("ISO2 code must be exactly 2 letters");
     }
 
     @Test
     void when_instantiated_with_invalid_iso3Code_throws_appropriate_CountryException() {
         assertThatThrownBy(() -> new Country("United States", "US", "US", 123))
                 .isInstanceOf(Country.CountryException.class)
-                .hasMessage("ISO3 code must be exactly 3 characters");
+                .hasMessage("ISO3 code must be exactly 3 letters");
     }
 
     @Test
