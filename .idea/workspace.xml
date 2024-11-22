@@ -4,31 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Added Address + Test&#10;Added Country, Order, Supplier" />
+    <list default="true" id="20d4f4d8-01a8-40fa-a8d3-dd47c1817cf8" name="Changes" comment="Added Address + Test&#10;Added Country, Order, Supplier">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projekt.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/CountryConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/CountryConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/EmailConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/EmailConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/NameConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/NameConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/CountryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/CountryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/CountryConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/CountryConverterTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="UML Class" />
-        <option value="Interface" />
-        <option value="Enum" />
-        <option value="Class" />
-        <option value="JUnit5 Test Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="feature" />
+        <entry key="$PROJECT_DIR$" value="feature" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="RESET_MODE" value="MIXED" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -42,188 +42,62 @@
     &quot;accountId&quot;: &quot;51c4d36e-4557-4ae8-bd13-3b6f585a2d54&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="alwaysUpdateSnapshots" value="true" />
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2oWVolVRM1sBosKZx2vTL3VQ3mY" />
+  <component name="ProjectId" id="2oWTdjFNuOVqsDKcu8vKAaLWo0S" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
-    &quot;JUnit.CountryConverterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailConverterTest.when_convert_a_null_email_to_db_data_returns_null.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailConverterTest.when_convert_a_null_email_value_to_a_email_returns_null.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailConverterTest.when_convert_a_valid_email_to_db_data_returns_content.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailConverterTest.when_convert_a_valid_email_value_to_a_email_instance.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailTest.when_instantiated_with_invalid_value_throws_appropriate_EmailException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailTest.when_instantiated_with_null_throws_appropriate_EmailException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailTest.when_instantiated_with_valid_value_does_not_throw_exception.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MovieRepositoryTest.can_find_by_title.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.MovieRepositoryTest.can_save.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MovieRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NameTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TitleConverterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TitleConverterTest.when_convert_a_null_title_to_db_value_returns_null.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.TitleConverterTest.when_convert_a_valid_title_to_db_value_returns_content.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.TitleTest.when_instantiated_with_null_throws_appropriate_TitleException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TitleTest.when_instantiated_with_to_long_value_throws_appropriate_TitleException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TitleTest.when_instantiated_with_to_short_value_throws_appropriate_TitleException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in InventoryHub.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.java in MovieManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.MovieManagaement [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vince/Documents/Schule/2024_2025/POS/projekt/InventoryHub&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "#1 on main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/delfy/Documents/GitHub/sj2425-4bhif-pos1-kalwoda-knezevic",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+    "spring.configuration.checksum": "4cdec908de5ca1dcf6c910b685bc6469",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="at.kalwodaknezevic.inventoryhub.persistance" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="at.kalwodaknezevic.inventoryhub.domain" />
-      <recent name="at.kalwodaknezevic.inventoryhub.persistance.converter" />
-      <recent name="at.kalwodaknezevic.moviemanagement.domain" />
-      <recent name="at.kalwodaknezevic.moviemanagement.persistance.converter" />
-      <recent name="at.kalwodaknezevic.moviemanagement.persistance" />
-    </key>
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
-  <component name="RunManager" selected="JUnit.CountryConverterTest">
-    <configuration name="CountryConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.persistance.converter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter.CountryConverterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmailConverterTest.when_convert_a_valid_email_to_db_data_returns_content" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.persistance.converter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter.EmailConverterTest" />
-      <option name="METHOD_NAME" value="when_convert_a_valid_email_to_db_data_returns_content" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmailConverterTest.when_convert_a_valid_email_value_to_a_email_instance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.persistance.converter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter.EmailConverterTest" />
-      <option name="METHOD_NAME" value="when_convert_a_valid_email_value_to_a_email_instance" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmailTest.when_instantiated_with_valid_value_does_not_throw_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.domain" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.domain.EmailTest" />
-      <option name="METHOD_NAME" value="when_instantiated_with_valid_value_does_not_throw_exception" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="java in InventoryHub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InventoryHubApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="InventoryHub" />
+  <component name="RunManager">
+    <configuration name="InventoryHubApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="projekt" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="at.kalwodaknezevic.inventoryhub.InventoryHubApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovieManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.moviemanagement.MovieManagementApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.CountryConverterTest" />
-        <item itemvalue="JUnit.java in InventoryHub" />
-        <item itemvalue="JUnit.EmailTest.when_instantiated_with_valid_value_does_not_throw_exception" />
-        <item itemvalue="JUnit.EmailConverterTest.when_convert_a_valid_email_value_to_a_email_instance" />
-        <item itemvalue="JUnit.EmailConverterTest.when_convert_a_valid_email_to_db_data_returns_content" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -236,144 +110,25 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="" />
-      <created>1730985497391</created>
+      <changelist id="20d4f4d8-01a8-40fa-a8d3-dd47c1817cf8" name="Changes" comment="" />
+      <created>1730984422097</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1730985497391</updated>
-      <workItem from="1730985498246" duration="2003000" />
-      <workItem from="1730987594194" duration="589000" />
-      <workItem from="1731009750029" duration="717000" />
-      <workItem from="1731010491417" duration="613000" />
-      <workItem from="1731396724405" duration="265000" />
-      <workItem from="1731397001924" duration="25000" />
-      <workItem from="1731397035988" duration="3540000" />
-      <workItem from="1731435999298" duration="8505000" />
-      <workItem from="1731450128355" duration="1505000" />
-      <workItem from="1731481719202" duration="2046000" />
-      <workItem from="1731489731406" duration="266000" />
-      <workItem from="1731490012836" duration="2145000" />
-      <workItem from="1731504658435" duration="2245000" />
-      <workItem from="1731507003113" duration="3504000" />
-      <workItem from="1731525848647" duration="5449000" />
-      <workItem from="1731589664164" duration="1302000" />
-      <workItem from="1731615028267" duration="4855000" />
-      <workItem from="1731786576199" duration="432000" />
-      <workItem from="1731791961717" duration="7000" />
-      <workItem from="1731854838584" duration="1377000" />
+      <updated>1730984422097</updated>
+      <workItem from="1730984424854" duration="128000" />
+      <workItem from="1731849133172" duration="69000" />
+      <workItem from="1731849206849" duration="1283000" />
+      <workItem from="1731851450602" duration="2239000" />
+      <workItem from="1732111973516" duration="1331000" />
+      <workItem from="1732113694993" duration="698000" />
+      <workItem from="1732269097287" duration="2816000" />
     </task>
-    <task id="LOCAL-00001" summary="Add Movie &amp; Title + Converter &amp; Tests">
-      <option name="closed" value="true" />
-      <created>1731482809119</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1731482809119</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add Movie &amp; Title + Converter &amp; Tests">
-      <option name="closed" value="true" />
-      <created>1731489461712</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1731489461712</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Changed from MovieManagement to InventoryHub">
-      <option name="closed" value="true" />
-      <created>1731505905927</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1731505905927</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Changed from MovieManagement to InventoryHub">
-      <option name="closed" value="true" />
-      <created>1731507052569</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1731507052569</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Changed from MovieManagement to InventoryHub">
-      <option name="closed" value="true" />
-      <created>1731507239773</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1731507239773</updated>
-    </task>
-    <task id="LOCAL-00006" summary="UML expansion">
-      <option name="closed" value="true" />
-      <created>1731516576610</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1731516576610</updated>
-    </task>
-    <task id="LOCAL-00007" summary="UML expansion">
-      <option name="closed" value="true" />
-      <created>1731516603551</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1731516603551</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Updated Model">
-      <option name="closed" value="true" />
-      <created>1731529248810</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1731529248810</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added EmailConverter + Tests">
-      <option name="closed" value="true" />
-      <created>1731529276062</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1731529276062</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added Address + Test&#10;Added Country, Order, Supplier">
-      <option name="closed" value="true" />
-      <created>1731786807075</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1731786807075</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="kalwoda" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="feature" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/feature" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -384,7 +139,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="kalwoda" />
+                        <option value="knezevic" />
                       </list>
                     </value>
                   </entry>
@@ -397,24 +152,18 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Movie &amp; Title + Converter &amp; Tests" />
-    <MESSAGE value="Changed from MovieManagement to InventoryHub" />
-    <MESSAGE value="UML expansion" />
-    <MESSAGE value="Updated Model" />
-    <MESSAGE value="Added EmailConverter + Tests" />
-    <MESSAGE value="Added Address + Test&#10;Added Country, Order, Supplier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Address + Test&#10;Added Country, Order, Supplier" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MovieManagaement$TitleConverterTest_when_convert_a_valid_title_to_db_value_returns_content.ic" NAME="TitleConverterTest.when_convert_a_valid_title_to_db_value_returns_content Coverage Results" MODIFIED="1731444495784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/InventoryHub$java_in_InventoryHub.ic" NAME="java in InventoryHub Coverage Results" MODIFIED="1731531488260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/MovieManagaement$TitleConverterTest_when_convert_a_null_title_to_db_value_returns_null.ic" NAME="TitleConverterTest.when_convert_a_null_title_to_db_value_returns_null Coverage Results" MODIFIED="1731444643460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>at.kalwodaknezevic.moviemanagement.persistance.converter.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/MovieManagaement$TitleConverterTest_when_convert_a_null_title_to_db_value_returns_null.ic" NAME="TitleConverterTest.when_convert_a_null_title_to_db_value_returns_null Coverage Results" MODIFIED="1731444643460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/MovieManagaement$TitleConverterTest_when_convert_a_valid_title_to_db_value_returns_content.ic" NAME="TitleConverterTest.when_convert_a_valid_title_to_db_value_returns_content Coverage Results" MODIFIED="1731444495784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>at.kalwodaknezevic.moviemanagement.persistance.converter.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/MovieManagaement$TitleConverterTest.ic" NAME="TitleConverterTest Coverage Results" MODIFIED="1731445118163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>at.kalwodaknezevic.moviemanagement.persistance.converter.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/InventoryHub$java_in_InventoryHub.ic" NAME="java in InventoryHub Coverage Results" MODIFIED="1731531488260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

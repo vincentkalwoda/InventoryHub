@@ -19,9 +19,9 @@ public class EmailConverter implements AttributeConverter<Email, String> {
 
     @Override
     public Email convertToEntityAttribute(String s) {
-        return switch (s) {
-            case null -> null;
-            default -> new Email(s);
-        };
+        if (s == null) {
+            return null;
+        }
+        return new Email(s);
     }
 }

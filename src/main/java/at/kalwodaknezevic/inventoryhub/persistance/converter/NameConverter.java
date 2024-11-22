@@ -20,9 +20,9 @@ public class NameConverter implements AttributeConverter<Name, String> {
 
     @Override
     public Name convertToEntityAttribute(String dbData) {
-        return switch (dbData) {
-            case null -> null;
-            default -> new Name(dbData);
-        };
+        if (dbData == null) {
+            return null;
+        }
+        return new Name(dbData);
     }
 }

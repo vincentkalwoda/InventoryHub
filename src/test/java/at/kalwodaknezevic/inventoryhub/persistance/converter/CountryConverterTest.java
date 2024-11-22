@@ -4,47 +4,45 @@ import at.kalwodaknezevic.inventoryhub.domain.Country;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CountryConverterTest {
 
     private final CountryConverter converter = new CountryConverter();
 
     @Test
-    void when_convertToDatabaseColumn_with_valid_country_returns_correct_string() {
-        Country country = new Country("United States", "US", "USA", 123);
-        String dbString = converter.convertToDatabaseColumn(country);
-        assertThat(dbString).isEqualTo("UnitedStatesUSUSA123");
+    void when_convertToEntityAttribute_with_valid_string_with_areaCode_returns_correct_country() {
+        String dbString = "United StatesUSUSA123"; // Example input string
+        Country country = converter.convertToEntityAttribute(dbString);
+
+        assertThat(country).isNotNull();
+        assertThat(country.getName()).isEqualTo("United States");
+        assertThat(country.getIso2Code()).isEqualTo("US");
+        assertThat(country.getIso3Code()).isEqualTo("USA");
+        assertThat(country.getAreaCode()).isEqualTo(123);
     }
 
     @Test
-    void when_convertToDatabaseColumn_with_null_country_returns_null() {
-        String dbString = converter.convertToDatabaseColumn(null);
-        assertThat(dbString).isNull();
-    }
-
-    @Test
-    void when_convertToEntityAttribute_with_valid_string_returns_correct_country() {
-        String dbString = "UnitedStatesUSUSA123";
+    void when_convertToEntityAttribute_with_valid_string_without_areaCode_returns_correct_country() {
+        String dbString = "United StatesUSUSA";
         Country country = converter.convertToEntityAttribute(dbString);
         assertThat(country).isNotNull();
-        assertThat(country.name()).isEqualTo("UnitedStates");
-        assertThat(country.iso2Code()).isEqualTo("US");
-        assertThat(country.iso3Code()).isEqualTo("USA");
-        assertThat(country.areaCode()).isEqualTo(123);
+        assertThat(country.getName()).isEqualTo("United States");
+        assertThat(country.getIso2Code()).isEqualTo("US");
+        assertThat(country.getIso3Code()).isEqualTo("USA");
+        assertThat(country.getAreaCode()).isNull();
     }
 
     @Test
     void when_convertToEntityAttribute_with_null_string_returns_null() {
-        Country country = converter.convertToEntityAttribute(null);
+        String dbString = null;
+        Country country = converter.convertToEntityAttribute(dbString);
         assertThat(country).isNull();
     }
 
     @Test
-    void when_convertToEntityAttribute_with_invalid_string_throws_CountryException() {
-        String dbString = "InvalidString";
-        assertThatThrownBy(() -> converter.convertToEntityAttribute(dbString))
-                .isInstanceOf(Country.CountryException.class)
-                .hasMessage("Input string does not contain valid ISO codes or area code");
+    void when_convertToEntityAttribute_with_empty_string_returns_null() {
+        String dbString = "";
+        Country country = converter.convertToEntityAttribute(dbString);
+        assertThat(country).isNull();
     }
 }
