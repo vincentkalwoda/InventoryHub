@@ -17,10 +17,8 @@ class Stock <ValueObject> <<(V, #009c1d) Embeddable >> {
 
 class Supplier <Entity> {
     - id: Long
-    - name: String
-    - address: Address
-    - email: Email
-    - phone: PhoneNumber
+    - companyName: String
+
 }
 
 class Employee <Entity> {
@@ -105,6 +103,7 @@ enum Category <Enum> {
 }
 
 Employee --> Person : inherits
+Supplier --> Person : inherits
 Article .up.> Category : < embedded
 Article .down.> Name : < embedded
 Stock *-left- Article : > owns

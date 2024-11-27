@@ -1,24 +1,27 @@
 package at.kalwodaknezevic.inventoryhub.domain;
-
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import java.util.Objects;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 
 @Entity
-public class Country {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+@Table(name = "countries")
+public class Country extends AbstractPersistable<Long> {
     private String name;
     private String iso2Code;
     private String iso3Code;
     private Integer areaCode;
 
-    // Default constructor (required by JPA)
+    /*
+
     protected Country() {
     }
 
@@ -42,10 +45,6 @@ public class Country {
         this.areaCode = areaCode;
     }
 
-    public Long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
     }
@@ -66,5 +65,5 @@ public class Country {
         public CountryException(String message) {
             super(message);
         }
-    }
+    } */
 }
