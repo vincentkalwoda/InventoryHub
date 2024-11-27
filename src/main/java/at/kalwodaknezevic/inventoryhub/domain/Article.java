@@ -1,12 +1,10 @@
 package at.kalwodaknezevic.inventoryhub.domain;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 @Data
 @NoArgsConstructor
@@ -22,7 +20,7 @@ public class Article {
     private Name name;
     private String description;
     private Category category;
-    private float price;
+    private Float price;
 
     @Embeddable
     public record ArticleId(@GeneratedValue @NotNull Long id) {

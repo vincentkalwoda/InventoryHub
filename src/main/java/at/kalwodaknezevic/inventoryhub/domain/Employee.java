@@ -3,24 +3,29 @@ package at.kalwodaknezevic.inventoryhub.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+@Data
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 
 @Entity
-@Table(name = "suppliers")
-public class Supplier extends Person {
+@Table(name = "employees")
+public class Employee extends Person {
     @EmbeddedId
-    private SupplierId supplierId;
-
+    private EmployeeId employeeId;
     @NotNull
-    private String companyName;
+    private String department;
+    @NotNull
+    private String position;
+    @NotNull
+    private float salary;
 
     @Embeddable
-    public record SupplierId(@GeneratedValue @NotNull Long id){}
+    public record EmployeeId(@GeneratedValue @NotNull Long id) {
+    }
 }
