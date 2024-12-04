@@ -1,8 +1,10 @@
 package at.kalwodaknezevic.inventoryhub.domain;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Embeddable
+@NoArgsConstructor
 public record PhoneNumber(
         Integer countryCode,
         Integer areaCode,

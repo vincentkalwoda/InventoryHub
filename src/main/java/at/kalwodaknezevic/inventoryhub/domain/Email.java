@@ -1,5 +1,10 @@
 package at.kalwodaknezevic.inventoryhub.domain;
 
+import jakarta.persistence.Embeddable;
+import lombok.NoArgsConstructor;
+
+@Embeddable
+@NoArgsConstructor
 public record Email(String emailValue) {
     public Email {
         if(emailValue == null) throw EmailException.forNullValue();
