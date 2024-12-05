@@ -26,8 +26,4 @@ public class Country extends AbstractPersistable<Long> {
     private String iso3Code;
     @NotNull
     private Integer areaCode;
-
-    @Embeddable
-    public record CountryId(@GeneratedValue @NotNull Long id) {
-    }
 }
