@@ -46,4 +46,12 @@ class EmployeeRepositoryTest {
         assertThat(foundEmployee).isNotEmpty();
         assertThat(foundEmployee.get().getEmployeeId()).isEqualTo(employee.getEmployeeId());
     }
+
+    @Test
+    void canFindByFirstnameAndLastname() {
+        employeeRepository.saveAndFlush(employee);
+        var foundEmployee = employeeRepository.findByFirstnameAndLastname(employee.getFirstname(), employee.getLastname());
+        assertThat(foundEmployee).isNotEmpty();
+        assertThat(foundEmployee.get().getEmployeeId()).isEqualTo(employee.getEmployeeId());
+    }
 }

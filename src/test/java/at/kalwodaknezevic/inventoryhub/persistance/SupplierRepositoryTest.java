@@ -5,11 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-
 import java.time.LocalDate;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class SupplierRepositoryTest {
@@ -41,6 +38,22 @@ class SupplierRepositoryTest {
     void canFindBySupplierId() {
         supplierRepository.saveAndFlush(supplier);
         var foundSupplier = supplierRepository.findBySupplierId(supplier.getSupplierId());
+        assertThat(foundSupplier).isNotEmpty();
+        assertThat(foundSupplier.get().getSupplierId()).isEqualTo(supplier.getSupplierId());
+    }
+
+    @Test
+    void canFindByFirstnameAndLastname() {
+        supplierRepository.saveAndFlush(supplier);
+        var foundSupplier = supplierRepository.findByFirstnameAndLastname(supplier.getFirstname(), supplier.getLastname());
+        assertThat(foundSupplier).isNotEmpty();
+        assertThat(foundSupplier.get().getSupplierId()).isEqualTo(supplier.getSupplierId());
+    }
+
+    @Test
+    void canFindByCompanyName() {
+        supplierRepository.saveAndFlush(supplier);
+        var foundSupplier = supplierRepository.findByCompanyName(supplier.getCompanyName());
         assertThat(foundSupplier).isNotEmpty();
         assertThat(foundSupplier.get().getSupplierId()).isEqualTo(supplier.getSupplierId());
     }

@@ -24,6 +24,18 @@ class ArticleRepositoryTest {
         // expect
         assertThat(articleRepository.saveAndFlush(article).getArticleId()).isNotNull();
     }
+
+    @Test
+    void can_find_by_id() {
+        // arrange / given
+        articleRepository.saveAndFlush(article);
+        // act / when
+        var foundArticle = articleRepository.findByArticleId(article.getArticleId());
+        // assert / then
+        assertThat(foundArticle).isNotEmpty();
+        assertThat(foundArticle.get().getArticleId()).isEqualTo(article.getArticleId());
+    }
+
     @Test
     void can_find_by_title() {
         // arrange / given

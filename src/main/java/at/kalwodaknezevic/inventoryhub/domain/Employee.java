@@ -15,13 +15,17 @@ import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "employees")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Employee extends Person {
     @EmbeddedId
     private EmployeeId employeeId;
+
     @NotNull
     private String department;
+
     @NotNull
     private String position;
+
     @NotNull
     private float salary;
 
