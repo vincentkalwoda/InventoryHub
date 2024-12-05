@@ -1,6 +1,9 @@
 package at.kalwodaknezevic.inventoryhub.domain;
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,55 +18,16 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 @Table(name = "countries")
 public class Country extends AbstractPersistable<Long> {
+    @NotNull
     private String name;
+    @NotNull
     private String iso2Code;
+    @NotNull
     private String iso3Code;
+    @NotNull
     private Integer areaCode;
 
-    /*
-
-    protected Country() {
+    @Embeddable
+    public record CountryId(@GeneratedValue @NotNull Long id) {
     }
-
-    public Country(String name, String iso2Code, String iso3Code, Integer areaCode) {
-        if (name == null || name.isEmpty()) {
-            throw new CountryException("Name must not be null or empty");
-        }
-        if (iso2Code == null || !iso2Code.matches("[A-Za-z]{2}")) {
-            throw new CountryException("ISO2 code must be exactly 2 letters");
-        }
-        if (iso3Code == null || !iso3Code.matches("[A-Za-z]{3}")) {
-            throw new CountryException("ISO3 code must be exactly 3 letters");
-        }
-        if (areaCode != null && (areaCode < 0 || areaCode > 999)) {
-            throw new CountryException("Area code must be a valid 1-3 digit number");
-        }
-
-        this.name = name;
-        this.iso2Code = iso2Code;
-        this.iso3Code = iso3Code;
-        this.areaCode = areaCode;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getIso2Code() {
-        return iso2Code;
-    }
-
-    public String getIso3Code() {
-        return iso3Code;
-    }
-
-    public Integer getAreaCode() {
-        return areaCode;
-    }
-
-    public static class CountryException extends RuntimeException {
-        public CountryException(String message) {
-            super(message);
-        }
-    } */
 }
