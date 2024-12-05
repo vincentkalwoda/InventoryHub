@@ -1,10 +1,8 @@
 package at.kalwodaknezevic.inventoryhub.domain;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
 
 @Embeddable
-@NoArgsConstructor
 public record Address(
         String street,
         String city,

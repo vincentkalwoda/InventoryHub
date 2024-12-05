@@ -11,8 +11,11 @@ import java.util.List;
 public class Order {
     @EmbeddedId
     private OrderId orderId;
+    @NotNull
     private List<Article> orderItems;
+    @NotNull
     private Supplier supplier;
+    @NotNull
     private LocalDate orderDate;
     private LocalDate deliveryDate;
     private OrderStatus orderStatus;
