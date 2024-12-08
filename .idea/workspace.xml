@@ -6,15 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Added Address + Test&#10;Added Country, Order, Supplier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/PhoneTypeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/PhoneTypeConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/puml/domain-model.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/puml/domain-model.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/CountryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/CountryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/AddressConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/AddressConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/AddressTypeConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/AddressTypeConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/CategoryConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/CategoryConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/OrderStatusConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/OrderStatusConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/PhoneNumberConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/PhoneNumberConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/PhoneTypeConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/PhoneTypeConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/StockConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/StockConverterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +59,11 @@
     &quot;accountId&quot;: &quot;51c4d36e-4557-4ae8-bd13-3b6f585a2d54&quot;
   }
 }</component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="java in InventoryHub" />
+    </enabled-run-configurations>
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -84,6 +91,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultPlantUmlFileTemplate": "UML Class",
+    "JUnit.CategoryConverterTest.executor": "Coverage",
     "JUnit.CountryConverterTest.executor": "Run",
     "JUnit.EmailConverterTest.when_convert_a_null_email_to_db_data_returns_null.executor": "Run",
     "JUnit.EmailConverterTest.when_convert_a_null_email_value_to_a_email_returns_null.executor": "Run",
@@ -98,6 +106,7 @@
     "JUnit.MovieRepositoryTest.can_save.executor": "Run",
     "JUnit.MovieRepositoryTest.executor": "Run",
     "JUnit.NameTest.executor": "Run",
+    "JUnit.OrderStatusConverterTest.executor": "Coverage",
     "JUnit.PersonRepositoryTest.can_find_by_name.executor": "Run",
     "JUnit.PersonRepositoryTest.can_save.executor": "Run",
     "JUnit.PersonRepositoryTest.executor": "Run",
@@ -156,14 +165,44 @@
       <recent name="at.kalwodaknezevic.inventoryhub.persistance" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="at.kalwodaknezevic.inventoryhub.domain" />
       <recent name="at.kalwodaknezevic.inventoryhub.persistance.converter" />
       <recent name="at.kalwodaknezevic.inventoryhub.persistance" />
-      <recent name="at.kalwodaknezevic.inventoryhub.domain" />
       <recent name="at.kalwodaknezevic.moviemanagement.domain" />
       <recent name="at.kalwodaknezevic.moviemanagement.persistance.converter" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.converter in InventoryHub">
+    <configuration name="CategoryConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.persistance.converter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter.CategoryConverterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderStatusConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.persistance.converter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter.OrderStatusConverterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PhoneTypeConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryHub" />
       <extension name="coverage">
@@ -175,38 +214,6 @@
       <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter" />
       <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter.PhoneTypeConverterTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PhoneTypeConverterTest.when_convert_a_null_phone_type_value_to_a_phone_type_returns_null" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.persistance.converter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter.PhoneTypeConverterTest" />
-      <option name="METHOD_NAME" value="when_convert_a_null_phone_type_value_to_a_phone_type_returns_null" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PhoneTypeConverterTest.when_convert_a_valid_phone_type_value_to_a_phone_type_instance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.persistance.converter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.persistance.converter.PhoneTypeConverterTest" />
-      <option name="METHOD_NAME" value="when_convert_a_valid_phone_type_value_to_a_phone_type_instance" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -244,10 +251,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.converter in InventoryHub" />
-        <item itemvalue="JUnit.PhoneTypeConverterTest" />
+        <item itemvalue="JUnit.OrderStatusConverterTest" />
         <item itemvalue="JUnit.java in InventoryHub" />
-        <item itemvalue="JUnit.PhoneTypeConverterTest.when_convert_a_null_phone_type_value_to_a_phone_type_returns_null" />
-        <item itemvalue="JUnit.PhoneTypeConverterTest.when_convert_a_valid_phone_type_value_to_a_phone_type_instance" />
+        <item itemvalue="JUnit.CategoryConverterTest" />
+        <item itemvalue="JUnit.PhoneTypeConverterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -292,6 +299,8 @@
       <workItem from="1732278986513" duration="2480000" />
       <workItem from="1732717662024" duration="5170000" />
       <workItem from="1732737670093" duration="4006000" />
+      <workItem from="1733567661605" duration="218000" />
+      <workItem from="1733659450209" duration="847000" />
     </task>
     <task id="LOCAL-00001" summary="Add Movie &amp; Title + Converter &amp; Tests">
       <option name="closed" value="true" />
@@ -437,16 +446,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added Address + Test&#10;Added Country, Order, Supplier" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/projekt$converter_in_InventoryHub.ic" NAME="converter in InventoryHub Coverage Results" MODIFIED="1732742075389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/projekt$converter_in_InventoryHub.ic" NAME="converter in InventoryHub Coverage Results" MODIFIED="1733660263581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/projekt$CategoryConverterTest.ic" NAME="CategoryConverterTest Coverage Results" MODIFIED="1733659766593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>at.kalwodaknezevic.inventoryhub.persistance.converter.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/projekt$PhoneTypeConverterTest.ic" NAME="PhoneTypeConverterTest Coverage Results" MODIFIED="1732742050802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>at.kalwodaknezevic.inventoryhub.persistance.converter.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/projekt$java_in_InventoryHub.ic" NAME="java in InventoryHub Coverage Results" MODIFIED="1732741933493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/projekt$java_in_InventoryHub.ic" NAME="java in InventoryHub Coverage Results" MODIFIED="1733659872054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/MovieManagaement$TitleConverterTest_when_convert_a_valid_title_to_db_value_returns_content.ic" NAME="TitleConverterTest.when_convert_a_valid_title_to_db_value_returns_content Coverage Results" MODIFIED="1731444495784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>at.kalwodaknezevic.moviemanagement.persistance.converter.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/MovieManagaement$TitleConverterTest_when_convert_a_null_title_to_db_value_returns_null.ic" NAME="TitleConverterTest.when_convert_a_null_title_to_db_value_returns_null Coverage Results" MODIFIED="1731444643460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>at.kalwodaknezevic.moviemanagement.persistance.converter.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/projekt$OrderStatusConverterTest.ic" NAME="OrderStatusConverterTest Coverage Results" MODIFIED="1733660044249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>at.kalwodaknezevic.inventoryhub.persistance.converter.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/MovieManagaement$TitleConverterTest.ic" NAME="TitleConverterTest Coverage Results" MODIFIED="1731445118163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>at.kalwodaknezevic.moviemanagement.persistance.converter.*</FILTER>

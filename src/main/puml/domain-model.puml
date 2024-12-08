@@ -7,7 +7,6 @@ class Article <Entity> {
     - description: String
     - category: Category
     - price: Float
-    - minStock: Integer
 }
 
 class Stock <ValueObject> <<(V, #009c1d) Embeddable >> {

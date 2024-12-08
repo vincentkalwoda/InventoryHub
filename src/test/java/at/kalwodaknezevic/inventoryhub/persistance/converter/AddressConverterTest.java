@@ -6,6 +6,7 @@ import at.kalwodaknezevic.inventoryhub.domain.Country;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class AddressConverterTest {
 
@@ -50,5 +51,13 @@ class AddressConverterTest {
     void when_convert_a_null_address_value_to_an_address_returns_null() {
         // expect
         assertThat(addressConverter.convertToEntityAttribute(null)).isNull();
+    }
+
+    @Test
+    void when_convert_an_invalid_address_value_to_an_address_throws_exception() {
+        // expect
+        assertThatThrownBy(() -> addressConverter.convertToEntityAttribute("Main St,Springfield,12345,Country"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Invalid address data: Main St,Springfield,12345,Country");
     }
 }

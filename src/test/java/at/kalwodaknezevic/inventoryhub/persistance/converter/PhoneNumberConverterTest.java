@@ -5,6 +5,7 @@ import at.kalwodaknezevic.inventoryhub.domain.PhoneType;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class PhoneNumberConverterTest {
 
@@ -49,5 +50,12 @@ class PhoneNumberConverterTest {
     void when_convert_a_null_phone_number_value_to_a_phone_number_returns_null() {
         // expect
         assertThat(phoneNumberConverter.convertToEntityAttribute(null)).isNull();
+    }
+
+    @Test
+    void when_convert_an_invalid_phone_number_value_to_a_phone_number_throws_exception() {
+        // expect
+        assertThatThrownBy(() -> phoneNumberConverter.convertToEntityAttribute("1-123-4567890-1234"))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }

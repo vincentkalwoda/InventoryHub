@@ -19,8 +19,10 @@ import java.util.List;
 public class Order {
     @EmbeddedId
     private OrderId orderId;
-    @OneToMany
-    private List<Article> orderItems;
+    @ElementCollection
+    @JoinTable(name = "order_items",
+            joinColumns = @JoinColumn(foreignKey = @ForeignKey(name = "FK_order_item_order")))
+    private List<OrderItem> orderItems;
     @ManyToOne
     private Supplier supplier;
     @NotNull

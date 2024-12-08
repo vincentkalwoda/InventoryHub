@@ -10,10 +10,23 @@ class AddressTypeConverterTest {
     private final AddressTypeConverter addressTypeConverter = new AddressTypeConverter();
 
     @Test
-    void when_convert_a_valid_address_type_to_db_value_returns_content() {
+    void when_convert_a_valid_address_type_billing_to_db_value_returns_content() {
         // arrange / given
         Character value = 'B';
         AddressType addressType = AddressType.BILLING;
+
+        // act / when
+        Character convertedValue = addressTypeConverter.convertToDatabaseColumn(addressType);
+
+        // assert / then
+        assertEquals(convertedValue, value);
+    }
+
+    @Test
+    void when_convert_a_valid_address_type_shipping_to_db_value_returns_content() {
+        // arrange / given
+        Character value = 'S';
+        AddressType addressType = AddressType.SHIPPING;
 
         // act / when
         Character convertedValue = addressTypeConverter.convertToDatabaseColumn(addressType);
@@ -29,7 +42,7 @@ class AddressTypeConverterTest {
     }
 
     @Test
-    void when_convert_a_valid_address_type_value_to_an_address_type_instance() {
+    void when_convert_a_valid_address_type_billing_value_to_an_address_type_instance() {
         // arrange / given
         Character value = 'B';
 
@@ -41,8 +54,26 @@ class AddressTypeConverterTest {
     }
 
     @Test
+    void when_convert_a_valid_address_type_shipping_value_to_an_address_type_instance() {
+        // arrange / given
+        Character value = 'S';
+
+        // act / when
+        var addressType = addressTypeConverter.convertToEntityAttribute(value);
+
+        // assert / then
+        assertEquals(AddressType.SHIPPING, addressType);
+    }
+
+    @Test
     void when_convert_a_null_address_type_value_to_an_address_type_returns_null() {
         // expect
         assertNull(addressTypeConverter.convertToEntityAttribute(null));
+    }
+
+    @Test
+    void when_convert_an_invalid_address_type_value_to_an_address_type_throws_exception() {
+        // expect
+        assertThrows(IllegalArgumentException.class, () -> addressTypeConverter.convertToEntityAttribute('X'));
     }
 }

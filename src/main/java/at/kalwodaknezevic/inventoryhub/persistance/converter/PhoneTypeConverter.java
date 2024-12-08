@@ -5,31 +5,31 @@ import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
 @Converter(autoApply = true)
-public class PhoneTypeConverter implements AttributeConverter<PhoneType, Integer> {
+public class PhoneTypeConverter implements AttributeConverter<PhoneType, Character> {
 
-    static final String VALID_VALUES = "0, 1, 2, 3, 4";
+    static final String VALID_VALUES = "H, M, W, F, O";
     public static final String COLUMN_DEFINITION = "enum ("+VALID_VALUES+")";
 
     @Override
-    public Integer convertToDatabaseColumn(PhoneType attribute) {
+    public Character convertToDatabaseColumn(PhoneType attribute) {
         return switch (attribute) {
-            case PhoneType.HOME -> 0;
-            case PhoneType.MOBILE -> 1;
-            case PhoneType.WORK -> 2;
-            case PhoneType.FAX -> 3;
-            case PhoneType.OTHER -> 4;
+            case PhoneType.HOME -> 'H';
+            case PhoneType.MOBILE -> 'M';
+            case PhoneType.WORK -> 'W';
+            case PhoneType.FAX -> 'F';
+            case PhoneType.OTHER -> 'O';
             case null -> null;
         };
     }
 
     @Override
-    public PhoneType convertToEntityAttribute(Integer dbData) {
+    public PhoneType convertToEntityAttribute(Character dbData) {
         return switch (dbData) {
-            case 0 -> PhoneType.HOME;
-            case 1 -> PhoneType.MOBILE;
-            case 2 -> PhoneType.WORK;
-            case 3 -> PhoneType.FAX;
-            case 4 -> PhoneType.OTHER;
+            case 'H' -> PhoneType.HOME;
+            case 'M' -> PhoneType.MOBILE;
+            case 'W' -> PhoneType.WORK;
+            case 'F' -> PhoneType.FAX;
+            case 'O' -> PhoneType.OTHER;
             case null -> null;
             default -> throw new IllegalArgumentException("Unknown phone type: " + dbData);
         };

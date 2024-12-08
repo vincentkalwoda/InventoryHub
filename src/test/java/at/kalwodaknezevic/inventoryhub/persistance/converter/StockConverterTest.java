@@ -5,6 +5,7 @@ import at.kalwodaknezevic.inventoryhub.domain.Stock;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class StockConverterTest {
 
@@ -46,5 +47,12 @@ class StockConverterTest {
     void when_convert_a_null_stock_value_to_a_stock_returns_null() {
         // expect
         assertThat(stockConverter.convertToEntityAttribute(null)).isNull();
+    }
+
+    @Test
+    void when_convert_an_invalid_stock_value_to_a_stock_throws_exception() {
+        // expect
+        assertThatThrownBy(() -> stockConverter.convertToEntityAttribute("1"))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
