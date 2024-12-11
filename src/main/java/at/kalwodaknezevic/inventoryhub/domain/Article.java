@@ -19,6 +19,7 @@ public class Article {
     private String description;
     private Category category;
     private Float price;
+    private Integer quantity;
 
     @Embeddable
     public record ArticleId(@GeneratedValue @NotNull Long id) {

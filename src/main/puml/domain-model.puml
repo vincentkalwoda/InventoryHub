@@ -7,17 +7,12 @@ class Article <Entity> {
     - description: String
     - category: Category
     - price: Float
-}
-
-class Stock <ValueObject> <<(V, #009c1d) Embeddable >> {
-    - article: Article
     - quantity: Integer
 }
 
 class Supplier <Entity> {
     - id: Long
     - companyName: String
-
 }
 
 class Employee <Entity> {
@@ -75,12 +70,17 @@ class Country <Entity> {
 class Order <Entity> {
     - id: Long
     - supplier: Supplier
-    - article: Article
-    - quantity: Integer
+    - articles: List<OrderItem>
     - orderDate: Date
     - deliveryDate: Date
     - status: OrderStatus
     - employee: Employee
+
+}
+
+class OrderItem <Entity> {
+    - article: Article
+    - quantity: Integer
 }
 
 enum OrderStatus <Enum> {
@@ -101,13 +101,12 @@ enum Category <Enum> {
     FURNITURE
 }
 
-Employee --> Person : inherits
-Supplier --> Person : inherits
+Employee --|> Person : inherits
+Supplier --|> Person : inherits
 Article .up.> Category : < embedded
 Article .down.> Name : < embedded
-Stock *-left- Article : > owns
 Order -right-> Supplier : references (FK)
-Order *-- Article : > owns
+Order *-- OrderItem : > owns
 Order .left.> OrderStatus : < embedded
 Supplier .down.> Email : < embedded
 Supplier .right.> PhoneNumber : < embedded
@@ -116,5 +115,6 @@ Supplier *-down- Address : > owns
 Address -down-> Country : references (FK)
 Address .down.> AddressType : < embedded
 Order .left.> Employee : "managed by"
+Article -down-> OrderItem : references (FK)
 
 @enduml

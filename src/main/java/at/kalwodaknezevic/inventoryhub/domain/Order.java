@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@Embeddable
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -24,11 +25,16 @@ public class Order {
             joinColumns = @JoinColumn(foreignKey = @ForeignKey(name = "FK_order_item_order")))
     private List<OrderItem> orderItems;
     @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_order_supplier"))
     private Supplier supplier;
     @NotNull
     private LocalDate orderDate;
     private LocalDate deliveryDate;
     private OrderStatus orderStatus;
+    @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK_order_employee"))
+    private Employee employees;
+
 
     @Embeddable
     public record OrderId(@GeneratedValue @NotNull Long id) {

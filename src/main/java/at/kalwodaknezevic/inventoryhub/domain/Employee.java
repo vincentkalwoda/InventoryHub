@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @Data
 @SuperBuilder
 @NoArgsConstructor
@@ -28,6 +30,11 @@ public class Employee extends Person {
 
     @NotNull
     private float salary;
+
+    @ElementCollection
+    @JoinTable(name = "employee_orders",
+            joinColumns = @JoinColumn(foreignKey = @ForeignKey(name = "FK_employee_order")))
+    private List<Order> orders;
 
     @Embeddable
     public record EmployeeId(@GeneratedValue @NotNull Long id) {
