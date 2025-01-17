@@ -22,8 +22,8 @@ class OrderRepositoryTest {
         Country austria = new Country("Austria", "AT", "AUT", 43);
         Address address = new Address("Teststraße", "1", "1234", austria, AddressType.SHIPPING);
         Supplier supplier = Supplier.builder()
-                .firstname("John")
-                .lastname("Doe")
+                .firstname(new Name("John"))
+                .lastname(new Name("Doe"))
                 .birthdate(LocalDate.of(1990, 1, 1))
                 .email(new Email("john.doe@spg.at"))
                 .phoneNumber(phoneNumber)

@@ -17,16 +17,27 @@ import java.time.LocalDate;
 @MappedSuperclass
 public abstract class Person {
     @NotNull
-    private String firstname;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "firstname"))
+    })
+    private Name firstname;
 
     @NotNull
-    private String lastname;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "lastname"))
+    })
+    private Name lastname;
 
     @NotNull
     private LocalDate birthdate;
 
     @NotNull
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "email"))
+    })
     private Email email;
 
     @Embedded
@@ -37,7 +48,7 @@ public abstract class Person {
     @Embedded
     private Address address;
 
-    protected Person( String firstname, String lastname, LocalDate birthdate, Email email, PhoneNumber phoneNumber, Address address) {
+    protected Person( Name firstname, Name lastname, LocalDate birthdate, Email email, PhoneNumber phoneNumber, Address address) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthdate = birthdate;

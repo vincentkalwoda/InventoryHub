@@ -37,7 +37,7 @@ class NameConverterTest {
         var name = nameConverter.convertToEntityAttribute(value);
 
         // assert / then
-        assertThat(name.nameValue()).isEqualTo(value);
+        assertThat(name.value()).isEqualTo(value);
     }
 
     @Test

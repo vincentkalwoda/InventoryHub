@@ -3,10 +3,10 @@ package at.kalwodaknezevic.inventoryhub.domain;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public record Email(String emailValue) {
+public record Email(String value) {
     public Email {
-        if(emailValue == null) throw EmailException.forNullValue();
-        if (!emailValue.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) throw EmailException.forInvalidValue();
+        if(value == null) throw EmailException.forNullValue();
+        if (!value.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) throw EmailException.forInvalidValue();
     }
 
     public static class EmailException extends RuntimeException {

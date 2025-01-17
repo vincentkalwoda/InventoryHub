@@ -12,7 +12,7 @@ public class EmailConverter implements AttributeConverter<Email, String> {
     @Override
     public String convertToDatabaseColumn(Email email) {
         return Optional.ofNullable(email)
-                .map(Email::emailValue)
+                .map(Email::value)
                 .filter(Objects::nonNull)
                 .orElse(null);
     }

@@ -1,11 +1,12 @@
 package at.kalwodaknezevic.inventoryhub.persistance;
 
 import at.kalwodaknezevic.inventoryhub.domain.Employee;
+import at.kalwodaknezevic.inventoryhub.domain.Name;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Employee.EmployeeId> {
     Optional<Employee> findByEmployeeId(Employee.EmployeeId employeeId);
-    Optional<Employee> findEmployeeByFirstnameAndLastname(String firstname, String lastname);
+    Optional<Employee> findEmployeeByFirstnameAndLastname(Name firstname, Name lastname);
 }

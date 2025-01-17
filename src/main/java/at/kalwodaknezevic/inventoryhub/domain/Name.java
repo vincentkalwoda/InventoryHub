@@ -10,15 +10,15 @@ package at.kalwodaknezevic.inventoryhub.domain;
 * @throws NameException
 */
 
-public record Name(String nameValue) {
+public record Name(String value) {
 
     private static int MIN_LENGTH = 1;
     private static int MAX_LENGTH = 50;
 
     public Name {
-        if(nameValue == null) throw NameException.forNullValue();
-        if(nameValue.length() < MIN_LENGTH) throw NameException.forLongValue();
-        if(nameValue.length() > MAX_LENGTH) throw NameException.forShortValue();
+        if(value == null) throw NameException.forNullValue();
+        if(value.length() < MIN_LENGTH) throw NameException.forLongValue();
+        if(value.length() > MAX_LENGTH) throw NameException.forShortValue();
     }
 
     public static class NameException extends RuntimeException {

@@ -13,7 +13,7 @@ public class NameConverter implements AttributeConverter<Name, String> {
     @Override
     public String convertToDatabaseColumn(Name title) {
         return Optional.ofNullable(title)
-                .map(Name::nameValue)
+                .map(Name::value)
                 .filter(Objects::nonNull)
                 .orElse(null);
     }

@@ -38,7 +38,7 @@ class EmailConverterTest {
         var convertedValue = emailConverter.convertToEntityAttribute(emailValue);
 
         // assert
-        assertThat(convertedValue.emailValue()).isEqualTo(emailValue);
+        assertThat(convertedValue.value()).isEqualTo(emailValue);
     }
 
     @Test
