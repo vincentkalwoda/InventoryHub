@@ -5,7 +5,6 @@ import lombok.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Builder
 
 @Entity
@@ -23,5 +22,15 @@ public class Article {
 
     @Embeddable
     public record ArticleId(@GeneratedValue @NotNull Long id) {
+    }
+
+    @Builder
+    public Article(ArticleId articleId, Name name, String description, Category category, Float price, Integer quantity) {
+        this.articleId = articleId;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.quantity = quantity;
     }
 }

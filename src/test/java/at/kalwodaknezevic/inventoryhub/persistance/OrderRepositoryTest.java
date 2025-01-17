@@ -27,7 +27,7 @@ class OrderRepositoryTest {
                 .birthdate(LocalDate.of(1990, 1, 1))
                 .email(new Email("john.doe@spg.at"))
                 .phoneNumber(phoneNumber)
-                .addresses(address)
+                .address(address)
                 .companyName("SPG")
                 .build();
         supplierRepository.saveAndFlush(supplier);
@@ -49,7 +49,7 @@ class OrderRepositoryTest {
     @Test
     void canFindByOrderId() {
         orderRepository.saveAndFlush(order);
-        var foundOrder = orderRepository.findByOrderId(order.getOrderId());
+        var foundOrder = orderRepository.findOrderByOrderId(order.getOrderId());
         assertThat(foundOrder).isNotEmpty();
         assertThat(foundOrder.get().getOrderId()).isEqualTo(order.getOrderId());
     }

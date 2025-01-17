@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Data
 @SuperBuilder
 @NoArgsConstructor
-@AllArgsConstructor
 
 @MappedSuperclass
 public abstract class Person {
@@ -36,9 +35,14 @@ public abstract class Person {
 
     @NotNull
     @Embedded
-    private Address addresses;
+    private Address address;
 
-    @Embeddable
-    public record PersonId(@GeneratedValue @NotNull Long id) {
+    protected Person( String firstname, String lastname, LocalDate birthdate, Email email, PhoneNumber phoneNumber, Address address) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 }

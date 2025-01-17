@@ -24,7 +24,7 @@ class SupplierRepositoryTest {
                 .birthdate(LocalDate.of(1990, 1, 1))
                 .email(new Email("john.doe@spg.at"))
                 .phoneNumber(phoneNumber)
-                .addresses(address)
+                .address(address)
                 .companyName("SPG")
                 .build();
     }

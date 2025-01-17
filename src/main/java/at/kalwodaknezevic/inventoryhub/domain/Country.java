@@ -12,7 +12,6 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Builder
 
 @Entity
@@ -26,4 +25,12 @@ public class Country extends AbstractPersistable<Long> {
     private String iso3Code;
     @NotNull
     private Integer areaCode;
+
+    @Builder
+    public Country(String name, String iso2Code, String iso3Code, Integer areaCode) {
+        this.name = name;
+        this.iso2Code = iso2Code;
+        this.iso3Code = iso3Code;
+        this.areaCode = areaCode;
+    }
 }

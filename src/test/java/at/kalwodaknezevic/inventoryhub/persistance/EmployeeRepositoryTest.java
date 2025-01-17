@@ -26,7 +26,7 @@ class EmployeeRepositoryTest {
                 .birthdate(LocalDate.of(1990, 1, 1))
                 .email(new Email("john.doe@spg.at"))
                 .phoneNumber(phoneNumber)
-                .addresses(address)
+                .address(address)
                 .department("IT")
                 .position("Developer")
                 .salary(5000f)
@@ -50,7 +50,7 @@ class EmployeeRepositoryTest {
     @Test
     void canFindByFirstnameAndLastname() {
         employeeRepository.saveAndFlush(employee);
-        var foundEmployee = employeeRepository.findByFirstnameAndLastname(employee.getFirstname(), employee.getLastname());
+        var foundEmployee = employeeRepository.findEmployeeByFirstnameAndLastname(employee.getFirstname(), employee.getLastname());
         assertThat(foundEmployee).isNotEmpty();
         assertThat(foundEmployee.get().getEmployeeId()).isEqualTo(employee.getEmployeeId());
     }
