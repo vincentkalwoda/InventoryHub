@@ -1,44 +1,36 @@
 package at.kalwodaknezevic.inventoryhub.persistance;
 
+import at.kalwodaknezevic.inventoryhub.FixturesFactory;
+import at.kalwodaknezevic.inventoryhub.TestcontainersConfiguration;
 import at.kalwodaknezevic.inventoryhub.domain.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.Import;
 
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
+@Import(TestcontainersConfiguration.class)
 class OrderRepositoryTest {
     private @Autowired OrderRepository orderRepository;
     private @Autowired SupplierRepository supplierRepository;
+    private @Autowired EmployeeRepository employeeRepository;
     private Order order;
 
     @BeforeEach
     void setUp() {
-        PhoneNumber phoneNumber = new PhoneNumber(43, 1, "4567890", 0, PhoneType.MOBILE);
-        Country austria = new Country("Austria", "AT", "AUT", 43);
-        Address address = new Address("Teststraße", "1", "1234", austria, AddressType.SHIPPING);
-        Supplier supplier = Supplier.builder()
-                .firstname(new Name("John"))
-                .lastname(new Name("Doe"))
-                .birthdate(LocalDate.of(1990, 1, 1))
-                .email(new Email("john.doe@spg.at"))
-                .phoneNumber(phoneNumber)
-                .address(address)
-                .companyName("SPG")
-                .build();
+        Country austria = FixturesFactory.austria();
+        Address address = FixturesFactory.spengergasse20(austria);
+        Supplier supplier = FixturesFactory.johnDoeSupplier(address);
         supplierRepository.saveAndFlush(supplier);
+        Employee employee = FixturesFactory.johnDoeEmployee(address);
+        employeeRepository.saveAndFlush(employee);
 
-        order = Order.builder()
-                .orderId(new Order.OrderId(1L))
-                .orderDate(LocalDate.now())
-                .deliveryDate(LocalDate.now().plusDays(5))
-                .orderStatus(OrderStatus.PENDING)
-                .supplier(supplier)
-                .build();
+        order = FixturesFactory.order(supplier, employee);
     }
 
     @Test

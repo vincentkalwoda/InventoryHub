@@ -1,32 +1,28 @@
 package at.kalwodaknezevic.inventoryhub.persistance;
 
+import at.kalwodaknezevic.inventoryhub.FixturesFactory;
+import at.kalwodaknezevic.inventoryhub.TestcontainersConfiguration;
 import at.kalwodaknezevic.inventoryhub.domain.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.Import;
+
 import java.time.LocalDate;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
+@Import(TestcontainersConfiguration.class)
 class SupplierRepositoryTest {
     private @Autowired SupplierRepository supplierRepository;
     private Supplier supplier;
 
     @BeforeEach
     void setUp() {
-        PhoneNumber phoneNumber = new PhoneNumber(43, 1, "4567890", 0, PhoneType.MOBILE);
-        Country austria = new Country("Austria", "AT", "AUT", 43);
-        Address address = new Address("Teststraße", "1", "1234", austria, AddressType.SHIPPING);
-        supplier = Supplier.builder()
-                .firstname(new Name("John"))
-                .lastname(new Name("Doe"))
-                .birthdate(LocalDate.of(1990, 1, 1))
-                .email(new Email("john.doe@spg.at"))
-                .phoneNumber(phoneNumber)
-                .address(address)
-                .companyName("SPG")
-                .build();
+        Country austria = FixturesFactory.austria();
+        Address address = FixturesFactory.spengergasse20(austria);
+        supplier = FixturesFactory.johnDoeSupplier(address);
     }
 
     @Test
@@ -45,9 +41,9 @@ class SupplierRepositoryTest {
     @Test
     void canFindByFirstnameAndLastname() {
         supplierRepository.saveAndFlush(supplier);
-        var foundSupplier = supplierRepository.findByFirstnameAndLastname(supplier.getFirstname(), supplier.getLastname());
-        assertThat(foundSupplier).isNotEmpty();
-        assertThat(foundSupplier.get().getSupplierId()).isEqualTo(supplier.getSupplierId());
+        var foundSuppliers = supplierRepository.findByFirstnameAndLastname(supplier.getFirstname(), supplier.getLastname());
+        assertThat(foundSuppliers).isNotEmpty();
+        assertThat(foundSuppliers).anyMatch(s -> s.getSupplierId().equals(supplier.getSupplierId()));
     }
 
     @Test
@@ -55,6 +51,6 @@ class SupplierRepositoryTest {
         supplierRepository.saveAndFlush(supplier);
         var foundSupplier = supplierRepository.findByCompanyName(supplier.getCompanyName());
         assertThat(foundSupplier).isNotEmpty();
-        assertThat(foundSupplier.get().getSupplierId()).isEqualTo(supplier.getSupplierId());
+        assertThat(foundSupplier).anyMatch(s -> s.getSupplierId().equals(supplier.getSupplierId()));
     }
 }

@@ -32,9 +32,7 @@ public class Employee extends Person {
     @NotNull
     private float salary;
 
-    @ElementCollection
-    @JoinTable(name = "employee_orders",
-            joinColumns = @JoinColumn(foreignKey = @ForeignKey(name = "FK_employee_order")))
+    @OneToMany(mappedBy = "employees")
     private List<Order> orders;
 
     @Embeddable

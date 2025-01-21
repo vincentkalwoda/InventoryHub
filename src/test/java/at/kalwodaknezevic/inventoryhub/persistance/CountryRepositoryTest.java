@@ -1,27 +1,21 @@
 package at.kalwodaknezevic.inventoryhub.persistance;
 
+import at.kalwodaknezevic.inventoryhub.FixturesFactory;
+import at.kalwodaknezevic.inventoryhub.TestcontainersConfiguration;
 import at.kalwodaknezevic.inventoryhub.domain.Country;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.Import;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
+@Import(TestcontainersConfiguration.class)
 class CountryRepositoryTest {
     private @Autowired CountryRepository countryRepository;
-    private Country country;
-
-    @BeforeEach
-    void setUp() {
-        country = Country.builder()
-                .name("Austria")
-                .iso2Code("AT")
-                .iso3Code("AUT")
-                .areaCode(43)
-                .build();
-    }
+    private final Country country = FixturesFactory.austria();
 
     @Test
     void canSave() {

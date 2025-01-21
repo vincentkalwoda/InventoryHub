@@ -9,32 +9,40 @@ import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 import java.util.List;
+
 @Data
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-
-@Embeddable
 @Entity
 @Table(name = "orders")
 public class Order {
     @EmbeddedId
     private OrderId orderId;
+
     @ElementCollection
     @JoinTable(name = "order_items",
             joinColumns = @JoinColumn(foreignKey = @ForeignKey(name = "FK_order_item_order")))
     private List<OrderItem> orderItems;
+
     @ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "FK_order_supplier"))
+    @JoinColumn(name = "supplier_id", foreignKey = @ForeignKey(name = "FK_order_supplier"))
+    @NotNull
     private Supplier supplier;
+
     @NotNull
     private LocalDate orderDate;
-    private LocalDate deliveryDate;
-    private OrderStatus orderStatus;
-    @ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "FK_order_employee"))
-    private Employee employees;
 
+    @NotNull
+    private LocalDate deliveryDate;
+
+    @NotNull
+    private OrderStatus orderStatus;
+
+    @ManyToOne
+    @JoinColumn(name = "employees_id", foreignKey = @ForeignKey(name = "FK_order_employee"))
+    @NotNull
+    private Employee employees;
 
     @Embeddable
     public record OrderId(@GeneratedValue @NotNull Long id) {
