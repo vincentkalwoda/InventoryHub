@@ -17,9 +17,12 @@ public class Article {
     @AttributeOverrides({
             @AttributeOverride(name = "value", column = @Column(name = "name"))
     })
+    @NotNull
     private Name name;
     private String description;
+    @NotNull
     private Category category;
+    @NotNull
     private Float price;
     private Integer quantity;
 

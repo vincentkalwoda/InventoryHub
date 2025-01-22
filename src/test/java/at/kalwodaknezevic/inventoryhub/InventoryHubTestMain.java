@@ -36,7 +36,7 @@ public class InventoryHubTestMain {
                 .withUsername(username)
                 .withPassword(password)
                 .withDatabaseName(dbName)
-                .withReuse(true); // Enable container reuse
+                .withReuse(true);
 
     }
 

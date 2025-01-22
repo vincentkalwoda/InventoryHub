@@ -16,18 +16,18 @@ import java.time.LocalDate;
 
 @MappedSuperclass
 public abstract class Person {
-    @NotNull
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "value", column = @Column(name = "firstname"))
     })
+    @NotNull
     private Name firstname;
 
-    @NotNull
     @Embedded
     @AttributeOverrides({
             @AttributeOverride(name = "value", column = @Column(name = "lastname"))
     })
+    @NotNull
     private Name lastname;
 
     @NotNull

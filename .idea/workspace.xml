@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Add flyway support (currently h2)">
+    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Added DockerConfigs + FixturesFactory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/InventoryHubApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/InventoryHubApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/SupplierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/SupplierRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/AddressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/AddressTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/CountryRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/CountryRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/EmployeeRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/EmployeeRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/OrderRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/OrderRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/SupplierRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/SupplierRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/FixturesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/FixturesFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/InventoryHubTestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/InventoryHubTestMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -360,7 +354,8 @@
       <workItem from="1737295583098" duration="980000" />
       <workItem from="1737400139629" duration="3605000" />
       <workItem from="1737487591221" duration="1981000" />
-      <workItem from="1737489611772" duration="3601000" />
+      <workItem from="1737489611772" duration="4694000" />
+      <workItem from="1737529913619" duration="495000" />
     </task>
     <task id="LOCAL-00001" summary="Add Movie &amp; Title + Converter &amp; Tests">
       <option name="closed" value="true" />
@@ -466,7 +461,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737139776145</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added DockerConfigs + FixturesFactory">
+      <option name="closed" value="true" />
+      <created>1737493789856</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1737493789856</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +534,8 @@
     <MESSAGE value="Fixed Code" />
     <MESSAGE value="Bugfixes" />
     <MESSAGE value="Add flyway support (currently h2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add flyway support (currently h2)" />
+    <MESSAGE value="Added DockerConfigs + FixturesFactory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DockerConfigs + FixturesFactory" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt$converter_in_InventoryHub.ic" NAME="converter in InventoryHub Coverage Results" MODIFIED="1733660348870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

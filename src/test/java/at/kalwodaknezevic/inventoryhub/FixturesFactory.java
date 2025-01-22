@@ -3,6 +3,7 @@ package at.kalwodaknezevic.inventoryhub;
 import at.kalwodaknezevic.inventoryhub.domain.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class FixturesFactory {
 
@@ -21,6 +22,10 @@ public class FixturesFactory {
 
     public static Email email() {
         return new Email("john.doe@spg.at");
+    }
+
+    public static Name articleName() {
+        return new Name("Article 1");
     }
 
     public static PhoneNumber mobilePhone() {
@@ -60,6 +65,18 @@ public class FixturesFactory {
                 .orderStatus(OrderStatus.PENDING)
                 .supplier(supplier)
                 .employees(employee)
+                .build();
+    }
+
+    public static OrderItem orderItem(Article article) {
+        return new OrderItem(article, 5);
+    }
+
+    public static Article article() {
+        return Article.builder()
+                .name(articleName())
+                .description("Article 1")
+                .price(10f)
                 .build();
     }
 }
