@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class InventoryHubApplicationTest {
     @Test
-    @Disabled("does not find datasource")
     void contextLoads() {
     }
 

@@ -19,7 +19,15 @@ class CountryRepositoryTest {
 
     @Test
     void canSave() {
-        assertThat(countryRepository.saveAndFlush(country).getId()).isNotNull();
+        assertThat(countryRepository.saveAndFlush(country).getCountryId()).isNotNull();
+    }
+
+    @Test
+    void canFindById() {
+        countryRepository.saveAndFlush(country);
+        var foundCountry = countryRepository.findByCountryId(country.getCountryId());
+        assertThat(foundCountry).isNotEmpty();
+        assertThat(foundCountry.get().getCountryId()).isEqualTo(country.getCountryId());
     }
 
     @Test

@@ -8,6 +8,7 @@ public record Address(
         String city,
         String zipCode,
         @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+        @JoinColumn(name = "country_id", foreignKey = @ForeignKey(name = "FK_supplier_country"))
         Country country,
         AddressType addressType
 ) {

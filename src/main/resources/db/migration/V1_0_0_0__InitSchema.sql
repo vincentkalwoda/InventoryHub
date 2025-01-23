@@ -8,19 +8,19 @@ create table articles
     id          bigint not null,
     name        varchar(255),
     description varchar(255),
-    category    char(1) check ( category in ('E', 'F', 'C', 'T', 'L', 'O' ) ),
+    category    char(1) check ( category in ('E', 'F', 'C', 'T', 'L', 'O') ),
     price       float(24),
     quantity    integer,
     primary key (id)
 );
 create table countries
 (
-    id        bigint       not null,
-    name      varchar(255) not null,
-    iso2code  varchar(255) not null,
-    iso3code  varchar(255) not null,
-    area_code integer      not null,
-    primary key (id)
+    country_id bigint       not null,
+    name       varchar(255) not null,
+    iso2code   varchar(255) not null,
+    iso3code   varchar(255) not null,
+    area_code  integer      not null,
+    primary key (country_id)
 );
 create table employee_orders
 (

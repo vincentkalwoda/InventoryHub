@@ -40,6 +40,20 @@
             <artifactId>flyway-database-postgresql</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.0.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>5.0.0</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- runtime / provided dependencies -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -116,6 +130,20 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>10.20.1</version>
+                <configuration>
+                    <url>jdbc:postgresql://localhost:35432/inventoryhubdb</url>
+                    <user>inventoryhubowner</user>
+                    <password>inventoryhubowner</password>
+                    <schemas>
+                        <schema>public</schema>
+                    </schemas>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
