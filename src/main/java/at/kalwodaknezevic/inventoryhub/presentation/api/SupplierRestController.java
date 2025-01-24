@@ -1,10 +1,7 @@
 package at.kalwodaknezevic.inventoryhub.presentation.api;
 
 import at.kalwodaknezevic.inventoryhub.domain.Supplier;
-import at.kalwodaknezevic.inventoryhub.dtos.EmployeeDto;
-import at.kalwodaknezevic.inventoryhub.dtos.OrderDto;
 import at.kalwodaknezevic.inventoryhub.dtos.SupplierDto;
-import at.kalwodaknezevic.inventoryhub.service.EmployeeService;
 import at.kalwodaknezevic.inventoryhub.service.SupplierService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -31,8 +28,8 @@ public class SupplierRestController {
     }
 
     @GetMapping("/{supplierId}")
-    public ResponseEntity<SupplierDto> getSupplierById(@PathVariable Supplier.SupplierId supplierId) {
-        return supplierService.getSupplier(supplierId)
+    public ResponseEntity<SupplierDto> getSupplierById(@PathVariable Long supplierId) {
+        return supplierService.getSupplier(new Supplier.SupplierId(supplierId))
                 .map(SupplierDto::new)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

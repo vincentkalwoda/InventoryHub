@@ -14,9 +14,7 @@ public class Article {
     @EmbeddedId
     private ArticleId articleId;
     @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "value", column = @Column(name = "name"))
-    })
+    @AttributeOverride(name = "value", column = @Column(name = "name"))
     @NotNull
     private Name name;
     private String description;

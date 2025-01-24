@@ -5,10 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 
 @Entity
@@ -24,15 +24,6 @@ public class Country {
     private String iso3Code;
     @NotNull
     private Integer areaCode;
-
-    @Builder
-    public Country(CountryId countryId,String name, String iso2Code, String iso3Code, Integer areaCode) {
-        this.countryId = countryId;
-        this.name = name;
-        this.iso2Code = iso2Code;
-        this.iso3Code = iso3Code;
-        this.areaCode = areaCode;
-    }
 
     @Embeddable
     public record CountryId(@GeneratedValue @NotNull Long countryId) {}

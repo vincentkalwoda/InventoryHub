@@ -3,13 +3,9 @@ package at.kalwodaknezevic.inventoryhub.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-
-import java.time.LocalDate;
-import java.util.List;
 
 @SuperBuilder
 @NoArgsConstructor
@@ -18,6 +14,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "suppliers")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Supplier extends Person {
 
     @EmbeddedId

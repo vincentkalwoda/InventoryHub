@@ -3,7 +3,6 @@ package at.kalwodaknezevic.inventoryhub;
 import at.kalwodaknezevic.inventoryhub.domain.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class FixturesFactory {
 

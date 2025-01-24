@@ -9,7 +9,9 @@ public class Base58 {
     private static final char[] ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".toCharArray();
     private static final SecureRandom RANDOM = new SecureRandom();
 
+    // Default constructor is required for Spring's dependency injection
     public Base58() {
+        // Intentionally left blank
     }
 
     public String randomString(int length) {

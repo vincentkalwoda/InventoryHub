@@ -2,7 +2,6 @@ package at.kalwodaknezevic.inventoryhub.presentation.api;
 
 import at.kalwodaknezevic.inventoryhub.domain.Employee;
 import at.kalwodaknezevic.inventoryhub.dtos.EmployeeDto;
-import at.kalwodaknezevic.inventoryhub.dtos.OrderDto;
 import at.kalwodaknezevic.inventoryhub.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
