@@ -1,8 +1,8 @@
 package at.kalwodaknezevic.inventoryhub.presentation.api;
 
-import at.kalwodaknezevic.inventoryhub.dtos.ArticleDto;
+import at.kalwodaknezevic.inventoryhub.domain.Order;
 import at.kalwodaknezevic.inventoryhub.dtos.OrderDto;
-import at.kalwodaknezevic.inventoryhub.service.ArticleService;
+import at.kalwodaknezevic.inventoryhub.dtos.OrderItemDto;
 import at.kalwodaknezevic.inventoryhub.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 
 @RestController
-@RequestMapping(ApiConstants.API+"/orders")
+@RequestMapping(ApiConstants.API + "/orders")
 public class OrderRestController {
 
     private final OrderService orderService;
@@ -30,10 +30,18 @@ public class OrderRestController {
     }
 
     @GetMapping("/{orderId}")
-    public ResponseEntity<OrderDto> getOrderById(@PathVariable Long orderId) {
+    public ResponseEntity<OrderDto> getOrderById(@PathVariable Order.OrderId orderId) {
         return orderService.getOrder(orderId)
                 .map(OrderDto::new)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/{orderId}/orderItems")
+    public ResponseEntity<List<OrderItemDto>> getOrderItems(@PathVariable Order.OrderId orderId) {
+        return ResponseEntity.ok(orderService.getOrderItems(orderId)
+                .stream()
+                .map(OrderItemDto::new)
+                .toList());
     }
 }

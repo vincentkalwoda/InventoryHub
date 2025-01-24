@@ -5,11 +5,11 @@ create sequence orders_seq start with 1 increment by 50;
 create sequence suppliers_seq start with 1 increment by 50;
 create table articles
 (
-    id          bigint not null,
-    name        varchar(255),
-    description varchar(255),
-    category    char(1) check ( category in ('E', 'F', 'C', 'T', 'L', 'O') ),
-    price       float(24),
+    id          bigint                                                       not null,
+    name        varchar(255)                                                 not null,
+    description varchar(255)                                                 not null,
+    category    char(1) check ( category in ('E', 'F', 'C', 'T', 'L', 'O') ) not null,
+    price       float(24)                                                    not null,
     quantity    integer,
     primary key (id)
 );
@@ -27,12 +27,17 @@ create table employee_orders
     employee_id bigint not null,
     orders_id   bigint not null unique
 );
+create table supplier_orders
+(
+    supplier_id bigint not null,
+    orders_id   bigint not null unique
+);
 create table employees
 (
     id           bigint       not null,
-    firstname    varchar(255),
-    lastname     varchar(255),
-    email        varchar(255),
+    firstname    varchar(255) not null,
+    lastname     varchar(255) not null,
+    email        varchar(255) not null,
     birthdate    date         not null,
     salary       float(24)    not null,
     department   varchar(255) not null,
@@ -51,26 +56,26 @@ create table employees
 );
 create table order_items
 (
-    order_id   bigint not null,
-    article_id bigint,
-    quantity   integer
+    order_id   bigint  not null,
+    article_id bigint  not null,
+    quantity   integer not null
 );
 create table orders
 (
     id            bigint not null,
     order_date    date   not null,
     order_status  char(1) check ( order_status in ('P', 'S', 'D', 'C') ),
-    delivery_date date,
-    supplier_id   bigint,
-    employees_id  bigint,
+    delivery_date date   not null,
+    supplier_id   bigint not null,
+    employees_id  bigint not null,
     primary key (id)
 );
 create table suppliers
 (
     id           bigint       not null,
-    firstname    varchar(255),
-    lastname     varchar(255),
-    email        varchar(255),
+    firstname    varchar(255) not null,
+    lastname     varchar(255) not null,
+    email        varchar(255) not null,
     birthdate    date         not null,
     company_name varchar(255) not null,
     phone_type   char(1) check ( phone_type in ('H', 'M', 'W', 'F', 'O') ),

@@ -35,7 +35,7 @@ public class SupplierService {
         return supplierRepository.findAll();
     }
 
-    public Optional<Supplier> getSupplier(Long supplierId) {
-        return supplierRepository.findById(new Supplier.SupplierId(supplierId));
+    public Optional<Supplier> getSupplier(Supplier.SupplierId supplierId) {
+        return supplierRepository.findById(supplierId);
     }
 }

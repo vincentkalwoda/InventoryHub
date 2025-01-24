@@ -8,7 +8,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 import static org.mockito.Mockito.when;
 
@@ -32,5 +34,25 @@ class EmployeeServiceTest {
 
         var createdEmployee = employeeService.createEmployee(employee.getFirstname(), employee.getLastname(), employee.getEmail(), employee.getPhoneNumber(), employee.getBirthdate(), employee.getDepartment(), employee.getPosition(), employee.getSalary());
         assertThat(createdEmployee).isEqualTo(employee);
+    }
+
+    @Test
+    void can_get_all_employees() {
+        var address = FixturesFactory.spengergasse20(FixturesFactory.austria());
+        var employee = FixturesFactory.johnDoeEmployee(address);
+        when(employeeRepository.findAll()).thenReturn(List.of(employee));
+
+        var employees = employeeService.getAll();
+        assertThat(employees).containsExactly(employee);
+    }
+
+    @Test
+    void can_get_employee() {
+        var address = FixturesFactory.spengergasse20(FixturesFactory.austria());
+        var employee = FixturesFactory.johnDoeEmployee(address);
+        when(employeeRepository.findById(employee.getEmployeeId())).thenReturn(java.util.Optional.of(employee));
+
+        var foundEmployee = employeeService.getEmployee(employee.getEmployeeId());
+        assertThat(foundEmployee).isPresent().contains(employee);
     }
 }

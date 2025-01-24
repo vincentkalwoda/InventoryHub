@@ -1,8 +1,6 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
-import at.kalwodaknezevic.inventoryhub.domain.Employee;
-import at.kalwodaknezevic.inventoryhub.domain.Order;
-import at.kalwodaknezevic.inventoryhub.domain.Supplier;
+import at.kalwodaknezevic.inventoryhub.domain.*;
 import at.kalwodaknezevic.inventoryhub.foundation.JavaTimeFactory;
 import at.kalwodaknezevic.inventoryhub.persistance.EmployeeRepository;
 import at.kalwodaknezevic.inventoryhub.persistance.OrderRepository;
@@ -52,7 +50,11 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Optional<Order> getOrder(Long orderId) {
-        return orderRepository.findById(new Order.OrderId(orderId));
+    public Optional<Order> getOrder(Order.OrderId orderId) {
+        return orderRepository.findById(orderId);
+    }
+
+    public List<OrderItem> getOrderItems(Order.OrderId orderId) {
+        return orderRepository.findById(orderId).get().getOrderItems();
     }
 }

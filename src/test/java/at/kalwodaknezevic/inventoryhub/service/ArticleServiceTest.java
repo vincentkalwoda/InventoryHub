@@ -8,7 +8,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 import static org.mockito.Mockito.when;
 
@@ -31,5 +33,14 @@ class ArticleServiceTest {
 
         var createdArticle = articleService.createArticle(article.getName(), article.getDescription(), article.getCategory(), article.getPrice(), article.getQuantity());
         assertThat(createdArticle).isEqualTo(article);
+    }
+
+    @Test
+    void can_get_all_articles() {
+        var article = FixturesFactory.article();
+        when(articleRepository.findAll()).thenReturn(List.of(article));
+
+        var articles = articleService.getAll();
+        assertThat(articles).containsExactly(article);
     }
 }

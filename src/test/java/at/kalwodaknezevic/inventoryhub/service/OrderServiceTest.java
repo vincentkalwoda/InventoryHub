@@ -19,11 +19,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -78,5 +79,35 @@ class OrderServiceTest {
         var order = orderService.createOrder(new Supplier.SupplierId(1l), new Employee.EmployeeId(1l), null);
 
         assertThat(order).isNotNull();
+    }
+
+    @Test
+    void can_get_all_orders() {
+        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())));
+        when(orderRepository.findAll()).thenReturn(java.util.List.of(order));
+
+        var orders = orderService.getAll();
+        assertThat(orders).containsExactly(order);
+    }
+
+    @Test
+    void can_get_order() {
+        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())));
+        when(orderRepository.findById(order.getOrderId())).thenReturn(java.util.Optional.of(order));
+
+        var foundOrder = orderService.getOrder(order.getOrderId());
+        assertThat(foundOrder).isPresent().contains(order);
+    }
+
+    @Test
+    void can_get_order_items() {
+        var article = FixturesFactory.article();
+        var orderItem = List.of(FixturesFactory.orderItem(article));
+        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())));
+        order.setOrderItems(orderItem);
+        when(orderRepository.findById(order.getOrderId())).thenReturn(java.util.Optional.of(order));
+
+        var orderItems = orderService.getOrderItems(order.getOrderId());
+        assertThat(orderItems).containsExactlyElementsOf(order.getOrderItems());
     }
 }

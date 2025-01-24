@@ -32,9 +32,6 @@ public class Employee extends Person {
     @NotNull
     private float salary;
 
-    @OneToMany(mappedBy = "employees")
-    private List<Order> orders;
-
     @Embeddable
     public record EmployeeId(@GeneratedValue @NotNull Long id) {
     }

@@ -1,9 +1,6 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
-import at.kalwodaknezevic.inventoryhub.domain.Email;
-import at.kalwodaknezevic.inventoryhub.domain.Employee;
-import at.kalwodaknezevic.inventoryhub.domain.Name;
-import at.kalwodaknezevic.inventoryhub.domain.PhoneNumber;
+import at.kalwodaknezevic.inventoryhub.domain.*;
 import at.kalwodaknezevic.inventoryhub.persistance.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -41,7 +38,7 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
-    public Optional<Employee> getEmployee(Long employeeId) {
-        return employeeRepository.findById(new Employee.EmployeeId(employeeId));
+    public Optional<Employee> getEmployee(Employee.EmployeeId employeeId) {
+        return employeeRepository.findById(employeeId);
     }
 }
