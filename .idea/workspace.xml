@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Changed Service + Controller Expansion">
+    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Code Cleanup">
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/EmployeeAssert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/foundation/Base58.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/foundation/Base58.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/ApiConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/ApiConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/EmployeeRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/EmployeeRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/SupplierRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/SupplierRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/FixturesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/FixturesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/InventoryHubApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/InventoryHubApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/CountryRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/CountryRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/OrderRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/OrderRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/EmailConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/EmailConverterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +164,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;#4 on feature&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vince/Documents/Schule/2024_2025/POS/sj2425-4bhif-pos1-kalwoda-knezevic/src/main/resources/db/migration&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vince/Downloads/mdt&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -204,6 +189,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="at.kalwodaknezevic.inventoryhub.assertions" />
       <recent name="at.kalwodaknezevic.inventoryhub.dtos" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -227,8 +213,8 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install" />
-      <command value="mvn clean verify" />
       <command value="mvn flyway:repair" />
+      <command value="mvn clean verify" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -397,7 +383,9 @@
       <workItem from="1737623102699" duration="101000" />
       <workItem from="1737623676306" duration="6476000" />
       <workItem from="1737653217241" duration="14699000" />
-      <workItem from="1737722628494" duration="1114000" />
+      <workItem from="1737722628494" duration="1268000" />
+      <workItem from="1737817071980" duration="2693000" />
+      <workItem from="1738318030835" duration="1291000" />
     </task>
     <task id="LOCAL-00001" summary="Add Movie &amp; Title + Converter &amp; Tests">
       <option name="closed" value="true" />
@@ -535,7 +523,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737722316155</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Code Cleanup">
+      <option name="closed" value="true" />
+      <created>1737723892205</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1737723892205</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +599,8 @@
     <MESSAGE value="Added DockerConfigs + FixturesFactory" />
     <MESSAGE value="Added Service + RestController + DTOs" />
     <MESSAGE value="Changed Service + Controller Expansion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed Service + Controller Expansion" />
+    <MESSAGE value="Code Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Cleanup" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt$converter_in_InventoryHub.ic" NAME="converter in InventoryHub Coverage Results" MODIFIED="1733660348870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
