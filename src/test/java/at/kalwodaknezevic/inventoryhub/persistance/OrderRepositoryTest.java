@@ -16,6 +16,7 @@ class OrderRepositoryTest {
     private @Autowired OrderRepository orderRepository;
     private @Autowired SupplierRepository supplierRepository;
     private @Autowired EmployeeRepository employeeRepository;
+    private @Autowired ArticleRepository articleRepository;
     private Order order;
 
     @BeforeEach
@@ -26,8 +27,10 @@ class OrderRepositoryTest {
         supplierRepository.saveAndFlush(supplier);
         Employee employee = FixturesFactory.johnDoeEmployee(address);
         employeeRepository.saveAndFlush(employee);
+        Article article = FixturesFactory.article();
+        articleRepository.saveAndFlush(article);
 
-        order = FixturesFactory.order(supplier, employee);
+        order = FixturesFactory.order(supplier, employee, article);
     }
 
     @Test

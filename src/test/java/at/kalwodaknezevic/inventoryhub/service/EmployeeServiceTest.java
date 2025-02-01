@@ -32,7 +32,7 @@ class EmployeeServiceTest {
         var employee = FixturesFactory.johnDoeEmployee(address);
         when(employeeRepository.save(employee)).thenReturn(employee);
 
-        var createdEmployee = employeeService.createEmployee(employee.getFirstname(), employee.getLastname(), employee.getEmail(), employee.getPhoneNumber(), employee.getBirthdate(), employee.getDepartment(), employee.getPosition(), employee.getSalary());
+        var createdEmployee = employeeService.createEmployee(employee.getName(), employee.getEmail(), employee.getPhoneNumber(), employee.getBirthdate(), employee.getDepartment(), employee.getPosition(), employee.getSalary());
         assertThat(createdEmployee).isEqualTo(employee);
     }
 

@@ -11,7 +11,7 @@ public record PhoneNumber(
         PhoneType phoneType
 ) {
     public PhoneNumber {
-        if (countryCode < 1 || countryCode > 999) throw PhoneNumberException.forInvalidCountryCode();
+        if (countryCode < 1 || countryCode > 999 || countryCode == null) throw PhoneNumberException.forInvalidCountryCode();
         if (areaCode < 1 || areaCode > 999) throw PhoneNumberException.forInvalidAreaCode();
         if (serialCode == null || serialCode.isBlank()) throw PhoneNumberException.forInvalidSerialCode();
         if (extension < 0 || extension > 9999) throw PhoneNumberException.forInvalidExtension();

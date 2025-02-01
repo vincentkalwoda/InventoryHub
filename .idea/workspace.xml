@@ -4,9 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Code Cleanup">
-      <change afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/EmployeeAssert.java" afterDir="false" />
+    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Added Assertions">
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/ArticleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Name.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/PhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/ArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/EmployeeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/EmployeeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/SupplierDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/SupplierDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/SupplierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/SupplierRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/NameConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/persistance/converter/NameConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/SupplierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/FixturesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/FixturesFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/Assertions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/Assertions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/EmployeeAssert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/EmployeeAssert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/OrderStatusAssert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/OrderStatusAssert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/SupplierAssert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/assertions/SupplierAssert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/AddressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/AddressTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/EmailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/EmailTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/NameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/NameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/PhoneNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/domain/PhoneNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/ArticleRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/EmployeeRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/EmployeeRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/OrderRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/OrderRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/SupplierRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/SupplierRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/NameConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/persistance/converter/NameConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/EmployeeServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/SupplierServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/SupplierServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,112 +112,126 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
-    &quot;JUnit.AddressTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in InventoryHub.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArticleRepositoryTest.can_save.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArticleServiceTest.can_create_article.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArticleServiceTest.cant_create_article_with_missing_name.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CategoryConverterTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.CountryConverterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CountryRepositoryTest.canFindById.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.CountryRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CountryServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailConverterTest.when_convert_a_null_email_to_db_data_returns_null.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailConverterTest.when_convert_a_null_email_value_to_a_email_returns_null.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailConverterTest.when_convert_a_valid_email_to_db_data_returns_content.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailConverterTest.when_convert_a_valid_email_value_to_a_email_instance.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailTest.when_instantiated_with_invalid_value_throws_appropriate_EmailException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailTest.when_instantiated_with_null_throws_appropriate_EmailException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmailTest.when_instantiated_with_valid_value_does_not_throw_exception.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmployeeRepositoryTest.canFindByEmployeeId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmployeeRepositoryTest.canSave.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmployeeRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EmployeeServiceTest.can_create_employee.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MovieRepositoryTest.can_find_by_title.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.MovieRepositoryTest.can_save.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MovieRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NameTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderRepositoryTest.canSave.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderServiceTest.can_create_order_with_existing_employee.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderServiceTest.can_create_order_with_existing_employee_and_supplier.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderServiceTest.can_get_all_orders.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderServiceTest.can_get_order_items.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderServiceTest.can_get_order_items_with_no_order_items.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderServiceTest.cant_create_order_with_missing_employee.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderServiceTest.cant_create_order_with_missing_employee_and_supplier.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderServiceTest.cant_create_order_with_missing_supplier.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderStatusConverterTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.PersonRepositoryTest.can_find_by_name.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersonRepositoryTest.can_save.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersonRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PhoneTypeConverterTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.PhoneTypeConverterTest.when_convert_a_null_phone_type_to_db_value_returns_null.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PhoneTypeConverterTest.when_convert_a_null_phone_type_value_to_a_phone_type_returns_null.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PhoneTypeConverterTest.when_convert_a_valid_phone_type_to_db_value_returns_content.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PhoneTypeConverterTest.when_convert_a_valid_phone_type_value_to_a_phone_type_instance.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SupplierRepositoryTest.canFindBySupplierId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SupplierRepositoryTest.canSave.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SupplierRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SupplierServiceTest.can_create_supplier.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SupplierServiceTest.can_get_orders.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TitleConverterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TitleConverterTest.when_convert_a_null_title_to_db_value_returns_null.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.TitleConverterTest.when_convert_a_valid_title_to_db_value_returns_content.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.TitleTest.when_instantiated_with_null_throws_appropriate_TitleException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TitleTest.when_instantiated_with_to_long_value_throws_appropriate_TitleException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TitleTest.when_instantiated_with_to_short_value_throws_appropriate_TitleException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.converter in InventoryHub.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.java in InventoryHub.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in MovieManagement.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [clean,verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [flyway:repair].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.InventoryHub [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.MovieManagaement [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;Spring Boot.InventoryHubApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.InventoryHubTestMain.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#4 on feature&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vince/Downloads/mdt&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultPlantUmlFileTemplate": "UML Class",
+    "JUnit.AddressTest.executor": "Run",
+    "JUnit.AddressTest.testAddressAssertions.executor": "Run",
+    "JUnit.All in InventoryHub.executor": "Run",
+    "JUnit.ArticleRepositoryTest.can_save.executor": "Run",
+    "JUnit.ArticleServiceTest.can_create_article.executor": "Run",
+    "JUnit.ArticleServiceTest.cant_create_article_with_missing_name.executor": "Run",
+    "JUnit.ArticleTest.testArticleAssertions.executor": "Run",
+    "JUnit.CategoryConverterTest.executor": "Coverage",
+    "JUnit.CountryConverterTest.executor": "Run",
+    "JUnit.CountryRepositoryTest.canFindById.executor": "Debug",
+    "JUnit.CountryRepositoryTest.executor": "Run",
+    "JUnit.CountryServiceTest.executor": "Run",
+    "JUnit.EmailConverterTest.when_convert_a_null_email_to_db_data_returns_null.executor": "Run",
+    "JUnit.EmailConverterTest.when_convert_a_null_email_value_to_a_email_returns_null.executor": "Run",
+    "JUnit.EmailConverterTest.when_convert_a_valid_email_to_db_data_returns_content.executor": "Run",
+    "JUnit.EmailConverterTest.when_convert_a_valid_email_value_to_a_email_instance.executor": "Run",
+    "JUnit.EmailTest.when_instantiated_with_invalid_value_throws_appropriate_EmailException.executor": "Run",
+    "JUnit.EmailTest.when_instantiated_with_null_throws_appropriate_EmailException.executor": "Run",
+    "JUnit.EmailTest.when_instantiated_with_valid_value_does_not_throw_exception.executor": "Run",
+    "JUnit.EmployeeRepositoryTest.canFindByEmployeeId.executor": "Run",
+    "JUnit.EmployeeRepositoryTest.canSave.executor": "Run",
+    "JUnit.EmployeeRepositoryTest.executor": "Run",
+    "JUnit.EmployeeServiceTest.can_create_employee.executor": "Run",
+    "JUnit.EmployeeTest.testEmployeeAssertions.executor": "Run",
+    "JUnit.MovieRepositoryTest.can_find_by_title.executor": "Debug",
+    "JUnit.MovieRepositoryTest.can_save.executor": "Run",
+    "JUnit.MovieRepositoryTest.executor": "Run",
+    "JUnit.NameConverterTest.when_convert_a_valid_title_value_to_a_title_instance.executor": "Run",
+    "JUnit.NameTest.executor": "Run",
+    "JUnit.NameTest.testNameAssertions.executor": "Run",
+    "JUnit.OrderRepositoryTest.canSave.executor": "Run",
+    "JUnit.OrderRepositoryTest.executor": "Run",
+    "JUnit.OrderServiceTest.can_create_order_with_existing_employee.executor": "Run",
+    "JUnit.OrderServiceTest.can_create_order_with_existing_employee_and_supplier.executor": "Run",
+    "JUnit.OrderServiceTest.can_get_all_orders.executor": "Run",
+    "JUnit.OrderServiceTest.can_get_order_items.executor": "Run",
+    "JUnit.OrderServiceTest.can_get_order_items_with_no_order_items.executor": "Run",
+    "JUnit.OrderServiceTest.cant_create_order_with_missing_employee.executor": "Run",
+    "JUnit.OrderServiceTest.cant_create_order_with_missing_employee_and_supplier.executor": "Run",
+    "JUnit.OrderServiceTest.cant_create_order_with_missing_supplier.executor": "Run",
+    "JUnit.OrderStatusConverterTest.executor": "Coverage",
+    "JUnit.OrderTest.testOrderAssertions.executor": "Run",
+    "JUnit.PersonRepositoryTest.can_find_by_name.executor": "Run",
+    "JUnit.PersonRepositoryTest.can_save.executor": "Run",
+    "JUnit.PersonRepositoryTest.executor": "Run",
+    "JUnit.PhoneNumberTest.executor": "Run",
+    "JUnit.PhoneNumberTest.testPhoneNumberAssertions.executor": "Run",
+    "JUnit.PhoneNumberTest.when_instantiated_with_invalid_phone_type_throws_appropriate_PhoneNumberException.executor": "Run",
+    "JUnit.PhoneNumberTest.when_instantiated_with_null_area_code_throws_appropriate_PhoneNumberException.executor": "Run",
+    "JUnit.PhoneNumberTest.when_instantiated_with_null_country_code_throws_appropriate_PhoneNumberException.executor": "Run",
+    "JUnit.PhoneNumberTest.when_instantiated_with_null_extension_throws_appropriate_PhoneNumberException.executor": "Run",
+    "JUnit.PhoneNumberTest.when_instantiated_with_null_phone_type_throws_appropriate_PhoneNumberException.executor": "Run",
+    "JUnit.PhoneNumberTest.when_instantiated_with_null_serial_code_throws_appropriate_PhoneNumberException.executor": "Run",
+    "JUnit.PhoneTypeConverterTest.executor": "Coverage",
+    "JUnit.PhoneTypeConverterTest.when_convert_a_null_phone_type_to_db_value_returns_null.executor": "Run",
+    "JUnit.PhoneTypeConverterTest.when_convert_a_null_phone_type_value_to_a_phone_type_returns_null.executor": "Run",
+    "JUnit.PhoneTypeConverterTest.when_convert_a_valid_phone_type_to_db_value_returns_content.executor": "Run",
+    "JUnit.PhoneTypeConverterTest.when_convert_a_valid_phone_type_value_to_a_phone_type_instance.executor": "Run",
+    "JUnit.SupplierRepositoryTest.canFindBySupplierId.executor": "Run",
+    "JUnit.SupplierRepositoryTest.canSave.executor": "Run",
+    "JUnit.SupplierRepositoryTest.executor": "Run",
+    "JUnit.SupplierServiceTest.can_create_supplier.executor": "Run",
+    "JUnit.SupplierServiceTest.can_get_orders.executor": "Run",
+    "JUnit.TitleConverterTest.executor": "Run",
+    "JUnit.TitleConverterTest.when_convert_a_null_title_to_db_value_returns_null.executor": "Coverage",
+    "JUnit.TitleConverterTest.when_convert_a_valid_title_to_db_value_returns_content.executor": "Coverage",
+    "JUnit.TitleTest.when_instantiated_with_null_throws_appropriate_TitleException.executor": "Run",
+    "JUnit.TitleTest.when_instantiated_with_to_long_value_throws_appropriate_TitleException.executor": "Run",
+    "JUnit.TitleTest.when_instantiated_with_to_short_value_throws_appropriate_TitleException.executor": "Run",
+    "JUnit.converter in InventoryHub.executor": "Coverage",
+    "JUnit.java in InventoryHub.executor": "Run",
+    "JUnit.java in MovieManagement.executor": "Run",
+    "Maven.InventoryHub [clean,install].executor": "Run",
+    "Maven.InventoryHub [clean,verify].executor": "Run",
+    "Maven.InventoryHub [clean].executor": "Run",
+    "Maven.InventoryHub [compile].executor": "Run",
+    "Maven.InventoryHub [flyway:repair].executor": "Run",
+    "Maven.InventoryHub [install].executor": "Run",
+    "Maven.InventoryHub [test].executor": "Run",
+    "Maven.InventoryHub [validate].executor": "Run",
+    "Maven.InventoryHub [verify].executor": "Run",
+    "Maven.MovieManagaement [verify].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "Spring Boot.InventoryHubApplication.executor": "Run",
+    "Spring Boot.InventoryHubTestMain.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "#4 on feature",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/vince/Downloads/mdt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;,
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2",
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;PostgreSQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="at.kalwodaknezevic.inventoryhub.assertions" />
@@ -203,10 +248,10 @@
       <recent name="at.kalwodaknezevic.inventoryhub.persistance" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="at.kalwodaknezevic.inventoryhub.domain" />
       <recent name="at.kalwodaknezevic.inventoryhub.service" />
       <recent name="at.kalwodaknezevic.inventoryhub.persistance" />
       <recent name="at.kalwodaknezevic.inventoryhub" />
-      <recent name="at.kalwodaknezevic.inventoryhub.domain" />
       <recent name="at.kalwodaknezevic.inventoryhub.persistance.converter" />
     </key>
   </component>
@@ -238,59 +283,66 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.java in InventoryHub">
-    <configuration name="All in InventoryHub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderServiceTest.can_get_all_orders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.OrderItemTest.testOrderItemAssertions">
+    <configuration name="AddressTest.testAddressAssertions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryHub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.service.*" />
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.service" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.service.OrderServiceTest" />
-      <option name="METHOD_NAME" value="can_get_all_orders" />
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.domain" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.domain.AddressTest" />
+      <option name="METHOD_NAME" value="testAddressAssertions" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceTest.can_get_order_items" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeTest.testEmployeeAssertions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryHub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.service.*" />
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.service" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.service.OrderServiceTest" />
-      <option name="METHOD_NAME" value="can_get_order_items" />
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.domain" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.domain.EmployeeTest" />
+      <option name="METHOD_NAME" value="testEmployeeAssertions" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceTest.can_get_order_items_with_no_order_items" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderItemTest.testOrderItemAssertions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryHub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.service.*" />
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.service" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.service.OrderServiceTest" />
-      <option name="METHOD_NAME" value="can_get_order_items_with_no_order_items" />
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.domain" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.domain.OrderItemTest" />
+      <option name="METHOD_NAME" value="testOrderItemAssertions" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhoneNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.domain" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.domain.PhoneNumberTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -317,13 +369,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.AddressTest.testAddressAssertions" />
+      <item itemvalue="JUnit.EmployeeTest.testEmployeeAssertions" />
+      <item itemvalue="JUnit.OrderItemTest.testOrderItemAssertions" />
+      <item itemvalue="JUnit.PhoneNumberTest" />
+      <item itemvalue="JUnit.java in InventoryHub" />
+      <item itemvalue="Spring Boot.InventoryHubApplication" />
+      <item itemvalue="Spring Boot.MovieManagementApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderItemTest.testOrderItemAssertions" />
         <item itemvalue="JUnit.java in InventoryHub" />
-        <item itemvalue="JUnit.All in InventoryHub" />
-        <item itemvalue="JUnit.OrderServiceTest.can_get_order_items" />
-        <item itemvalue="JUnit.OrderServiceTest.can_get_order_items_with_no_order_items" />
-        <item itemvalue="JUnit.OrderServiceTest.can_get_all_orders" />
+        <item itemvalue="JUnit.AddressTest.testAddressAssertions" />
+        <item itemvalue="JUnit.EmployeeTest.testEmployeeAssertions" />
+        <item itemvalue="JUnit.PhoneNumberTest" />
       </list>
     </recent_temporary>
   </component>
@@ -385,7 +446,9 @@
       <workItem from="1737653217241" duration="14699000" />
       <workItem from="1737722628494" duration="1268000" />
       <workItem from="1737817071980" duration="2693000" />
-      <workItem from="1738318030835" duration="1291000" />
+      <workItem from="1738318030835" duration="1658000" />
+      <workItem from="1738359423945" duration="2049000" />
+      <workItem from="1738417424167" duration="5752000" />
     </task>
     <task id="LOCAL-00001" summary="Add Movie &amp; Title + Converter &amp; Tests">
       <option name="closed" value="true" />
@@ -531,7 +594,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737723892205</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added Assertions">
+      <option name="closed" value="true" />
+      <created>1738319559580</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1738319559580</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +671,8 @@
     <MESSAGE value="Added Service + RestController + DTOs" />
     <MESSAGE value="Changed Service + Controller Expansion" />
     <MESSAGE value="Code Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Cleanup" />
+    <MESSAGE value="Added Assertions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Assertions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projekt$converter_in_InventoryHub.ic" NAME="converter in InventoryHub Coverage Results" MODIFIED="1733660348870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

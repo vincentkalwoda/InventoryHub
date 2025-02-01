@@ -32,7 +32,7 @@ class SupplierServiceTest {
         var supplier = FixturesFactory.johnDoeSupplier(address);
         when(supplierRepository.save(supplier)).thenReturn(supplier);
 
-        var createdSupplier = supplierService.createSupplier(supplier.getFirstname(), supplier.getLastname(), supplier.getEmail(), supplier.getPhoneNumber(), supplier.getBirthdate(), supplier.getCompanyName());
+        var createdSupplier = supplierService.createSupplier(supplier.getName(), supplier.getEmail(), supplier.getPhoneNumber(), supplier.getBirthdate(), supplier.getCompanyName());
         assertThat(createdSupplier).isEqualTo(supplier);
     }
 

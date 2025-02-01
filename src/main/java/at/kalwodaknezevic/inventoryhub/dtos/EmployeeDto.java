@@ -8,15 +8,15 @@ import at.kalwodaknezevic.inventoryhub.domain.PhoneNumber;
 import java.time.LocalDate;
 
 public record EmployeeDto(
-        Name firstname,
-        Name lastname,
+        String firstname,
+        String lastname,
         Email email,
         PhoneNumber phoneNumber,
         LocalDate birthDate) {
 
     public EmployeeDto(Employee e) {
-        this(e.getFirstname(),
-                e.getLastname(),
+        this(e.getName().firstname(),
+                e.getName().lastname(),
                 e.getEmail(),
                 e.getPhoneNumber(),
                 e.getBirthdate());

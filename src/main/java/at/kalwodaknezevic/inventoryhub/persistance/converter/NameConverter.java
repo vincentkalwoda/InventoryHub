@@ -11,9 +11,9 @@ import java.util.Optional;
 public class NameConverter implements AttributeConverter<Name, String> {
 
     @Override
-    public String convertToDatabaseColumn(Name title) {
-        return Optional.ofNullable(title)
-                .map(Name::value)
+    public String convertToDatabaseColumn(Name name) {
+        return Optional.ofNullable(name)
+                .map(n -> n.firstname() + " " + n.lastname())
                 .filter(Objects::nonNull)
                 .orElse(null);
     }
@@ -23,6 +23,7 @@ public class NameConverter implements AttributeConverter<Name, String> {
         if (dbData == null) {
             return null;
         }
-        return new Name(dbData);
+        String[] parts = dbData.split(" ");
+        return new Name(parts[0], parts[1]);
     }
 }

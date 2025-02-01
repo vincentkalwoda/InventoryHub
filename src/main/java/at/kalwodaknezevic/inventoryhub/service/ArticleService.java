@@ -19,7 +19,7 @@ import java.util.Optional;
 public class ArticleService {
     private final ArticleRepository articleRepository;
 
-    public Article createArticle(Name name, String description, Category category, Float price, Integer quantity) {
+    public Article createArticle(String name, String description, Category category, Float price, Integer quantity) {
         var article = Article.builder()
                 .name(name)
                 .description(description)

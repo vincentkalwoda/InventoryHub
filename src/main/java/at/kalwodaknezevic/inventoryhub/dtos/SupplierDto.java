@@ -8,15 +8,15 @@ import at.kalwodaknezevic.inventoryhub.domain.Supplier;
 import java.time.LocalDate;
 
 public record SupplierDto(
-        Name firstname,
-        Name lastname,
+        String firstname,
+        String lastname,
         Email email,
         PhoneNumber phoneNumber,
         LocalDate birthDate) {
 
     public SupplierDto(Supplier s) {
-        this(s.getFirstname(),
-                s.getLastname(),
+        this(s.getName().firstname(),
+                s.getName().lastname(),
                 s.getEmail(),
                 s.getPhoneNumber(),
                 s.getBirthdate());

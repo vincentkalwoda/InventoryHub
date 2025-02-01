@@ -12,26 +12,18 @@ public class EmployeeAssert extends AbstractAssert<EmployeeAssert, Employee> {
         return new EmployeeAssert(actual);
     }
 
-    public EmployeeAssert hasValidEmployeeId() {
-        isNotNull();
-        if (actual.getEmployeeId() == null || actual.getEmployeeId().id() == null) {
-            failWithMessage("Expected employee's ID to be not null but was <%s>", actual.getEmployeeId());
-        }
-        return this;
-    }
-
     public EmployeeAssert hasValidFirstname() {
         isNotNull();
-        if (actual.getFirstname() == null || actual.getFirstname().toString().isEmpty()) {
-            failWithMessage("Expected employee's first name to be not null and not empty but was <%s>", actual.getFirstname());
+        if (actual.getName().firstname() == null || actual.getName().firstname().isEmpty()) {
+            failWithMessage("Expected employee's first name to be not null and not empty but was <%s>", actual.getName().firstname());
         }
         return this;
     }
 
     public EmployeeAssert hasValidLastname() {
         isNotNull();
-        if (actual.getLastname() == null || actual.getLastname().toString().isEmpty()) {
-            failWithMessage("Expected employee's last name to be not null and not empty but was <%s>", actual.getLastname());
+        if (actual.getName().lastname() == null || actual.getName().lastname().isEmpty()) {
+            failWithMessage("Expected employee's last name to be not null and not empty but was <%s>", actual.getName().lastname());
         }
         return this;
     }
@@ -54,7 +46,7 @@ public class EmployeeAssert extends AbstractAssert<EmployeeAssert, Employee> {
 
     public EmployeeAssert hasValidAddress() {
         isNotNull();
-        if (actual.getAddress() == null) {
+        if (actual.getAddress() == null || actual.getAddress().toString().isEmpty()) {
             failWithMessage("Expected employee's address to be not null but was <%s>", actual.getAddress());
         }
         return this;

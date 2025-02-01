@@ -16,14 +16,10 @@ import java.time.LocalDate;
 @MappedSuperclass
 public abstract class Person {
     @Embedded
-    @AttributeOverride(name = "value", column = @Column(name = "firstname"))
+    @AttributeOverride(name="firstname", column=@Column(name="firstname"))
+    @AttributeOverride(name="lastname", column=@Column(name="lastname"))
     @NotNull
-    private Name firstname;
-
-    @Embedded
-    @AttributeOverride(name = "value", column = @Column(name = "lastname"))
-    @NotNull
-    private Name lastname;
+    private Name name;
 
     @NotNull
     private LocalDate birthdate;

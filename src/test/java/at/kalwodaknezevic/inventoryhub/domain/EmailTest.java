@@ -2,9 +2,18 @@ package at.kalwodaknezevic.inventoryhub.domain;
 
 import org.junit.jupiter.api.Test;
 
+import static at.kalwodaknezevic.inventoryhub.assertions.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmailTest {
+
+    @Test
+    void testEmailAssertions() {
+        Email email = new Email("john.doe@spg.at");
+
+        assertThat(email)
+                .isValidEmail();
+    }
 
     @Test
     void when_instantiated_with_null_throws_appropriate_EmailException() {

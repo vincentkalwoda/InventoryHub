@@ -1,24 +1,18 @@
 package at.kalwodaknezevic.inventoryhub.domain;
 
-/*
-* Represents a type-safe Name following the rules below:
-*
-* - does not accept null values
-* - restricts to values longer than 50 characters
-*
-* @param nameValue
-* @throws NameException
-*/
-
-public record Name(String value) {
+public record Name(String firstname, String lastname) {
 
     private static int MIN_LENGTH = 1;
     private static int MAX_LENGTH = 50;
 
     public Name {
-        if(value == null) throw NameException.forNullValue();
-        if(value.length() < MIN_LENGTH) throw NameException.forLongValue();
-        if(value.length() > MAX_LENGTH) throw NameException.forShortValue();
+        if(firstname == null) throw NameException.forNullValue("Firstname");
+        if(firstname.length() < MIN_LENGTH) throw NameException.forLongValue("Firstname");
+        if(firstname.length() > MAX_LENGTH) throw NameException.forShortValue("Firstname");
+
+        if(lastname == null) throw NameException.forNullValue("Lastname");
+        if(lastname.length() < MIN_LENGTH) throw NameException.forLongValue("Lastname");
+        if(lastname.length() > MAX_LENGTH) throw NameException.forShortValue("Lastname");
     }
 
     public static class NameException extends RuntimeException {
@@ -26,16 +20,16 @@ public record Name(String value) {
             super(message);
         }
 
-        static NameException forNullValue() {
-            return new NameException("Name value must not be null!");
+        static NameException forNullValue(String field) {
+            return new NameException(field + " must not be null!");
         }
 
-        static NameException forShortValue() {
-            return new NameException("Name value must not be longer than %d characters!".formatted(MAX_LENGTH));
+        static NameException forShortValue(String field) {
+            return new NameException(field + " must not be longer than %d characters!".formatted(MAX_LENGTH));
         }
 
-        static NameException forLongValue() {
-            return new NameException("Name value must not be shorter than %d characters!".formatted(MIN_LENGTH));
+        static NameException forLongValue(String field) {
+            return new NameException(field + " must not be shorter than %d characters!".formatted(MIN_LENGTH));
         }
     }
 }

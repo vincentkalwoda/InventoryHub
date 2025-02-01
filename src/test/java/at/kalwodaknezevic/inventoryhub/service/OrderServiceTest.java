@@ -80,7 +80,7 @@ class OrderServiceTest {
 
     @Test
     void can_get_all_orders() {
-        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())));
+        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.article());
         when(orderRepository.findAll()).thenReturn(java.util.List.of(order));
 
         var orders = orderService.getAll();
@@ -89,7 +89,7 @@ class OrderServiceTest {
 
     @Test
     void can_get_order() {
-        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())));
+        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.article());
         when(orderRepository.findById(order.getOrderId())).thenReturn(java.util.Optional.of(order));
 
         var foundOrder = orderService.getOrder(order.getOrderId());
@@ -100,7 +100,7 @@ class OrderServiceTest {
     void can_get_order_items() {
         var article = FixturesFactory.article();
         var orderItem = List.of(FixturesFactory.orderItem(article));
-        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())));
+        var order = FixturesFactory.order(FixturesFactory.johnDoeSupplier(FixturesFactory.spengergasse20(FixturesFactory.austria())), FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria())), article);
         order.setOrderItems(orderItem);
         when(orderRepository.findById(order.getOrderId())).thenReturn(java.util.Optional.of(order));
 

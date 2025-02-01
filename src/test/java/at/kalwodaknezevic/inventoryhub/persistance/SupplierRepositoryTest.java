@@ -38,9 +38,9 @@ class SupplierRepositoryTest {
     }
 
     @Test
-    void canFindByFirstnameAndLastname() {
+    void canFindByName() {
         supplierRepository.saveAndFlush(supplier);
-        var foundSuppliers = supplierRepository.findByFirstnameAndLastname(supplier.getFirstname(), supplier.getLastname());
+        var foundSuppliers = supplierRepository.findByName(supplier.getName());
         assertThat(foundSuppliers).isNotEmpty();
         assertThat(foundSuppliers).anyMatch(s -> s.getSupplierId().equals(supplier.getSupplierId()));
     }

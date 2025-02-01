@@ -9,6 +9,6 @@ import java.util.Optional;
 
 public interface SupplierRepository extends JpaRepository<Supplier, Supplier.SupplierId> {
     Optional<Supplier> findBySupplierId(Supplier.SupplierId supplierId);
-    List<Supplier> findByFirstnameAndLastname(Name firstname, Name lastname);
+    List<Supplier> findByName(Name name);
     List<Supplier> findByCompanyName(String companyName);
 }

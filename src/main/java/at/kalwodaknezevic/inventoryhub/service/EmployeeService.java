@@ -20,10 +20,9 @@ public class EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     @Transactional
-    public Employee createEmployee(Name firstname, Name lastname, Email email, PhoneNumber phoneNumber, LocalDate birthdate, String department, String position, Float salary) {
+    public Employee createEmployee(Name name, Email email, PhoneNumber phoneNumber, LocalDate birthdate, String department, String position, Float salary) {
         var employee = Employee.builder()
-                .firstname(firstname)
-                .lastname(lastname)
+                .name(name)
                 .email(email)
                 .phoneNumber(phoneNumber)
                 .birthdate(birthdate)

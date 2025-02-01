@@ -19,10 +19,9 @@ public class SupplierService {
     private final SupplierRepository supplierRepository;
 
     @Transactional
-    public Supplier createSupplier(Name firstname, Name lastname, Email email, PhoneNumber phoneNumber, LocalDate birthdate, String companyName) {
+    public Supplier createSupplier(Name name, Email email, PhoneNumber phoneNumber, LocalDate birthdate, String companyName) {
         var supplier = Supplier.builder()
-                .firstname(firstname)
-                .lastname(lastname)
+                .name(name)
                 .email(email)
                 .phoneNumber(phoneNumber)
                 .birthdate(birthdate)

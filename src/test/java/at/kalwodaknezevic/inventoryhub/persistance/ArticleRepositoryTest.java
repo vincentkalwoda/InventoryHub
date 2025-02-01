@@ -1,4 +1,5 @@
 package at.kalwodaknezevic.inventoryhub.persistance;
+import at.kalwodaknezevic.inventoryhub.FixturesFactory;
 import at.kalwodaknezevic.inventoryhub.TestcontainersConfiguration;
 import at.kalwodaknezevic.inventoryhub.domain.Article;
 import at.kalwodaknezevic.inventoryhub.domain.Category;
@@ -23,14 +24,8 @@ class ArticleRepositoryTest {
     @Test
     void can_save() {
 
-        Article article = Article.builder()
-                .name(new Name("Test"))
-                .description("Test")
-                .category(Category.CLOTHING)
-                .price(1.0f)
-                .quantity(1)
-                .build();
-        // expect
+        Article article = FixturesFactory.article();
+
         assertThat(articleRepository.saveAndFlush(article).getArticleId()).isNotNull();
     }
 }

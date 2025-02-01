@@ -3,6 +3,7 @@ package at.kalwodaknezevic.inventoryhub;
 import at.kalwodaknezevic.inventoryhub.domain.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class FixturesFactory {
 
@@ -23,8 +24,8 @@ public class FixturesFactory {
         return new Email("john.doe@spg.at");
     }
 
-    public static Name articleName() {
-        return new Name("Article 1");
+    public static String articleName() {
+        return "Article 1";
     }
 
     public static PhoneNumber mobilePhone() {
@@ -33,8 +34,7 @@ public class FixturesFactory {
 
     public static Employee johnDoeEmployee(Address address) {
         return Employee.builder()
-                .firstname(new Name("John"))
-                .lastname(new Name("Doe"))
+                .name(new Name("John", "Doe"))
                 .birthdate(LocalDate.of(1990, 1, 1))
                 .email(email())
                 .phoneNumber(mobilePhone())
@@ -47,8 +47,7 @@ public class FixturesFactory {
 
     public static Supplier johnDoeSupplier(Address address) {
         return Supplier.builder()
-                .firstname(new Name("John"))
-                .lastname(new Name("Doe"))
+                .name(new Name("John", "Doe"))
                 .birthdate(LocalDate.of(1990, 1, 1))
                 .email(new Email("john.doe@spg.at"))
                 .phoneNumber(mobilePhone())
@@ -57,13 +56,14 @@ public class FixturesFactory {
                 .build();
     }
 
-    public static Order order(Supplier supplier, Employee employee) {
+    public static Order order(Supplier supplier, Employee employee, Article article) {
         return Order.builder()
                 .orderDate(LocalDate.now())
                 .deliveryDate(LocalDate.now().plusDays(5))
                 .orderStatus(OrderStatus.PENDING)
                 .supplier(supplier)
                 .employees(employee)
+                .orderItems(List.of(orderItem(article)))
                 .build();
     }
 
@@ -75,7 +75,9 @@ public class FixturesFactory {
         return Article.builder()
                 .name(articleName())
                 .description("Article 1")
+                .category(Category.OTHER)
                 .price(10f)
+                .quantity(100)
                 .build();
     }
 }

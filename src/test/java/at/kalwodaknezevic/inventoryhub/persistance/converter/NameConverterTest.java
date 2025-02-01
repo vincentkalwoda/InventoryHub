@@ -12,8 +12,8 @@ class NameConverterTest {
     @Test
     void when_convert_a_valid_title_to_db_value_returns_content() {
         // arrange / given
-        String value = "Article 1";
-        Name name = new Name("Article 1");
+        String value = "John Doe";
+        Name name = new Name("John", "Doe");
 
         // act / when
         String convertedValue = nameConverter.convertToDatabaseColumn(name);
@@ -31,13 +31,13 @@ class NameConverterTest {
     @Test
     void when_convert_a_valid_title_value_to_a_title_instance() {
         // arrange / given
-        String value = "Article 1";
+        String value = "John Doe";
 
         // act / when
         var name = nameConverter.convertToEntityAttribute(value);
 
         // assert / then
-        assertThat(name.value()).isEqualTo(value);
+        assertThat(name.firstname() + " " + name.lastname()).isEqualTo(value);
     }
 
     @Test

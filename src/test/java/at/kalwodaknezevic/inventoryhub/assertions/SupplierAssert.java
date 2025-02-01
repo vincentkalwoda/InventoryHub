@@ -30,16 +30,16 @@ public class SupplierAssert extends AbstractAssert<SupplierAssert, Supplier> {
 
     public SupplierAssert hasValidFirstname() {
         isNotNull();
-        if (actual.getFirstname() == null || actual.getFirstname().toString().isEmpty()) {
-            failWithMessage("Expected supplier's first name to be not null and not empty but was <%s>", actual.getFirstname());
+        if (actual.getName().firstname() == null || actual.getName().firstname().isEmpty()) {
+            failWithMessage("Expected supplier's first name to be not null and not empty but was <%s>", actual.getName().firstname());
         }
         return this;
     }
 
     public SupplierAssert hasValidLastname() {
         isNotNull();
-        if (actual.getLastname() == null || actual.getLastname().toString().isEmpty()) {
-            failWithMessage("Expected supplier's last name to be not null and not empty but was <%s>", actual.getLastname());
+        if (actual.getName().lastname() == null || actual.getName().lastname().isEmpty()) {
+            failWithMessage("Expected supplier's last name to be not null and not empty but was <%s>", actual.getName().lastname());
         }
         return this;
     }

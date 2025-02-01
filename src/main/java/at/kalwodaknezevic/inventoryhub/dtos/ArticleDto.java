@@ -5,7 +5,7 @@ import at.kalwodaknezevic.inventoryhub.domain.Category;
 import at.kalwodaknezevic.inventoryhub.domain.Name;
 
 public record ArticleDto(
-        Name name,
+        String name,
         String description,
         Category category,
         Float price,

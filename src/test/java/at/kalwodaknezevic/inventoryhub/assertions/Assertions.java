@@ -28,4 +28,33 @@ public class Assertions extends org.assertj.core.api.Assertions {
     public static CategoryAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.Category actual) {
         return new CategoryAssert(actual);
     }
+
+    public static CountryAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.Country actual) {
+        return new CountryAssert(actual);
+    }
+
+    public static PhoneNumberAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.PhoneNumber actual) {
+        return new PhoneNumberAssert(actual);
+    }
+
+    public static NameAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.Name actual) {
+        return new NameAssert(actual);
+    }
+
+    public static PhoneTypeAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.PhoneType actual) {
+        return new PhoneTypeAssert(actual);
+    }
+
+    public static AddressAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.Address actual) {
+        return new AddressAssert(actual);
+    }
+
+    public static EmailAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.Email actual) {
+        return new EmailAssert(actual);
+    }
+
+    public static AddressTypeAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.AddressType actual) {
+        return new AddressTypeAssert(actual);
+    }
+
 }
