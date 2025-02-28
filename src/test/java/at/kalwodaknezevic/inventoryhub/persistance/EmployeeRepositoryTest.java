@@ -2,7 +2,9 @@ package at.kalwodaknezevic.inventoryhub.persistance;
 
 import at.kalwodaknezevic.inventoryhub.FixturesFactory;
 import at.kalwodaknezevic.inventoryhub.TestcontainersConfiguration;
-import at.kalwodaknezevic.inventoryhub.domain.*;
+import at.kalwodaknezevic.inventoryhub.domain.Address;
+import at.kalwodaknezevic.inventoryhub.domain.Country;
+import at.kalwodaknezevic.inventoryhub.domain.Employee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,15 +42,15 @@ class EmployeeRepositoryTest {
     @Test
     void canFindByName() {
         employeeRepository.saveAndFlush(employee);
-        var foundEmployee = employeeRepository.findEmployeeByName(employee.getName());
+        var foundEmployee = employeeRepository.findByName(employee.getName());
         assertThat(foundEmployee).isNotEmpty();
-        assertThat(foundEmployee.get().getEmployeeId()).isEqualTo(employee.getEmployeeId());
+        assertThat(foundEmployee).anyMatch(e -> e.getEmployeeId().equals(employee.getEmployeeId()));
     }
 
     @Test
     void canFindByEmail() {
         employeeRepository.saveAndFlush(employee);
-        var foundEmployee = employeeRepository.findEmployeeByEmail(employee.getEmail());
+        var foundEmployee = employeeRepository.findByEmail(employee.getEmail());
         assertThat(foundEmployee).isNotEmpty();
         assertThat(foundEmployee.get().getEmployeeId()).isEqualTo(employee.getEmployeeId());
     }

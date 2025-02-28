@@ -46,8 +46,8 @@ public class OrderAssert extends AbstractAssert<OrderAssert, Order> {
 
     public OrderAssert hasValidEmployee() {
         isNotNull();
-        if (actual.getEmployees() == null) {
-            failWithMessage("Expected order's employee to be not null but was <%s>", actual.getEmployees());
+        if (actual.getEmployee() == null) {
+            failWithMessage("Expected order's employee to be not null but was <%s>", actual.getEmployee());
         }
         return this;
     }

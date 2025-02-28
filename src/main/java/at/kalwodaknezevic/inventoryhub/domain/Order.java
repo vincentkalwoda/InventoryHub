@@ -3,15 +3,15 @@ package at.kalwodaknezevic.inventoryhub.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
-@SuperBuilder
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -19,6 +19,10 @@ import java.util.List;
 public class Order {
     @EmbeddedId
     private OrderId orderId;
+
+    @Embedded
+    @AttributeOverride(name = "value", column = @Column(name = "apiKey"))
+    private ApiKey apiKey;
 
     @ElementCollection
     @JoinTable(name = "order_items",
@@ -42,7 +46,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "employees_id", foreignKey = @ForeignKey(name = "FK_order_employee"))
     @NotNull
-    private Employee employees;
+    private Employee employee;
 
     @Embeddable
     public record OrderId(@GeneratedValue @NotNull Long id) {

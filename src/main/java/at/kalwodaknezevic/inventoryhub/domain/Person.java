@@ -1,6 +1,9 @@
 package at.kalwodaknezevic.inventoryhub.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,9 +18,14 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @MappedSuperclass
 public abstract class Person {
+
     @Embedded
-    @AttributeOverride(name="firstname", column=@Column(name="firstname"))
-    @AttributeOverride(name="lastname", column=@Column(name="lastname"))
+    @AttributeOverride(name = "value", column = @Column(name = "apiKey"))
+    private ApiKey apiKey;
+
+    @Embedded
+    @AttributeOverride(name = "firstname", column = @Column(name = "firstname"))
+    @AttributeOverride(name = "lastname", column = @Column(name = "lastname"))
     @NotNull
     private Name name;
 

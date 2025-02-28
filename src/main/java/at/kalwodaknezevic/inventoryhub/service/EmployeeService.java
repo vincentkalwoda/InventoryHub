@@ -1,6 +1,7 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
 import at.kalwodaknezevic.inventoryhub.domain.*;
+import at.kalwodaknezevic.inventoryhub.foundation.Base58;
 import at.kalwodaknezevic.inventoryhub.persistance.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,13 @@ public class EmployeeService {
 
     @Transactional
     public Employee createEmployee(Name name, Email email, PhoneNumber phoneNumber, LocalDate birthdate, String department, String position, Float salary) {
+        ApiKey apiKey;
+        do {
+            apiKey = new ApiKey("e_" + Base58.random(10));
+        } while (employeeRepository.findByApiKey(apiKey).isPresent());
+
         var employee = Employee.builder()
+                .apiKey(apiKey)
                 .name(name)
                 .email(email)
                 .phoneNumber(phoneNumber)

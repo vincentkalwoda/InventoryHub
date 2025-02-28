@@ -2,17 +2,24 @@ package at.kalwodaknezevic.inventoryhub.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Entity
 @Table(name = "articles")
 public class Article {
-    @Getter
     @EmbeddedId
     private ArticleId articleId;
+
+    @Embedded
+    @AttributeOverride(name = "value", column = @Column(name = "apiKey"))
+    private ApiKey apiKey;
 
     @NotNull
     private String name;
@@ -29,15 +36,5 @@ public class Article {
 
     @Embeddable
     public record ArticleId(@GeneratedValue @NotNull Long id) {
-    }
-
-    @Builder
-    public Article(ArticleId articleId, String name, String description, Category category, Float price, Integer quantity) {
-        this.articleId = articleId;
-        this.name = name;
-        this.description = description;
-        this.category = category;
-        this.price = price;
-        this.quantity = quantity;
     }
 }

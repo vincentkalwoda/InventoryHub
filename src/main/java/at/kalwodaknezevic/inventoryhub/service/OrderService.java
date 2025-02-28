@@ -1,6 +1,7 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
 import at.kalwodaknezevic.inventoryhub.domain.*;
+import at.kalwodaknezevic.inventoryhub.foundation.Base58;
 import at.kalwodaknezevic.inventoryhub.foundation.JavaTimeFactory;
 import at.kalwodaknezevic.inventoryhub.persistance.EmployeeRepository;
 import at.kalwodaknezevic.inventoryhub.persistance.OrderRepository;
@@ -11,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -29,6 +29,11 @@ public class OrderService {
 
     @Transactional
     public Order createOrder(Supplier.SupplierId supplierId, Employee.EmployeeId employeeId, LocalDate deliveryDate) {
+        ApiKey apiKey;
+        do {
+            apiKey = new ApiKey("o_" + Base58.random(10));
+        } while (orderRepository.findByApiKey(apiKey).isPresent());
+
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new NoSuchElementException("Employee not found"));
 
@@ -37,7 +42,8 @@ public class OrderService {
 
         var now = javaTimeFactory.today();
         Order order = Order.builder()
-                .employees(employee)
+                .apiKey(apiKey)
+                .employee(employee)
                 .supplier(supplier)
                 .orderDate(now)
                 .deliveryDate(deliveryDate)

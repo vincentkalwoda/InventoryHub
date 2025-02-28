@@ -62,7 +62,7 @@ public class FixturesFactory {
                 .deliveryDate(LocalDate.now().plusDays(5))
                 .orderStatus(OrderStatus.PENDING)
                 .supplier(supplier)
-                .employees(employee)
+                .employee(employee)
                 .orderItems(List.of(orderItem(article)))
                 .build();
     }

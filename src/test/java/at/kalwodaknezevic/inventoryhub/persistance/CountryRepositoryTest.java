@@ -34,6 +34,6 @@ class CountryRepositoryTest {
         countryRepository.saveAndFlush(country);
         var foundCountry = countryRepository.findByName(country.getName());
         assertThat(foundCountry).isNotEmpty();
-        assertThat(foundCountry.get().getName()).isEqualTo(country.getName());
+        assertThat(foundCountry).anyMatch(e -> e.getCountryId().equals(country.getCountryId()));
     }
 }

@@ -1,4 +1,5 @@
 package at.kalwodaknezevic.inventoryhub.domain;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,16 +17,25 @@ import lombok.NoArgsConstructor;
 public class Country {
     @EmbeddedId
     private CountryId countryId;
+
+    @Embedded
+    @AttributeOverride(name = "value", column = @Column(name = "apiKey"))
+    private ApiKey apiKey;
+
     @NotNull
     private String name;
+
     @NotNull
     private String iso2Code;
+
     @NotNull
     private String iso3Code;
+
     @NotNull
     private Integer areaCode;
 
     @Embeddable
-    public record CountryId(@GeneratedValue @NotNull Long countryId) {}
+    public record CountryId(@GeneratedValue @NotNull Long countryId) {
+    }
 
 }

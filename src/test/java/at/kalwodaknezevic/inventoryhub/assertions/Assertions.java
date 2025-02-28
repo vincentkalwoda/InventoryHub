@@ -57,4 +57,7 @@ public class Assertions extends org.assertj.core.api.Assertions {
         return new AddressTypeAssert(actual);
     }
 
+    public static ApiKeyAssert assertThat(at.kalwodaknezevic.inventoryhub.domain.ApiKey actual) {
+        return new ApiKeyAssert(actual);
+    }
 }

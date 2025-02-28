@@ -15,7 +15,7 @@ public record OrderDto(
 
     public OrderDto(Order o) {
         this(new SupplierDto(o.getSupplier()),
-                new EmployeeDto(o.getEmployees()),
+                new EmployeeDto(o.getEmployee()),
                 o.getOrderDate(),
                 o.getDeliveryDate(),
                 o.getOrderStatus(),
@@ -24,4 +24,14 @@ public record OrderDto(
                         .map(OrderItemDto::new)
                         .toArray(OrderItemDto[]::new));
     }
+
+    public OrderDto(SupplierDto supplier, EmployeeDto employee, LocalDate orderDate, LocalDate deliveryDate, OrderStatus orderStatus, OrderItemDto[] orderItems) {
+        this.supplier = supplier;
+        this.employee = employee;
+        this.orderDate = orderDate;
+        this.deliveryDate = deliveryDate;
+        this.orderStatus = orderStatus;
+        this.orderItems = orderItems;
+    }
+
 }

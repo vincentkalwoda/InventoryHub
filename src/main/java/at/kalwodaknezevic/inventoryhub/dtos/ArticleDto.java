@@ -2,7 +2,6 @@ package at.kalwodaknezevic.inventoryhub.dtos;
 
 import at.kalwodaknezevic.inventoryhub.domain.Article;
 import at.kalwodaknezevic.inventoryhub.domain.Category;
-import at.kalwodaknezevic.inventoryhub.domain.Name;
 
 public record ArticleDto(
         String name,
