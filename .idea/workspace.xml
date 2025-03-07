@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Refactor Order and Repository Classes to Include API Key Management">
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/commands/ArticleCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/commands/CountryCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/commands/EmployeeCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/commands/OrderCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/commands/SupplierCommands.java" afterDir="false" />
+    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Introduce command classes for Country, Article, Supplier, Employee, and Order management">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/ArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/CountryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/SupplierService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/FixturesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/FixturesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/ArticleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/ArticleServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/CountryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/CountryServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/EmployeeServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/SupplierServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/SupplierServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0_0_1__Added_ApiKeys.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0_0_1__Added_ApiKeys.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,9 +167,12 @@
     "Maven.InventoryHub [clean,verify].executor": "Run",
     "Maven.InventoryHub [clean].executor": "Run",
     "Maven.InventoryHub [compile].executor": "Run",
+    "Maven.InventoryHub [flyway:clean...].executor": "Run",
     "Maven.InventoryHub [flyway:clean].executor": "Run",
+    "Maven.InventoryHub [flyway:info].executor": "Run",
     "Maven.InventoryHub [flyway:migrate].executor": "Run",
     "Maven.InventoryHub [flyway:repair].executor": "Run",
+    "Maven.InventoryHub [flyway:validate...].executor": "Run",
     "Maven.InventoryHub [flyway:validate].executor": "Run",
     "Maven.InventoryHub [install].executor": "Run",
     "Maven.InventoryHub [test].executor": "Run",
@@ -241,6 +227,10 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vince\Documents\Schule\2024_2025\POS\sj2425-4bhif-pos1-kalwoda-knezevic\src\main\resources\db\migration" />
+      <recent name="C:\Users\vince\Documents\Schule\2024_2025\POS\sj2425-4bhif-pos1-kalwoda-knezevic\src\main\sql" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="at.kalwodaknezevic.inventoryhub" />
       <recent name="at.kalwodaknezevic.inventoryhub.persistance" />
@@ -258,10 +248,14 @@
       <command value="mvn clean verify" />
       <command value="mvn clean install" />
       <command value="./mvnw flyway:clean" />
-      <command value="mvn flyway:clean" />
-      <command value="mvn flyway:migrate" />
-      <command value="mvn flyway:validate" />
+      <command value="mvn flyway:validate -Dflyway.outOfOrder=true " />
+      <command value="mvn flyway:validate -Dflyway.cleanDisabled=false" />
       <command value="mvn flyway:repair" />
+      <command value="mvn flyway:validate" />
+      <command value="mvn flyway:migrate" />
+      <command value="mvn flyway:info" />
+      <command value="mvn flyway:clean" />
+      <command value="mvn flyway:clean -Dflyway.cleanDisabled=false" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -273,22 +267,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OrderServiceTest.can_create_order_with_existing_employee_and_supplier">
-    <configuration name="CountryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.service" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.service.CountryServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.java in InventoryHub">
     <configuration name="EmployeeServiceTest.can_create_employee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryHub" />
       <extension name="coverage">
@@ -352,6 +331,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java in InventoryHub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryHub" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InventoryHubApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="InventoryHub" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="at.kalwodaknezevic.inventoryhub.InventoryHubApplication" />
@@ -367,7 +354,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CountryServiceTest" />
+      <item itemvalue="JUnit.java in InventoryHub" />
       <item itemvalue="JUnit.EmployeeServiceTest.can_create_employee" />
       <item itemvalue="JUnit.OrderServiceTest" />
       <item itemvalue="JUnit.OrderServiceTest.cant_create_order_with_missing_supplier" />
@@ -377,11 +364,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in InventoryHub" />
         <item itemvalue="JUnit.OrderServiceTest.can_create_order_with_existing_employee_and_supplier" />
         <item itemvalue="JUnit.OrderServiceTest" />
         <item itemvalue="JUnit.OrderServiceTest.cant_create_order_with_missing_supplier" />
         <item itemvalue="JUnit.EmployeeServiceTest.can_create_employee" />
-        <item itemvalue="JUnit.CountryServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -465,7 +452,7 @@
       <workItem from="1740775706294" duration="92000" />
       <workItem from="1741076180064" duration="5567000" />
       <workItem from="1741382026340" duration="902000" />
-      <workItem from="1741383447316" duration="839000" />
+      <workItem from="1741383447316" duration="3082000" />
     </task>
     <task id="LOCAL-00001" summary="Add Movie &amp; Title + Converter &amp; Tests">
       <option name="closed" value="true" />
@@ -635,7 +622,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740779332417</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Introduce command classes for Country, Article, Supplier, Employee, and Order management">
+      <option name="closed" value="true" />
+      <created>1741384372119</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1741384372119</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,7 +702,8 @@
     <MESSAGE value="Added Assertions" />
     <MESSAGE value="Extended Assertions &amp; Updated Model" />
     <MESSAGE value="Refactor Order and Repository Classes to Include API Key Management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Order and Repository Classes to Include API Key Management" />
+    <MESSAGE value="Introduce command classes for Country, Article, Supplier, Employee, and Order management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduce command classes for Country, Article, Supplier, Employee, and Order management" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
