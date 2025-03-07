@@ -1,6 +1,9 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
 import at.kalwodaknezevic.inventoryhub.FixturesFactory;
+import at.kalwodaknezevic.inventoryhub.commands.EmployeeCommands.CreateEmployeeCommand;
+import at.kalwodaknezevic.inventoryhub.domain.ApiKey;
+import at.kalwodaknezevic.inventoryhub.domain.Employee;
 import at.kalwodaknezevic.inventoryhub.persistance.EmployeeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,9 +12,11 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -19,20 +24,23 @@ class EmployeeServiceTest {
     private @Mock EmployeeRepository employeeRepository;
 
     private EmployeeService employeeService;
+    private Employee employee;
+    private CreateEmployeeCommand createEmployeeCommand;
 
     @BeforeEach
     void setUp() {
         assumeThat(employeeRepository).isNotNull();
         employeeService = new EmployeeService(employeeRepository);
+        employee = FixturesFactory.johnDoeEmployee(FixturesFactory.spengergasse20(FixturesFactory.austria()));
+        createEmployeeCommand = FixturesFactory.createEmployeeCommand(employee);
     }
 
     @Test
     void can_create_employee() {
-        var address = FixturesFactory.spengergasse20(FixturesFactory.austria());
-        var employee = FixturesFactory.johnDoeEmployee(address);
-        when(employeeRepository.save(employee)).thenReturn(employee);
+        when(employeeRepository.findByApiKey(any(ApiKey.class))).thenReturn(Optional.empty());
+        when(employeeRepository.save(any(Employee.class))).thenReturn(employee);
 
-        var createdEmployee = employeeService.createEmployee(employee.getName(), employee.getEmail(), employee.getPhoneNumber(), employee.getBirthdate(), employee.getDepartment(), employee.getPosition(), employee.getSalary());
+        var createdEmployee = employeeService.createEmployee(createEmployeeCommand);
         assertThat(createdEmployee).isEqualTo(employee);
     }
 

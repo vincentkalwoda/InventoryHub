@@ -1,5 +1,6 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
+import at.kalwodaknezevic.inventoryhub.commands.ArticleCommands.CreateArticleCommand;
 import at.kalwodaknezevic.inventoryhub.domain.ApiKey;
 import at.kalwodaknezevic.inventoryhub.domain.Article;
 import at.kalwodaknezevic.inventoryhub.domain.Category;
@@ -18,7 +19,7 @@ import java.util.Optional;
 public class ArticleService {
     private final ArticleRepository articleRepository;
 
-    public Article createArticle(String name, String description, Category category, Float price, Integer quantity) {
+    public Article createArticle(CreateArticleCommand command) {
         ApiKey apiKey;
         do {
             apiKey = new ApiKey("a_" + Base58.random(10));
@@ -26,11 +27,11 @@ public class ArticleService {
 
         var article = Article.builder()
                 .apiKey(apiKey)
-                .name(name)
-                .description(description)
-                .category(category)
-                .price(price)
-                .quantity(quantity)
+                .name(command.name())
+                .description(command.description())
+                .category(Category.valueOf(command.category()))
+                .price(command.price())
+                .quantity(command.quantity())
                 .build();
         return articleRepository.save(article);
     }

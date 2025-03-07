@@ -1,6 +1,8 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
-import at.kalwodaknezevic.inventoryhub.domain.*;
+import at.kalwodaknezevic.inventoryhub.commands.SupplierCommands.CreateSupplierCommand;
+import at.kalwodaknezevic.inventoryhub.domain.ApiKey;
+import at.kalwodaknezevic.inventoryhub.domain.Supplier;
 import at.kalwodaknezevic.inventoryhub.foundation.Base58;
 import at.kalwodaknezevic.inventoryhub.persistance.SupplierRepository;
 import jakarta.transaction.Transactional;
@@ -8,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +21,7 @@ public class SupplierService {
     private final SupplierRepository supplierRepository;
 
     @Transactional
-    public Supplier createSupplier(Name name, Email email, PhoneNumber phoneNumber, LocalDate birthdate, String companyName) {
+    public Supplier createSupplier(CreateSupplierCommand command) {
         ApiKey apiKey;
         do {
             apiKey = new ApiKey("s_" + Base58.random(10));
@@ -28,11 +29,11 @@ public class SupplierService {
 
         var supplier = Supplier.builder()
                 .apiKey(apiKey)
-                .name(name)
-                .email(email)
-                .phoneNumber(phoneNumber)
-                .birthdate(birthdate)
-                .companyName(companyName)
+                .name(command.name())
+                .email(command.email())
+                .phoneNumber(command.phoneNumber())
+                .birthdate(command.birthdate())
+                .companyName(command.companyName())
                 .build();
         return supplierRepository.save(supplier);
     }

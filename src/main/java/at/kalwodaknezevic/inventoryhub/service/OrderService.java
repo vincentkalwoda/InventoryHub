@@ -1,5 +1,6 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
+import at.kalwodaknezevic.inventoryhub.commands.OrderCommands.CreateOrderCommand;
 import at.kalwodaknezevic.inventoryhub.domain.*;
 import at.kalwodaknezevic.inventoryhub.foundation.Base58;
 import at.kalwodaknezevic.inventoryhub.foundation.JavaTimeFactory;
@@ -11,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -28,25 +28,26 @@ public class OrderService {
     private final JavaTimeFactory javaTimeFactory;
 
     @Transactional
-    public Order createOrder(Supplier.SupplierId supplierId, Employee.EmployeeId employeeId, LocalDate deliveryDate) {
+    public Order createOrder(CreateOrderCommand command) {
         ApiKey apiKey;
         do {
             apiKey = new ApiKey("o_" + Base58.random(10));
         } while (orderRepository.findByApiKey(apiKey).isPresent());
 
-        Employee employee = employeeRepository.findById(employeeId)
+        Employee employee = employeeRepository.findById(command.employee().getEmployeeId())
                 .orElseThrow(() -> new NoSuchElementException("Employee not found"));
 
-        Supplier supplier = supplierRepository.findById(supplierId)
+        Supplier supplier = supplierRepository.findById(command.supplier().getSupplierId())
                 .orElseThrow(() -> new NoSuchElementException("Supplier not found"));
 
-        var now = javaTimeFactory.today();
         Order order = Order.builder()
                 .apiKey(apiKey)
                 .employee(employee)
                 .supplier(supplier)
-                .orderDate(now)
-                .deliveryDate(deliveryDate)
+                .orderDate(command.orderDate())
+                .deliveryDate(command.deliveryDate())
+                .orderStatus(command.orderStatus())
+                .orderItems(command.orderItems())
                 .build();
 
         return orderRepository.save(order);

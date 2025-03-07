@@ -1,6 +1,8 @@
 package at.kalwodaknezevic.inventoryhub.service;
 
 import at.kalwodaknezevic.inventoryhub.FixturesFactory;
+import at.kalwodaknezevic.inventoryhub.commands.SupplierCommands.CreateSupplierCommand;
+import at.kalwodaknezevic.inventoryhub.domain.Supplier;
 import at.kalwodaknezevic.inventoryhub.persistance.SupplierRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,20 +21,23 @@ class SupplierServiceTest {
     private @Mock SupplierRepository supplierRepository;
 
     private SupplierService supplierService;
+    private Supplier supplier;
+    private CreateSupplierCommand createSupplierCommand;
 
     @BeforeEach
     void setUp() {
         assumeThat(supplierRepository).isNotNull();
         supplierService = new SupplierService(supplierRepository);
+        var address = FixturesFactory.spengergasse20(FixturesFactory.austria());
+        supplier = FixturesFactory.johnDoeSupplier(address);
+        createSupplierCommand = FixturesFactory.createSupplierCommand(supplier);
     }
 
     @Test
     void can_create_supplier() {
-        var address = FixturesFactory.spengergasse20(FixturesFactory.austria());
-        var supplier = FixturesFactory.johnDoeSupplier(address);
         when(supplierRepository.save(supplier)).thenReturn(supplier);
 
-        var createdSupplier = supplierService.createSupplier(supplier.getName(), supplier.getEmail(), supplier.getPhoneNumber(), supplier.getBirthdate(), supplier.getCompanyName());
+        var createdSupplier = supplierService.createSupplier(createSupplierCommand);
         assertThat(createdSupplier).isEqualTo(supplier);
     }
 

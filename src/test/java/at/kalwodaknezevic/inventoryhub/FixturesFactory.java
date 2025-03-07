@@ -1,5 +1,11 @@
 package at.kalwodaknezevic.inventoryhub;
 
+import at.kalwodaknezevic.inventoryhub.commands.ArticleCommands.CreateArticleCommand;
+import at.kalwodaknezevic.inventoryhub.commands.CountryCommands.CreateCountryCommand;
+import at.kalwodaknezevic.inventoryhub.commands.EmployeeCommands.CreateEmployeeCommand;
+import at.kalwodaknezevic.inventoryhub.commands.OrderCommands.CreateOrderCommand;
+import at.kalwodaknezevic.inventoryhub.commands.SupplierCommands;
+import at.kalwodaknezevic.inventoryhub.commands.SupplierCommands.CreateSupplierCommand;
 import at.kalwodaknezevic.inventoryhub.domain.*;
 
 import java.time.LocalDate;
@@ -79,5 +85,59 @@ public class FixturesFactory {
                 .price(10f)
                 .quantity(100)
                 .build();
+    }
+
+    public static CreateArticleCommand createArticleCommand(Article article) {
+        return new CreateArticleCommand(
+                article.getName(),
+                article.getDescription(),
+                article.getCategory().name(),
+                article.getPrice(),
+                article.getQuantity()
+        );
+    }
+
+    public static CreateCountryCommand createCountryCommand(Country country) {
+        return new CreateCountryCommand(
+                country.getName(),
+                country.getIso2Code(),
+                country.getIso3Code(),
+                country.getAreaCode()
+        );
+    }
+
+    public static CreateEmployeeCommand createEmployeeCommand(Employee employee) {
+        return new CreateEmployeeCommand(
+                employee.getName(),
+                employee.getBirthdate(),
+                employee.getEmail(),
+                employee.getPhoneNumber(),
+                employee.getAddress(),
+                employee.getDepartment(),
+                employee.getPosition(),
+                employee.getSalary()
+        );
+    }
+
+    public static CreateOrderCommand createOrderCommand(Order order) {
+        return new CreateOrderCommand(
+                order.getOrderItems(),
+                order.getSupplier(),
+                order.getOrderDate(),
+                order.getDeliveryDate(),
+                order.getOrderStatus(),
+                order.getEmployee()
+        );
+    }
+
+    public static CreateSupplierCommand createSupplierCommand(Supplier supplier) {
+        return new SupplierCommands.CreateSupplierCommand(
+                supplier.getName(),
+                supplier.getBirthdate(),
+                supplier.getEmail(),
+                supplier.getPhoneNumber(),
+                supplier.getAddress(),
+                supplier.getCompanyName()
+        );
     }
 }
