@@ -1,8 +1,6 @@
 package at.kalwodaknezevic.inventoryhub.dtos;
 
-import at.kalwodaknezevic.inventoryhub.domain.Email;
 import at.kalwodaknezevic.inventoryhub.domain.Employee;
-import at.kalwodaknezevic.inventoryhub.domain.Name;
 import at.kalwodaknezevic.inventoryhub.domain.PhoneNumber;
 
 import java.time.LocalDate;
@@ -10,15 +8,23 @@ import java.time.LocalDate;
 public record EmployeeDto(
         String firstname,
         String lastname,
-        Email email,
+        String email,
         PhoneNumber phoneNumber,
-        LocalDate birthDate) {
+        LocalDate birthDate,
+        String department,
+        String position,
+        Float salary
+) {
 
     public EmployeeDto(Employee e) {
         this(e.getName().firstname(),
                 e.getName().lastname(),
-                e.getEmail(),
+                e.getEmail().value(),
                 e.getPhoneNumber(),
-                e.getBirthdate());
+                e.getBirthdate(),
+                e.getDepartment(),
+                e.getPosition(),
+                e.getSalary()
+        );
     }
 }

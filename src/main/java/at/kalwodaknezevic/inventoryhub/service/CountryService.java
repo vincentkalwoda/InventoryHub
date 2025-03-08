@@ -24,7 +24,7 @@ public class CountryService {
     public Country createCountry(CreateCountryCommand command) {
         ApiKey apiKey;
         do {
-            apiKey = new ApiKey("a_" + Base58.random(10));
+            apiKey = new ApiKey("a_" + Base58.random(16));
         } while (countryRepository.findByApiKey(apiKey).isPresent());
 
         var country = Country.builder()

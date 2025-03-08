@@ -24,7 +24,7 @@ public class SupplierService {
     public Supplier createSupplier(CreateSupplierCommand command) {
         ApiKey apiKey;
         do {
-            apiKey = new ApiKey("s_" + Base58.random(10));
+            apiKey = new ApiKey("s_" + Base58.random(16));
         } while (supplierRepository.findByApiKey(apiKey).isPresent());
 
         var supplier = Supplier.builder()

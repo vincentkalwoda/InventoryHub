@@ -31,7 +31,7 @@ public class OrderService {
     public Order createOrder(CreateOrderCommand command) {
         ApiKey apiKey;
         do {
-            apiKey = new ApiKey("o_" + Base58.random(10));
+            apiKey = new ApiKey("o_" + Base58.random(16));
         } while (orderRepository.findByApiKey(apiKey).isPresent());
 
         Employee employee = employeeRepository.findById(command.employee().getEmployeeId())

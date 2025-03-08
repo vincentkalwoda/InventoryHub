@@ -25,7 +25,7 @@ public class EmployeeService {
     public Employee createEmployee(CreateEmployeeCommand command) {
         ApiKey apiKey;
         do {
-            apiKey = new ApiKey("e_" + Base58.random(10));
+            apiKey = new ApiKey("e_" + Base58.random(16));
         } while (employeeRepository.findByApiKey(apiKey).isPresent());
 
         var employee = Employee.builder()

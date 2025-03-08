@@ -22,7 +22,7 @@ public class ArticleService {
     public Article createArticle(CreateArticleCommand command) {
         ApiKey apiKey;
         do {
-            apiKey = new ApiKey("a_" + Base58.random(10));
+            apiKey = new ApiKey("a_" + Base58.random(16));
         } while (articleRepository.findByApiKey(apiKey).isPresent());
 
         var article = Article.builder()
