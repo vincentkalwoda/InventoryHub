@@ -4,9 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Introduce command classes for Country, Article, Supplier, Employee, and Order management">
+    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Extend API key length and simplify Dto email handling&#10;&#10;Increased the API key length from 10 to 16 characters for better security across multiple services. Simplified email handling in EmployeeDto and SupplierDto by using plain strings instead of the Email domain object. Removed the now-unused Email class and its dependencies.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/ControllerSupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CountryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateArticleForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateCountryForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateEmployeeForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateOrderForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateSupplierForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/SupplierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/countries/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employees/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/suppliers/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0_0_1__Added_ApiKeys.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0_0_1__Added_ApiKeys.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/EmployeeRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/EmployeeRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/OrderRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/OrderRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/CountryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/SupplierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/EmployeeServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/SupplierServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/SupplierServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +53,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -81,6 +109,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "DefaultPlantUmlFileTemplate": "UML Class",
     "JUnit.AddressTest.executor": "Run",
     "JUnit.AddressTest.testAddressAssertions.executor": "Run",
@@ -169,6 +198,7 @@
     "Maven.InventoryHub [compile].executor": "Run",
     "Maven.InventoryHub [flyway:clean...].executor": "Run",
     "Maven.InventoryHub [flyway:clean].executor": "Run",
+    "Maven.InventoryHub [flyway:info,-X].executor": "Run",
     "Maven.InventoryHub [flyway:info].executor": "Run",
     "Maven.InventoryHub [flyway:migrate].executor": "Run",
     "Maven.InventoryHub [flyway:repair].executor": "Run",
@@ -228,6 +258,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vince\Documents\Schule\2024_2025\POS\sj2425-4bhif-pos1-kalwoda-knezevic\src\main\resources\templates" />
       <recent name="C:\Users\vince\Documents\Schule\2024_2025\POS\sj2425-4bhif-pos1-kalwoda-knezevic\src\main\resources\db\migration" />
       <recent name="C:\Users\vince\Documents\Schule\2024_2025\POS\sj2425-4bhif-pos1-kalwoda-knezevic\src\main\sql" />
     </key>
@@ -253,9 +284,10 @@
       <command value="mvn flyway:repair" />
       <command value="mvn flyway:validate" />
       <command value="mvn flyway:migrate" />
-      <command value="mvn flyway:info" />
       <command value="mvn flyway:clean" />
       <command value="mvn flyway:clean -Dflyway.cleanDisabled=false" />
+      <command value="mvn flyway:info" />
+      <command value="mvn flyway:info -X " />
     </option>
   </component>
   <component name="RunDashboard">
@@ -267,7 +299,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.java in InventoryHub">
+  <component name="RunManager" selected="Spring Boot.InventoryHubApplication">
     <configuration name="EmployeeServiceTest.can_create_employee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryHub" />
       <extension name="coverage">
@@ -452,7 +484,11 @@
       <workItem from="1740775706294" duration="92000" />
       <workItem from="1741076180064" duration="5567000" />
       <workItem from="1741382026340" duration="902000" />
-      <workItem from="1741383447316" duration="3082000" />
+      <workItem from="1741383447316" duration="3716000" />
+      <workItem from="1741452207455" duration="1967000" />
+      <workItem from="1741597482287" duration="840000" />
+      <workItem from="1741618422679" duration="2988000" />
+      <workItem from="1741632739209" duration="8069000" />
     </task>
     <task id="LOCAL-00001" summary="Add Movie &amp; Title + Converter &amp; Tests">
       <option name="closed" value="true" />
@@ -630,7 +666,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741384372119</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add api_key column to articles, countries, employees, orders, and suppliers tables">
+      <option name="closed" value="true" />
+      <created>1741386557968</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1741386557968</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Extend API key length and simplify Dto email handling&#10;&#10;Increased the API key length from 10 to 16 characters for better security across multiple services. Simplified email handling in EmployeeDto and SupplierDto by using plain strings instead of the Email domain object. Removed the now-unused Email class and its dependencies.">
+      <option name="closed" value="true" />
+      <created>1741452985655</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1741452985655</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,7 +755,10 @@
     <MESSAGE value="Extended Assertions &amp; Updated Model" />
     <MESSAGE value="Refactor Order and Repository Classes to Include API Key Management" />
     <MESSAGE value="Introduce command classes for Country, Article, Supplier, Employee, and Order management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduce command classes for Country, Article, Supplier, Employee, and Order management" />
+    <MESSAGE value="Add api_key column to articles, countries, employees, orders, and suppliers tables" />
+    <MESSAGE value="Increase API Key Length to 16 Characters for Article, Country, Employee, Order, and Supplier Services" />
+    <MESSAGE value="Extend API key length and simplify Dto email handling&#10;&#10;Increased the API key length from 10 to 16 characters for better security across multiple services. Simplified email handling in EmployeeDto and SupplierDto by using plain strings instead of the Email domain object. Removed the now-unused Email class and its dependencies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Extend API key length and simplify Dto email handling&#10;&#10;Increased the API key length from 10 to 16 characters for better security across multiple services. Simplified email handling in EmployeeDto and SupplierDto by using plain strings instead of the Email domain object. Removed the now-unused Email class and its dependencies." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

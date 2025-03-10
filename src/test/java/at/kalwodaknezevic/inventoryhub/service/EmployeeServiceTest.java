@@ -60,7 +60,7 @@ class EmployeeServiceTest {
         var employee = FixturesFactory.johnDoeEmployee(address);
         when(employeeRepository.findById(employee.getEmployeeId())).thenReturn(java.util.Optional.of(employee));
 
-        var foundEmployee = employeeService.getEmployee(employee.getEmployeeId());
+        var foundEmployee = employeeService.getEmployee(employee.getEmployeeId().id());
         assertThat(foundEmployee).isPresent().contains(employee);
     }
 }

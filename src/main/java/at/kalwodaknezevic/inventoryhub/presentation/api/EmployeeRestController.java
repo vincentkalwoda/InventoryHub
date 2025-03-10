@@ -1,6 +1,5 @@
 package at.kalwodaknezevic.inventoryhub.presentation.api;
 
-import at.kalwodaknezevic.inventoryhub.domain.Employee;
 import at.kalwodaknezevic.inventoryhub.dtos.EmployeeDto;
 import at.kalwodaknezevic.inventoryhub.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +27,7 @@ public class EmployeeRestController {
     }
 
     @GetMapping("/{employeeId}")
-    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable Employee.EmployeeId employeeId) {
+    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable Long employeeId) {
         return employeeService.getEmployee(employeeId)
                 .map(EmployeeDto::new)
                 .map(ResponseEntity::ok)

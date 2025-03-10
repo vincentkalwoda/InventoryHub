@@ -94,7 +94,7 @@ class OrderServiceTest {
     void can_get_order() {
         when(orderRepository.findById(order.getOrderId())).thenReturn(java.util.Optional.of(order));
 
-        var foundOrder = orderService.getOrder(order.getOrderId());
+        var foundOrder = orderService.getOrder(order.getOrderId().id());
         assertThat(foundOrder).isPresent().contains(order);
     }
 

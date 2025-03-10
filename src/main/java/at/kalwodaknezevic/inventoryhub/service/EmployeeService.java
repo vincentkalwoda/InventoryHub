@@ -2,9 +2,12 @@ package at.kalwodaknezevic.inventoryhub.service;
 
 import at.kalwodaknezevic.inventoryhub.commands.EmployeeCommands.CreateEmployeeCommand;
 import at.kalwodaknezevic.inventoryhub.domain.ApiKey;
+import at.kalwodaknezevic.inventoryhub.domain.Email;
 import at.kalwodaknezevic.inventoryhub.domain.Employee;
+import at.kalwodaknezevic.inventoryhub.domain.Name;
 import at.kalwodaknezevic.inventoryhub.foundation.Base58;
 import at.kalwodaknezevic.inventoryhub.persistance.EmployeeRepository;
+import at.kalwodaknezevic.inventoryhub.presentation.www.CreateEmployeeForm;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,11 +44,31 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
+    public Employee createEmployee(CreateEmployeeForm form) {
+        ApiKey apiKey;
+        do {
+            apiKey = new ApiKey("e_" + Base58.random(16));
+        } while (employeeRepository.findByApiKey(apiKey).isPresent());
+
+        var employee = Employee.builder()
+                .apiKey(apiKey)
+                .name(new Name(form.getFirstName(), form.getLastName()))
+                .email(new Email(form.getEmail()))
+                .build();
+
+        return employeeRepository.save(employee);
+    }
+
+    public void deleteEmployee(Long employeeId) {
+        Employee employee = employeeRepository.findById(new Employee.EmployeeId(employeeId)).get();
+        employeeRepository.delete(employee);
+    }
+
     public List<Employee> getAll() {
         return employeeRepository.findAll();
     }
 
-    public Optional<Employee> getEmployee(Employee.EmployeeId employeeId) {
-        return employeeRepository.findById(employeeId);
+    public Optional<Employee> getEmployee(Long employeeId) {
+        return employeeRepository.findById(new Employee.EmployeeId(employeeId));
     }
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country SSR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">ISO 2 Code</th>
+            <th scope="col">ISO 3 Code</th>
+            <th scope="col">Area Code</th>
+            <th scope="col"><a href="#" th:href="@{/countries/add}" th:text="Add">Add</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${#lists.isEmpty(countries)}">
+            <td colspan="7" class="text-center" th:text="No countries found">No countries found</td>
+        </tr>
+        <tr th:each="country, countryStatus : ${countries}" th:object="${country}">
+            <th scope="row">
+                <a href="#" th:href="@{/countries/{key}(key=*{apiKey})}" th:text="${countryStatus.index}">1</a>
+            </th>
+            <td th:text="*{name}">Austria</td>
+            <td th:text="*{iso2Code}">AT</td>
+            <td th:text="*{iso3Code}">AUT</td>
+            <td th:text="*{areaCode}">+43</td>
+            <th scope="row">
+                <a href="#" th:href="@{/countries/update/{key}(key=*{apiKey})}" th:text="Edit">Edit</a>
+                <a href="#" th:href="@{/countries/delete/{key}(key=*{apiKey})}" th:text="Delete">Delete</a>
+            </th>
+        </tbody>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

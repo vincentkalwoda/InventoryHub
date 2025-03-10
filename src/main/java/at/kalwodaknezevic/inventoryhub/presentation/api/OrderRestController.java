@@ -30,7 +30,7 @@ public class OrderRestController {
     }
 
     @GetMapping("/{orderId}")
-    public ResponseEntity<OrderDto> getOrderById(@PathVariable Order.OrderId orderId) {
+    public ResponseEntity<OrderDto> getOrderById(@PathVariable Long orderId) {
         return orderService.getOrder(orderId)
                 .map(OrderDto::new)
                 .map(ResponseEntity::ok)
