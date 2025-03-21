@@ -19,16 +19,17 @@
             <th scope="col">Category</th>
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
-            <th scope="col"><a href="#" th:href="@{/articles/add}" th:text="Add">Add</a></th>
+            <th scope="col"><a href="#" th:href="@{/articles/new}">New</a></th>
         </tr>
         </thead>
         <tbody>
         <tr th:if="${#lists.isEmpty(articles)}">
-            <td colspan="7" class="text-center" th:text="No articles found">No articles found</td>
+            <td colspan="7" class="text-center">No articles found</td>
         </tr>
         <tr th:each="article, articleStatus : ${articles}" th:object="${article}">
             <th scope="row">
-                <a href="#" th:href="@{/articles/{key}(key=*{apiKey})}" th:text="${articleStatus.index}">1</a>
+                <a href="#" th:href="@{/articles/show/{key}(key=*{apiKey.value()})}"
+                   th:text="${articleStatus.index}">1</a>
             </th>
             <td th:text="*{name}">Article 1</td>
             <td th:text="*{description}">Description</td>
@@ -36,8 +37,8 @@
             <td th:text="*{price}">100.0</td>
             <td th:text="*{quantity}">10</td>
             <th scope="row">
-                <a href="#" th:href="@{/articles/update/{key}(key=*{apiKey})}" th:text="Edit">Edit</a>
-                <a href="#" th:href="@{/articles/delete/{key}(key=*{apiKey})}" th:text="Delete">Delete</a>
+                <a href="#" th:href="@{/articles/edit/{key}(key=*{apiKey.value()})}">Edit</a>
+                <a href="#" th:href="@{/articles/delete/{key}(key=*{apiKey.value()})}" th:text="Delete">Delete</a>
             </th>
         </tbody>
     </table>

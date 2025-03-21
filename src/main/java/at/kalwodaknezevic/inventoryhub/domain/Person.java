@@ -29,7 +29,6 @@ public abstract class Person {
     @NotNull
     private Name name;
 
-    @NotNull
     private LocalDate birthdate;
 
     @NotNull
@@ -38,10 +37,8 @@ public abstract class Person {
     private Email email;
 
     @Embedded
-    @NotNull
     private PhoneNumber phoneNumber;
 
-    @NotNull
     @Embedded
     private Address address;
 }

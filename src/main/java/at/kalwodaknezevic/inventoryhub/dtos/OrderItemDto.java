@@ -7,6 +7,8 @@ public record OrderItemDto(
         int quantity) {
 
     public OrderItemDto(OrderItem o) {
-        this(new ArticleDto(o.getArticle()), o.getQuantity());
+        this(
+                new ArticleDto(o.getArticle()),
+                o.getQuantity());
     }
 }

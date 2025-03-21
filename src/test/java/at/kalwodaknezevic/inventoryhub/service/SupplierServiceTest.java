@@ -57,7 +57,7 @@ class SupplierServiceTest {
         var supplier = FixturesFactory.johnDoeSupplier(address);
         when(supplierRepository.findById(supplier.getSupplierId())).thenReturn(java.util.Optional.of(supplier));
 
-        var foundSupplier = supplierService.getSupplier(supplier.getSupplierId().id());
+        var foundSupplier = supplierService.getSupplier(supplier.getApiKey().value());
         assertThat(foundSupplier).isPresent().contains(supplier);
     }
 }

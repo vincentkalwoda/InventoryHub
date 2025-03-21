@@ -27,9 +27,9 @@ public class CountryRestController {
                 .toList());
     }
 
-    @GetMapping("/{countryId}")
-    public ResponseEntity<CountryDto> getCountry(@PathVariable Long countryId) {
-        return countryService.getCountry(countryId)
+    @GetMapping("/{apiKey}")
+    public ResponseEntity<CountryDto> getCountry(@PathVariable String apiKey) {
+        return countryService.getCountry(apiKey)
                 .map(CountryDto::new)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

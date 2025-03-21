@@ -1,6 +1,5 @@
 package at.kalwodaknezevic.inventoryhub.presentation.api;
 
-import at.kalwodaknezevic.inventoryhub.domain.Supplier;
 import at.kalwodaknezevic.inventoryhub.dtos.SupplierDto;
 import at.kalwodaknezevic.inventoryhub.service.SupplierService;
 import lombok.RequiredArgsConstructor;
@@ -27,9 +26,9 @@ public class SupplierRestController {
                 .toList());
     }
 
-    @GetMapping("/{supplierId}")
-    public ResponseEntity<SupplierDto> getSupplierById(@PathVariable Long supplierId) {
-        return supplierService.getSupplier(new Supplier.SupplierId(supplierId))
+    @GetMapping("/{apiKey}")
+    public ResponseEntity<SupplierDto> getSupplierById(@PathVariable String apiKey) {
+        return supplierService.getSupplier(apiKey)
                 .map(SupplierDto::new)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

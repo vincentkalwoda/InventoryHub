@@ -19,25 +19,25 @@
             <th scope="col">Birthdate</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Company Name</th>
-            <th scope="col"><a href="#" th:href="@{/suppliers/add}" th:text="Add">Add</a></th>
+            <th scope="col"><a href="#" th:href="@{/suppliers/new}">New</a></th>
         </tr>
         </thead>
         <tbody>
         <tr th:if="${#lists.isEmpty(suppliers)}">
-            <td colspan="7" class="text-center" th:text="No suppliers found">No suppliers found</td>
+            <td colspan="7" class="text-center">No suppliers found</td>
         </tr>
         <tr th:each="supplier, supplierStatus : ${suppliers}" th:object="${supplier}">
             <th scope="row">
-                <a href="#" th:href="@{/suppliers/{key}(key=*{apiKey})}" th:text="${supplierStatus.index}">1</a>
+                <a href="#" th:href="@{/suppliers/show/{key}(key=*{apiKey.value()})}" th:text="${supplierStatus.index}">1</a>
             </th>
-            <td th:text="*{name}">Vincent Kalwoda</td>
-            <td th:text="*{email}">kalwoda@spg.at</td>
+            <td th:text="*{name.firstname() + ' ' + name.lastname()}">Vincent Kalwoda</td>
+            <td th:text="*{email.value()}">kalwoda@spg.at</td>
             <td th:text="*{birthdate}">15.03.2007</td>
             <td th:text="*{phoneNumber}">+43699999999</td>
             <td th:text="*{companyName}">SPG</td>
             <th scope="row">
-                <a href="#" th:href="@{/suppliers/update/{key}(key=*{apiKey})}" th:text="Edit">Edit</a>
-                <a href="#" th:href="@{/suppliers/delete/{key}(key=*{apiKey})}" th:text="Delete">Delete</a>
+                <a href="#" th:href="@{/suppliers/edit/{key}(key=*{apiKey.value()})}" th:text="Edit">Edit</a>
+                <a href="#" th:href="@{/suppliers/delete/{key}(key=*{apiKey.value()})}" th:text="Delete">Delete</a>
             </th>
         </tbody>
     </table>

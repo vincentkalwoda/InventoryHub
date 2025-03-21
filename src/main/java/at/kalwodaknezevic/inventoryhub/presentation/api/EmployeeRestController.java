@@ -26,9 +26,9 @@ public class EmployeeRestController {
                 .toList());
     }
 
-    @GetMapping("/{employeeId}")
-    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable Long employeeId) {
-        return employeeService.getEmployee(employeeId)
+    @GetMapping("/{apiKey}")
+    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable String apiKey) {
+        return employeeService.getEmployee(apiKey)
                 .map(EmployeeDto::new)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

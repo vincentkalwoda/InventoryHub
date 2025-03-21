@@ -1,6 +1,5 @@
 package at.kalwodaknezevic.inventoryhub.presentation.api;
 
-import at.kalwodaknezevic.inventoryhub.domain.Order;
 import at.kalwodaknezevic.inventoryhub.dtos.OrderDto;
 import at.kalwodaknezevic.inventoryhub.dtos.OrderItemDto;
 import at.kalwodaknezevic.inventoryhub.service.OrderService;
@@ -29,17 +28,17 @@ public class OrderRestController {
                 .toList());
     }
 
-    @GetMapping("/{orderId}")
-    public ResponseEntity<OrderDto> getOrderById(@PathVariable Long orderId) {
-        return orderService.getOrder(orderId)
+    @GetMapping("/{apiKey}")
+    public ResponseEntity<OrderDto> getOrderById(@PathVariable String apiKey) {
+        return orderService.getOrder(apiKey)
                 .map(OrderDto::new)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/{orderId}/orderItems")
-    public ResponseEntity<List<OrderItemDto>> getOrderItems(@PathVariable Order.OrderId orderId) {
-        return ResponseEntity.ok(orderService.getOrderItems(orderId)
+    @GetMapping("/{apiKey}/orderItems")
+    public ResponseEntity<List<OrderItemDto>> getOrderItems(@PathVariable String apiKey) {
+        return ResponseEntity.ok(orderService.getOrderItems(apiKey)
                 .stream()
                 .map(OrderItemDto::new)
                 .toList());

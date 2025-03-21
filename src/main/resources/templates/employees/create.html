@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Employee SSR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h1>Create Employee</h1>
+
+    <p th:if="${errors}">
+        <span th:text="${errors}">Error messages should be shown here!</span>
+
+    <form method="post">
+        <div class="form-group has-validation">
+            <label for="firstname">Firstname</label>
+            <input type="text" class="form-control" id="firstname" th:field="${newEmployee.firstName}"
+                   aria-describedby="firstnameHelp"
+                   placeholder="Enter firstname">
+            <small id="firstnameHelp" class="form-text text-muted">Please enter the firstname of the employee.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newEmployee.firstName')}"
+                 th:text="${#strings.listJoin(#fields.errors('newEmployee.firstName'), ', ')}">Here should the error
+                messages
+                been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="lastname">Lastname</label>
+            <input type="text" class="form-control" id="lastname" th:field="${newEmployee.lastName}"
+                   aria-describedby="lastnameHelp" placeholder="Enter lastname">
+            <small id="lastnameHelp" class="form-text text-muted">Please enter the lastname of the employee.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newEmployee.lastName')}"
+                 th:text="${#strings.listJoin(#fields.errors('newEmployee.lastName'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" th:field="${newEmployee.email}"
+                   aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Please enter the email of the employee.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newEmployee.email')}"
+                 th:text="${#strings.listJoin(#fields.errors('newEmployee.email'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber" th:field="${newEmployee.phoneNumber}"
+                   aria-describedby="phoneNumberHelp" placeholder="Enter phonenumber">
+            <small id="phoneNumberHelp" class="form-text text-muted">Please enter the phone number of the
+                employee.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newEmployee.phoneNumber')}"
+                 th:text="${#strings.listJoin(#fields.errors('newEmployee.phoneNumber'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="birthdate">Birthdate</label>
+            <input type="date" class="form-control" id="birthdate" th:field="${newEmployee.birthdate}"
+                   aria-describedby="birthdateHelp" placeholder="Enter birthdate">
+            <small id="birthdateHelp" class="form-text text-muted">Please enter the birthdate of the employee.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newEmployee.birthdate')}"
+                 th:text="${#strings.listJoin(#fields.errors('newEmployee.birthdate'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="department">Department</label>
+            <input type="text" class="form-control" id="department" th:field="${newEmployee.department}"
+                   aria-describedby="departmentHelp" placeholder="Enter department">
+            <small id="departmentHelp" class="form-text text-muted">Please enter the department of the employee.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newEmployee.department')}"
+                 th:text="${#strings.listJoin(#fields.errors('newEmployee.department'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="position">Position</label>
+            <input type="text" class="form-control" id="position" th:field="${newEmployee.position}"
+                   aria-describedby="positionHelp" placeholder="Enter position">
+            <small id="positionHelp" class="form-text text-muted">Please enter the position of the employee.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newEmployee.position')}"
+                 th:text="${#strings.listJoin(#fields.errors('newEmployee.position'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="salary">Salary</label>
+            <input type="number" class="form-control" id="salary" th:field="${newEmployee.salary}"
+                   aria-describedby="salaryHelp" placeholder="Enter salary">
+            <small id="salaryHelp" class="form-text text-muted">Please enter the salary of the employee.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newEmployee.salary')}"
+                 th:text="${#strings.listJoin(#fields.errors('newEmployee.salary'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="#" th:href="@{/employees}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

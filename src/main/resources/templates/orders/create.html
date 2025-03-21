@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order SSR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Create Order</h1>
+
+    <p th:if="${errors}">
+        <span th:text="${errors}">Error messages should be shown here!</span>
+    </p>
+
+    <form method="post" th:object="${newOrder}">
+        <div class="form-group has-validation">
+            <label for="supplier">Supplier</label>
+            <select class="form-select" id="supplier" th:field="*{supplier.apiKey}" aria-describedby="supplierHelp">
+                <option th:each="supplier : ${suppliers}" th:value="${supplier.apiKey}"
+                        th:text="${supplier.companyName}"></option>
+            </select>
+            <small id="supplierHelp" class="form-text text-muted">Please select the supplier of the order.</small>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="employee">Employee</label>
+            <select class="form-select" id="employee" th:field="*{employee.apiKey}" aria-describedby="employeeHelp">
+                <option th:each="employee : ${employees}" th:value="${employee.apiKey}"
+                        th:text="${employee.name.firstname()} + ' ' + ${employee.name.lastname()}"></option>
+            </select>
+            <small id="employeeHelp" class="form-text text-muted">Please select the employee of the order.</small>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="orderDate">Order Date</label>
+            <input type="date" class="form-control" id="orderDate" th:field="*{orderDate}"
+                   aria-describedby="orderDateHelp" placeholder="Enter order date">
+            <small id="orderDateHelp" class="form-text text-muted">Please enter the order date of the order.</small>
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('orderDate')}"
+                 th:text="${#strings.listJoin(#fields.errors('orderDate'), ', ')}"></div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="deliveryDate">Delivery Date</label>
+            <input type="date" class="form-control" id="deliveryDate" th:field="*{deliveryDate}"
+                   aria-describedby="deliveryDateHelp" placeholder="Enter delivery date">
+            <small id="deliveryDateHelp" class="form-text text-muted">Please enter the delivery date of the
+                order.</small>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="orderItems">Order Items</label>
+            <div th:each="orderItem, iterStat : ${newOrder.orderItems}">
+                <select id="orderItems" class="form-select" th:field="*{orderItems[__${iterStat.index}__].articleId}"
+                        aria-describedby="orderItemsHelp">
+                    <option th:each="article : ${articles}" th:value="${article.articleId}"
+                            th:text="${article.name}"></option>
+                </select>
+                <input type="number" class="form-control" th:field="*{orderItems[__${iterStat.index}__].quantity}"
+                       placeholder="Enter quantity" min="1">
+            </div>
+            <small id="orderItemsHelp" class="form-text text-muted">Please select the order items and their
+                quantities.</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="#" th:href="@{/orders}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

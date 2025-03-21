@@ -4,6 +4,7 @@ import at.kalwodaknezevic.inventoryhub.commands.OrderCommands.CreateOrderCommand
 import at.kalwodaknezevic.inventoryhub.domain.*;
 import at.kalwodaknezevic.inventoryhub.foundation.Base58;
 import at.kalwodaknezevic.inventoryhub.foundation.JavaTimeFactory;
+import at.kalwodaknezevic.inventoryhub.persistance.ArticleRepository;
 import at.kalwodaknezevic.inventoryhub.persistance.EmployeeRepository;
 import at.kalwodaknezevic.inventoryhub.persistance.OrderRepository;
 import at.kalwodaknezevic.inventoryhub.persistance.SupplierRepository;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor(onConstructor_ = @__(@Autowired))
 
@@ -27,6 +29,7 @@ public class OrderService {
     private final SupplierRepository supplierRepository;
     private final EmployeeRepository employeeRepository;
     private final JavaTimeFactory javaTimeFactory;
+    private final ArticleRepository articleRepository;
 
     @Transactional
     public Order createOrder(CreateOrderCommand command) {
@@ -66,6 +69,13 @@ public class OrderService {
         Supplier supplier = supplierRepository.findById(form.getSupplier().getSupplierId())
                 .orElseThrow(() -> new NoSuchElementException("Supplier not found"));
 
+        List<OrderItem> orderItems = form.getOrderItems().stream()
+                .map(itemForm -> new OrderItem(
+                        articleRepository.findById(itemForm.getArticleId())
+                                .orElseThrow(() -> new NoSuchElementException("Article not found")),
+                        itemForm.getQuantity()))
+                .collect(Collectors.toList());
+
         Order order = Order.builder()
                 .apiKey(apiKey)
                 .employee(employee)
@@ -73,14 +83,14 @@ public class OrderService {
                 .orderDate(form.getOrderDate())
                 .deliveryDate(form.getDeliveryDate())
                 .orderStatus(OrderStatus.PENDING)
-                .orderItems(form.getOrderItems())
+                .orderItems(orderItems)
                 .build();
 
         return orderRepository.save(order);
     }
 
-    public void deleteOrder(Long orderId) {
-        Order order = orderRepository.findById(new Order.OrderId(orderId)).get();
+    public void deleteOrder(String apiKey) {
+        Order order = orderRepository.findByApiKey(new ApiKey(apiKey)).get();
         orderRepository.delete(order);
     }
 
@@ -88,11 +98,11 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Optional<Order> getOrder(Long orderId) {
-        return orderRepository.findById(new Order.OrderId(orderId));
+    public Optional<Order> getOrder(String apiKey) {
+        return orderRepository.findByApiKey(new ApiKey(apiKey));
     }
 
-    public List<OrderItem> getOrderItems(Order.OrderId orderId) {
-        return orderRepository.findById(orderId).get().getOrderItems();
+    public List<OrderItem> getOrderItems(String apiKey) {
+        return orderRepository.findByApiKey(new ApiKey(apiKey)).get().getOrderItems();
     }
 }

@@ -19,4 +19,14 @@ public class CreateEmployeeForm {
     @NotBlank
     @NotNull
     private String email;
+
+    private String phoneNumber;
+
+    private String birthdate;
+
+    private String department;
+
+    private String position;
+
+    private Float salary;
 }

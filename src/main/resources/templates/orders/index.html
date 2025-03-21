@@ -19,16 +19,16 @@
             <th scope="col">Order Date</th>
             <th scope="col">Delivery Date</th>
             <th scope="col">Order Status</th>
-            <th scope="col"><a href="#" th:href="@{/orders/add}" th:text="Add">Add</a></th>
+            <th scope="col"><a href="#" th:href="@{/orders/new}">New</a></th>
         </tr>
         </thead>
         <tbody>
         <tr th:if="${#lists.isEmpty(orders)}">
-            <td colspan="7" class="text-center" th:text="No orders found">No orders found</td>
+            <td colspan="7" class="text-center">No orders found</td>
         </tr>
         <tr th:each="order, orderStatus : ${orders}" th:object="${order}">
             <th scope="row">
-                <a href="#" th:href="@{/orders/{key}(key=*{apiKey})}" th:text="${orderStatus.index}">1</a>
+                <a href="#" th:href="@{/orders/show/{key}(key=*{apiKey.value()})}" th:text="${orderStatus.index}">1</a>
             </th>
             <td th:text="*{supplier.companyName}">SPG</td>
             <td th:text="*{employee.name}">Vincent Kalwoda</td>
@@ -36,8 +36,8 @@
             <td th:text="*{deliveryDate}">15.04.2025</td>
             <td th:text="*{orderStatus}">PENDING</td>
             <th scope="row">
-                <a href="#" th:href="@{/suppliers/update/{key}(key=*{apiKey})}" th:text="Edit">Edit</a>
-                <a href="#" th:href="@{/suppliers/delete/{key}(key=*{apiKey})}" th:text="Delete">Delete</a>
+                <a href="#" th:href="@{/suppliers/edit/{key}(key=*{apiKey.value()})}" th:text="Edit">Edit</a>
+                <a href="#" th:href="@{/suppliers/delete/{key}(key=*{apiKey.value()})}" th:text="Delete">Delete</a>
             </th>
         </tbody>
     </table>

@@ -20,6 +20,10 @@ public class CreateSupplierForm {
     @NotNull
     private String email;
 
+    private String phoneNumber;
+
+    private String birthdate;
+
     @NotBlank
     @NotNull
     private String companyName;

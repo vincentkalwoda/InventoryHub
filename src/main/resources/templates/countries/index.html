@@ -18,12 +18,12 @@
             <th scope="col">ISO 2 Code</th>
             <th scope="col">ISO 3 Code</th>
             <th scope="col">Area Code</th>
-            <th scope="col"><a href="#" th:href="@{/countries/add}" th:text="Add">Add</a></th>
+            <th scope="col"><a href="#" th:href="@{/countries/new}">New</a></th>
         </tr>
         </thead>
         <tbody>
         <tr th:if="${#lists.isEmpty(countries)}">
-            <td colspan="7" class="text-center" th:text="No countries found">No countries found</td>
+            <td colspan="7" class="text-center">No countries found</td>
         </tr>
         <tr th:each="country, countryStatus : ${countries}" th:object="${country}">
             <th scope="row">

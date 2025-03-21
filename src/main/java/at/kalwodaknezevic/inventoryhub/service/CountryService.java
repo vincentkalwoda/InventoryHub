@@ -6,6 +6,7 @@ import at.kalwodaknezevic.inventoryhub.domain.Country;
 import at.kalwodaknezevic.inventoryhub.foundation.Base58;
 import at.kalwodaknezevic.inventoryhub.persistance.CountryRepository;
 import at.kalwodaknezevic.inventoryhub.presentation.www.CreateCountryForm;
+import at.kalwodaknezevic.inventoryhub.presentation.www.EditCountryForm;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,9 +56,26 @@ public class CountryService {
         return countryRepository.save(country);
     }
 
+    public Country updateCountry(Country country) {
+        Country countryToUpdate = countryRepository.findByApiKey(country.getApiKey()).get();
+        countryToUpdate.setName(country.getName());
+        countryToUpdate.setIso2Code(country.getIso2Code());
+        countryToUpdate.setIso3Code(country.getIso3Code());
+        countryToUpdate.setAreaCode(country.getAreaCode());
+        return countryRepository.save(countryToUpdate);
+    }
 
-    public void deleteCountry(Long countryId) {
-        Country country = countryRepository.findById(new Country.CountryId(countryId)).get();
+    public Country updateCountry(EditCountryForm form) {
+        Country countryToUpdate = countryRepository.findByApiKey(new ApiKey(form.getApiKey().value())).get();
+        countryToUpdate.setName(form.getName());
+        countryToUpdate.setIso2Code(form.getIso2Code());
+        countryToUpdate.setIso3Code(form.getIso3Code());
+        countryToUpdate.setAreaCode(form.getAreaCode());
+        return countryRepository.save(countryToUpdate);
+    }
+
+    public void deleteCountry(String apiKey) {
+        Country country = countryRepository.findByApiKey(new ApiKey(apiKey)).get();
         countryRepository.delete(country);
     }
 
@@ -65,7 +83,7 @@ public class CountryService {
         return countryRepository.findAll();
     }
 
-    public Optional<Country> getCountry(Long countryId) {
-        return countryRepository.findById(new Country.CountryId(countryId));
+    public Optional<Country> getCountry(String apiKey) {
+        return countryRepository.findByApiKey(new ApiKey(apiKey));
     }
 }

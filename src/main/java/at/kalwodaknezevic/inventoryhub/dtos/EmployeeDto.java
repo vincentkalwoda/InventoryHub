@@ -6,6 +6,7 @@ import at.kalwodaknezevic.inventoryhub.domain.PhoneNumber;
 import java.time.LocalDate;
 
 public record EmployeeDto(
+        String apiKey,
         String firstname,
         String lastname,
         String email,
@@ -17,7 +18,9 @@ public record EmployeeDto(
 ) {
 
     public EmployeeDto(Employee e) {
-        this(e.getName().firstname(),
+        this(
+                e.getApiKey().value(),
+                e.getName().firstname(),
                 e.getName().lastname(),
                 e.getEmail().value(),
                 e.getPhoneNumber(),

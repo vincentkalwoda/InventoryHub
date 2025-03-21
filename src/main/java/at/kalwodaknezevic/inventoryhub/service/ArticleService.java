@@ -7,6 +7,7 @@ import at.kalwodaknezevic.inventoryhub.domain.Category;
 import at.kalwodaknezevic.inventoryhub.foundation.Base58;
 import at.kalwodaknezevic.inventoryhub.persistance.ArticleRepository;
 import at.kalwodaknezevic.inventoryhub.presentation.www.CreateArticleForm;
+import at.kalwodaknezevic.inventoryhub.presentation.www.EditArticleForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,8 +55,28 @@ public class ArticleService {
         return articleRepository.save(article);
     }
 
-    public void deleteArticle(Long articleId) {
-        Article article = articleRepository.findById(new Article.ArticleId(articleId)).get();
+    public Article updateArticle(Article article) {
+        Article articleToUpdate = articleRepository.findByApiKey(article.getApiKey()).get();
+        articleToUpdate.setName(article.getName());
+        articleToUpdate.setDescription(article.getDescription());
+        articleToUpdate.setCategory(article.getCategory());
+        articleToUpdate.setPrice(article.getPrice());
+        articleToUpdate.setQuantity(article.getQuantity());
+        return articleRepository.save(articleToUpdate);
+    }
+
+    public Article updateArticle(EditArticleForm form) {
+        Article articleToUpdate = articleRepository.findByApiKey(new ApiKey(form.getApiKey().value())).get();
+        articleToUpdate.setName(form.getName());
+        articleToUpdate.setDescription(form.getDescription());
+        articleToUpdate.setCategory(form.getCategory());
+        articleToUpdate.setPrice(form.getPrice());
+        articleToUpdate.setQuantity(form.getQuantity());
+        return articleRepository.save(articleToUpdate);
+    }
+
+    public void deleteArticle(String apiKey) {
+        Article article = articleRepository.findByApiKey(new ApiKey(apiKey)).get();
         articleRepository.delete(article);
     }
 
@@ -63,7 +84,7 @@ public class ArticleService {
         return articleRepository.findAll();
     }
 
-    public Optional<Article> getArticle(Long articleId) {
-        return articleRepository.findById(new Article.ArticleId(articleId));
+    public Optional<Article> getArticle(String apiKey) {
+        return articleRepository.findByApiKey(new ApiKey(apiKey));
     }
 }

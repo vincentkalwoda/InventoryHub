@@ -19,7 +19,6 @@ public class CreateCountryForm {
     @NotNull
     private String iso3Code;
 
-    @NotBlank
     @NotNull
     private Integer areaCode;
 }

@@ -12,7 +12,7 @@ public class GlobalControllerAdvice {
 
     @ExceptionHandler(Throwable.class)
     public ResponseEntity<ErrorResponse> handleAllExceptions(Throwable ex) {
-        var problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, "Something unexpected went wrong!");
+        var problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage());
         var errorResponse = ErrorResponse.builder(ex, problemDetail).build();
         return ResponseEntity.internalServerError().body(errorResponse);
     }

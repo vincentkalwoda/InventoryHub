@@ -20,26 +20,26 @@
             <th scope="col">Phone Number</th>
             <th scope="col">Department</th>
             <th scope="col">Position</th>
-            <th scope="col"><a href="#" th:href="@{/employees/add}" th:text="Add">Add</a></th>
+            <th scope="col"><a href="#" th:href="@{/employees/new}">New</a></th>
         </tr>
         </thead>
         <tbody>
         <tr th:if="${#lists.isEmpty(employees)}">
-            <td colspan="8" class="text-center" th:text="No employees found">No employees found</td>
+            <td colspan="8" class="text-center">No employees found</td>
         </tr>
         <tr th:each="employee, employeeStatus : ${employees}" th:object="${employee}">
             <th scope="row">
-                <a href="#" th:href="@{/employees/{key}(key=*{apiKey})}" th:text="${employeeStatus.index}">1</a>
+                <a href="#" th:href="@{/employees/show/{key}(key=*{apiKey.value()})}" th:text="${employeeStatus.index}">1</a>
             </th>
-            <td th:text="*{name}">Vincent Kalwoda</td>
-            <td th:text="*{email}">kalwoda@spg.at</td>
+            <td th:text="*{name.firstname() + ' ' + name.lastname()}">Vincent Kalwoda</td>
+            <td th:text="*{email.value()}">kalwoda@spg.at</td>
             <td th:text="*{birthdate}">15.03.2007</td>
-            <td th:text="*{phoneNumber}">+43699999999</td>
+            <td th:text="*{phoneNumber.toString()}">+43699999999</td>
             <td th:text="*{department}">IT</td>
             <td th:text="*{position}">Software Engineer</td>
             <th scope="row">
-                <a href="#" th:href="@{/employees/update/{key}(key=*{apiKey})}" th:text="Edit">Edit</a>
-                <a href="#" th:href="@{/employees/delete/{key}(key=*{apiKey})}" th:text="Delete">Delete</a>
+                <a href="#" th:href="@{/employees/edit/{key}(key=*{apiKey.value()})}" th:text="Edit">Edit</a>
+                <a href="#" th:href="@{/employees/delete/{key}(key=*{apiKey.value()})}" th:text="Delete">Delete</a>
             </th>
         </tbody>
     </table>

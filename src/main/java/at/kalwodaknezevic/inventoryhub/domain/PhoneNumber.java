@@ -1,6 +1,6 @@
 package at.kalwodaknezevic.inventoryhub.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Embeddable;
 
 @Embeddable
 public record PhoneNumber(
@@ -42,5 +42,10 @@ public record PhoneNumber(
         static PhoneNumberException forInvalidPhoneType() {
             return new PhoneNumberException("Phone type must not be null or empty!");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "+" + countryCode + "-" + areaCode + "-" + serialCode + "-" + extension;
     }
 }

@@ -6,6 +6,7 @@ import at.kalwodaknezevic.inventoryhub.domain.Supplier;
 import java.time.LocalDate;
 
 public record SupplierDto(
+        String apiKey,
         String firstname,
         String lastname,
         String email,
@@ -15,7 +16,9 @@ public record SupplierDto(
 ) {
 
     public SupplierDto(Supplier s) {
-        this(s.getName().firstname(),
+        this(
+                s.getApiKey().value(),
+                s.getName().firstname(),
                 s.getName().lastname(),
                 s.getEmail().value(),
                 s.getPhoneNumber(),

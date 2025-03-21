@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Article SSR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h1>Edit Article</h1>
+
+    <form method="post">
+        <div class="form-group has-validation">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" th:field="${editArticle.name}" aria-describedby="nameHelp"
+                   placeholder="Enter name">
+            <small id="nameHelp" class="form-text text-muted">Please enter the name of the article.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('editArticle.name')}"
+                 th:text="${#strings.listJoin(#fields.errors('editArticle.name'), ', ')}">Here should the error messages
+                been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" th:field="${editArticle.description}"
+                   aria-describedby="descriptionHelp" placeholder="Enter description">
+            <small id="descriptionHelp" class="form-text text-muted">Please enter the description of the
+                article.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('editArticle.description')}"
+                 th:text="${#strings.listJoin(#fields.errors('editArticle.description'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" th:field="${editArticle.category}">
+                <option th:each="category : ${categories}" th:value="${category}" th:text="${category}"></option>
+            </select>
+            <small id="categoryHelp" class="form-text text-muted">Please select the category of the article.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('editArticle.category')}"
+                 th:text="${#strings.listJoin(#fields.errors('editArticle.category'), ', ')}">Here should the error
+                messages been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" th:field="${editArticle.price}"
+                   aria-describedby="priceHelp"
+                   placeholder="Enter price">
+            <small id="priceHelp" class="form-text text-muted">Please enter the price of the article.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('editArticle.price')}"
+                 th:text="${#strings.listJoin(#fields.errors('editArticle.price'), ', ')}">Here should the error
+                messages
+                been shown!
+            </div>
+        </div>
+
+        <div class="form-group has-validation">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="quantity" th:field="${editArticle.quantity}"
+                   aria-describedby="quantityHelp"
+                   placeholder="Enter quantity">
+            <small id="quantityHelp" class="form-text text-muted">Please enter the quantity of the article.</small>
+
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('editArticle.quantity')}"
+                 th:text="${#strings.listJoin(#fields.errors('editArticle.quantity'), ', ')}">Here should the error
+                messages
+                been shown!
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="#" th:href="@{/articles}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

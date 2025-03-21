@@ -94,7 +94,7 @@ class OrderServiceTest {
     void can_get_order() {
         when(orderRepository.findById(order.getOrderId())).thenReturn(java.util.Optional.of(order));
 
-        var foundOrder = orderService.getOrder(order.getOrderId().id());
+        var foundOrder = orderService.getOrder(order.getApiKey().value());
         assertThat(foundOrder).isPresent().contains(order);
     }
 
@@ -104,7 +104,7 @@ class OrderServiceTest {
         order.setOrderItems(orderItem);
         when(orderRepository.findById(order.getOrderId())).thenReturn(java.util.Optional.of(order));
 
-        var orderItems = orderService.getOrderItems(order.getOrderId());
+        var orderItems = orderService.getOrderItems(order.getApiKey().value());
         assertThat(orderItems).containsExactlyElementsOf(order.getOrderItems());
     }
 }

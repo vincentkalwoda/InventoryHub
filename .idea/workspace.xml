@@ -4,33 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Extend API key length and simplify Dto email handling&#10;&#10;Increased the API key length from 10 to 16 characters for better security across multiple services. Simplified email handling in EmployeeDto and SupplierDto by using plain strings instead of the Email domain object. Removed the now-unused Email class and its dependencies.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/ArticleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/ControllerSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CountryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateArticleForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateCountryForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateEmployeeForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateOrderForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateSupplierForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/SupplierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/countries/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employees/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/suppliers/index.html" afterDir="false" />
+    <list default="true" id="b84539d5-cb1d-4782-8762-e8ff30e154c3" name="Changes" comment="Refactor country, employee, supplier, and order management to use API keys; add edit forms and update methods">
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/EditArticleForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/EditCountryForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/EditEmployeeForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/EditSupplierForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/OrderItemForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/countries/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/countries/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/countries/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employees/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employees/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/employees/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/suppliers/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/suppliers/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/suppliers/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/presentation/api/ArticleRestControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/presentation/api/CountryRestControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/InventoryHubApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/InventoryHubApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/domain/PhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/ArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/CountryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/CountryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/EmployeeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/EmployeeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/OrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/OrderDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/OrderItemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/OrderItemDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/SupplierDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/dtos/SupplierDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/ArticleRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/ArticleRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/CountryRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/CountryRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/EmployeeRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/EmployeeRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/GlobalControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/GlobalControllerAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/OrderRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/OrderRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/SupplierRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/api/SupplierRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/ControllerSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/ControllerSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CountryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateCountryForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateCountryForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateEmployeeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateEmployeeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateOrderForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateOrderForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateSupplierForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/CreateSupplierForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/presentation/www/SupplierController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/ArticleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/CountryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/EmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/kalwodaknezevic/inventoryhub/service/SupplierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/countries/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/countries/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/employees/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/employees/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/orders/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/suppliers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/suppliers/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/EmployeeServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/OrderServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/SupplierServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/kalwodaknezevic/inventoryhub/service/SupplierServiceTest.java" afterDir="false" />
@@ -116,6 +145,10 @@
     "JUnit.All in InventoryHub.executor": "Run",
     "JUnit.ArticleRepositoryTest.can_findAllProjectedBy.executor": "Run",
     "JUnit.ArticleRepositoryTest.can_save.executor": "Run",
+    "JUnit.ArticleRestControllerTest.createArticle_returnsCreatedArticle.executor": "Run",
+    "JUnit.ArticleRestControllerTest.getAllArticles_returnsListOfArticles.executor": "Run",
+    "JUnit.ArticleRestControllerTest.getArticle_returnsArticle.executor": "Run",
+    "JUnit.ArticleRestControllerTest.getArticle_returnsNotFound.executor": "Run",
     "JUnit.ArticleServiceTest.can_create_article.executor": "Run",
     "JUnit.ArticleServiceTest.cant_create_article_with_missing_name.executor": "Run",
     "JUnit.ArticleServiceTest.executor": "Run",
@@ -124,6 +157,7 @@
     "JUnit.CountryConverterTest.executor": "Run",
     "JUnit.CountryRepositoryTest.canFindById.executor": "Debug",
     "JUnit.CountryRepositoryTest.executor": "Run",
+    "JUnit.CountryRestControllerTest.executor": "Run",
     "JUnit.CountryServiceTest.can_create_country.executor": "Run",
     "JUnit.CountryServiceTest.executor": "Run",
     "JUnit.EmailConverterTest.when_convert_a_null_email_to_db_data_returns_null.executor": "Run",
@@ -220,7 +254,7 @@
     "Spring Boot.InventoryHubTestMain.executor": "Run",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "#4 on feature",
+    "git-widget-placeholder": "feature",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/vince/Desktop/taskify",
     "node.js.detected.package.eslint": "true",
@@ -233,7 +267,7 @@
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -248,6 +282,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="at.kalwodaknezevic.inventoryhub.presentation.www" />
       <recent name="at.kalwodaknezevic.inventoryhub.assertions" />
       <recent name="at.kalwodaknezevic.inventoryhub.dtos" />
     </key>
@@ -267,11 +302,11 @@
       <recent name="at.kalwodaknezevic.inventoryhub.persistance" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="at.kalwodaknezevic.inventoryhub.presentation.api" />
       <recent name="at.kalwodaknezevic.inventoryhub.domain" />
       <recent name="at.kalwodaknezevic.inventoryhub.service" />
       <recent name="at.kalwodaknezevic.inventoryhub.persistance" />
       <recent name="at.kalwodaknezevic.inventoryhub" />
-      <recent name="at.kalwodaknezevic.inventoryhub.persistance.converter" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -300,73 +335,81 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.InventoryHubApplication">
-    <configuration name="EmployeeServiceTest.can_create_employee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleRestControllerTest.createArticle_returnsCreatedArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryHub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.service.*" />
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.presentation.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.service" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.service.EmployeeServiceTest" />
-      <option name="METHOD_NAME" value="can_create_employee" />
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api.ArticleRestControllerTest" />
+      <option name="METHOD_NAME" value="createArticle_returnsCreatedArticle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleRestControllerTest.getAllArticles_returnsListOfArticles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="InventoryHub" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.service.*" />
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.presentation.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.service" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.service.OrderServiceTest" />
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api.ArticleRestControllerTest" />
+      <option name="METHOD_NAME" value="getAllArticles_returnsListOfArticles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleRestControllerTest.getArticle_returnsArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.presentation.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api.ArticleRestControllerTest" />
+      <option name="METHOD_NAME" value="getArticle_returnsArticle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleRestControllerTest.getArticle_returnsNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.presentation.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api.ArticleRestControllerTest" />
+      <option name="METHOD_NAME" value="getArticle_returnsNotFound" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CountryRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InventoryHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.presentation.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api" />
+      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.presentation.api.CountryRestControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderServiceTest.can_create_order_with_existing_employee_and_supplier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.service" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.service.OrderServiceTest" />
-      <option name="METHOD_NAME" value="can_create_order_with_existing_employee_and_supplier" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderServiceTest.cant_create_order_with_missing_supplier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="at.kalwodaknezevic.inventoryhub.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="at.kalwodaknezevic.inventoryhub.service" />
-      <option name="MAIN_CLASS_NAME" value="at.kalwodaknezevic.inventoryhub.service.OrderServiceTest" />
-      <option name="METHOD_NAME" value="cant_create_order_with_missing_supplier" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="java in InventoryHub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="InventoryHub" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -386,21 +429,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.java in InventoryHub" />
-      <item itemvalue="JUnit.EmployeeServiceTest.can_create_employee" />
-      <item itemvalue="JUnit.OrderServiceTest" />
-      <item itemvalue="JUnit.OrderServiceTest.cant_create_order_with_missing_supplier" />
-      <item itemvalue="JUnit.OrderServiceTest.can_create_order_with_existing_employee_and_supplier" />
+      <item itemvalue="JUnit.ArticleRestControllerTest.createArticle_returnsCreatedArticle" />
+      <item itemvalue="JUnit.ArticleRestControllerTest.getAllArticles_returnsListOfArticles" />
+      <item itemvalue="JUnit.ArticleRestControllerTest.getArticle_returnsArticle" />
+      <item itemvalue="JUnit.ArticleRestControllerTest.getArticle_returnsNotFound" />
+      <item itemvalue="JUnit.CountryRestControllerTest" />
       <item itemvalue="Spring Boot.InventoryHubApplication" />
       <item itemvalue="Spring Boot.MovieManagementApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in InventoryHub" />
-        <item itemvalue="JUnit.OrderServiceTest.can_create_order_with_existing_employee_and_supplier" />
-        <item itemvalue="JUnit.OrderServiceTest" />
-        <item itemvalue="JUnit.OrderServiceTest.cant_create_order_with_missing_supplier" />
-        <item itemvalue="JUnit.EmployeeServiceTest.can_create_employee" />
+        <item itemvalue="JUnit.CountryRestControllerTest" />
+        <item itemvalue="JUnit.ArticleRestControllerTest.createArticle_returnsCreatedArticle" />
+        <item itemvalue="JUnit.ArticleRestControllerTest.getArticle_returnsNotFound" />
+        <item itemvalue="JUnit.ArticleRestControllerTest.getArticle_returnsArticle" />
+        <item itemvalue="JUnit.ArticleRestControllerTest.getAllArticles_returnsListOfArticles" />
       </list>
     </recent_temporary>
   </component>
@@ -488,7 +531,14 @@
       <workItem from="1741452207455" duration="1967000" />
       <workItem from="1741597482287" duration="840000" />
       <workItem from="1741618422679" duration="2988000" />
-      <workItem from="1741632739209" duration="8069000" />
+      <workItem from="1741632739209" duration="9740000" />
+      <workItem from="1741946010759" duration="453000" />
+      <workItem from="1741948940387" duration="889000" />
+      <workItem from="1742225164707" duration="22157000" />
+      <workItem from="1742284150238" duration="279000" />
+      <workItem from="1742380891427" duration="2238000" />
+      <workItem from="1742475036218" duration="682000" />
+      <workItem from="1742551013575" duration="959000" />
     </task>
     <task id="LOCAL-00001" summary="Add Movie &amp; Title + Converter &amp; Tests">
       <option name="closed" value="true" />
@@ -682,7 +732,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741452985655</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add forms and templates for core entities with Thymeleaf&#10;&#10;Added Thymeleaf templates for countries, employees, suppliers, orders, and articles, alongside Java form classes for these entities. Integrated Thymeleaf dependency into the project to support server-side rendering. These changes enhance the presentation layer, providing a structured UI for managing core entity data.">
+      <option name="closed" value="true" />
+      <created>1741642197392</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1741642197392</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -758,7 +816,8 @@
     <MESSAGE value="Add api_key column to articles, countries, employees, orders, and suppliers tables" />
     <MESSAGE value="Increase API Key Length to 16 Characters for Article, Country, Employee, Order, and Supplier Services" />
     <MESSAGE value="Extend API key length and simplify Dto email handling&#10;&#10;Increased the API key length from 10 to 16 characters for better security across multiple services. Simplified email handling in EmployeeDto and SupplierDto by using plain strings instead of the Email domain object. Removed the now-unused Email class and its dependencies." />
-    <option name="LAST_COMMIT_MESSAGE" value="Extend API key length and simplify Dto email handling&#10;&#10;Increased the API key length from 10 to 16 characters for better security across multiple services. Simplified email handling in EmployeeDto and SupplierDto by using plain strings instead of the Email domain object. Removed the now-unused Email class and its dependencies." />
+    <MESSAGE value="Add forms and templates for core entities with Thymeleaf&#10;&#10;Added Thymeleaf templates for countries, employees, suppliers, orders, and articles, alongside Java form classes for these entities. Integrated Thymeleaf dependency into the project to support server-side rendering. These changes enhance the presentation layer, providing a structured UI for managing core entity data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add forms and templates for core entities with Thymeleaf&#10;&#10;Added Thymeleaf templates for countries, employees, suppliers, orders, and articles, alongside Java form classes for these entities. Integrated Thymeleaf dependency into the project to support server-side rendering. These changes enhance the presentation layer, providing a structured UI for managing core entity data." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
