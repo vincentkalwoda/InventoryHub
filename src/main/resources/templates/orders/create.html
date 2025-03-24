@@ -15,55 +15,88 @@
         <span th:text="${errors}">Error messages should be shown here!</span>
     </p>
 
-    <form method="post" th:object="${newOrder}">
+    <form method="post">
         <div class="form-group has-validation">
             <label for="supplier">Supplier</label>
-            <select class="form-select" id="supplier" th:field="*{supplier.apiKey}" aria-describedby="supplierHelp">
+            <select class="form-select" id="supplier" th:field="*{newOrder.supplier.apiKey}"
+                    aria-describedby="supplierHelp">
                 <option th:each="supplier : ${suppliers}" th:value="${supplier.apiKey}"
                         th:text="${supplier.companyName}"></option>
             </select>
             <small id="supplierHelp" class="form-text text-muted">Please select the supplier of the order.</small>
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newOrder.supplier')}"
+                 th:text="${#strings.listJoin(#fields.errors('newOrder.supplier'), ', ')}">Here should the error
+                messages
+                been shown!
+            </div>
         </div>
 
         <div class="form-group has-validation">
             <label for="employee">Employee</label>
-            <select class="form-select" id="employee" th:field="*{employee.apiKey}" aria-describedby="employeeHelp">
+            <select class="form-select" id="employee" th:field="*{newOrder.employee.apiKey}"
+                    aria-describedby="employeeHelp">
                 <option th:each="employee : ${employees}" th:value="${employee.apiKey}"
                         th:text="${employee.name.firstname()} + ' ' + ${employee.name.lastname()}"></option>
             </select>
             <small id="employeeHelp" class="form-text text-muted">Please select the employee of the order.</small>
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newOrder.employee')}"
+                 th:text="${#strings.listJoin(#fields.errors('newOrder.employee'), ', ')}">Here should the error
+                messages
+                been shown!
+            </div>
         </div>
 
         <div class="form-group has-validation">
             <label for="orderDate">Order Date</label>
-            <input type="date" class="form-control" id="orderDate" th:field="*{orderDate}"
+            <input type="date" class="form-control" id="orderDate" th:field="*{newOrder.orderDate}"
                    aria-describedby="orderDateHelp" placeholder="Enter order date">
             <small id="orderDateHelp" class="form-text text-muted">Please enter the order date of the order.</small>
-            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('orderDate')}"
-                 th:text="${#strings.listJoin(#fields.errors('orderDate'), ', ')}"></div>
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newOrder.orderDate')}"
+                 th:text="${#strings.listJoin(#fields.errors('newOrder.orderDate'), ', ')}"></div>
         </div>
 
         <div class="form-group has-validation">
             <label for="deliveryDate">Delivery Date</label>
-            <input type="date" class="form-control" id="deliveryDate" th:field="*{deliveryDate}"
+            <input type="date" class="form-control" id="deliveryDate" th:field="*{newOrder.deliveryDate}"
                    aria-describedby="deliveryDateHelp" placeholder="Enter delivery date">
             <small id="deliveryDateHelp" class="form-text text-muted">Please enter the delivery date of the
                 order.</small>
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newOrder.deliveryDate')}"
+                 th:text="${#strings.listJoin(#fields.errors('newOrder.deliveryDate'), ', ')}">Here should the error
+                messages
+                been shown!
+            </div>
         </div>
 
         <div class="form-group has-validation">
             <label for="orderItems">Order Items</label>
-            <div th:each="orderItem, iterStat : ${newOrder.orderItems}">
-                <select id="orderItems" class="form-select" th:field="*{orderItems[__${iterStat.index}__].articleId}"
-                        aria-describedby="orderItemsHelp">
-                    <option th:each="article : ${articles}" th:value="${article.articleId}"
-                            th:text="${article.name}"></option>
-                </select>
-                <input type="number" class="form-control" th:field="*{orderItems[__${iterStat.index}__].quantity}"
-                       placeholder="Enter quantity" min="1">
+            <div id="orderItemsContainer">
+                <div th:each="orderItem, iterStat : ${newOrder.orderItems}" class="d-flex gap-2 mb-2">
+                    <div th:each="orderItem, iterStat : ${newOrder.orderItems}" class="d-flex gap-2 mb-2">
+                        <select class="form-select" th:field="*{newOrder.orderItems[__${iterStat.index}__].apiKey}">
+                            <option th:each="article : ${articles}" th:value="${article.apiKey}"
+                                    th:text="${article.name}"></option>
+                        </select>
+                        <input type="number" class="form-control"
+                               th:field="*{newOrder.orderItems[__${iterStat.index}__].quantity}"
+                               placeholder="Enter quantity" min="1">
+                    </div>
+                </div>
             </div>
+            <input type="hidden" name="index" th:value="${newOrder.orderItems.size()}">
+            <button type="button" class="btn btn-secondary mt-2"
+                    hx-get="/orders/addOrderItem"
+                    hx-target="#orderItemsContainer"
+                    hx-swap="beforeend"
+                    hx-include="[name='index']">
+                Add Another Article
+            </button>
             <small id="orderItemsHelp" class="form-text text-muted">Please select the order items and their
                 quantities.</small>
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('newOrder.orderItems')}"
+                 th:text="${#strings.listJoin(#fields.errors('newOrder.orderItems'), ', ')}">Here should the error
+                messages been shown!
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -73,5 +106,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+<script src="https://unpkg.com/htmx.org@1.9.0"></script>
 </body>
 </html>

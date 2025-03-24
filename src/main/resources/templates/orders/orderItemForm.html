@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="d-flex gap-2 mb-2">
+    <select class="form-select" th:name="|orderItems[${index}].articleId|">
+        <option th:each="article : ${articles}" th:value="${article.articleId}" th:text="${article.name}"></option>
+    </select>
+    <input type="number" class="form-control" th:name="|orderItems[${index}].quantity|" placeholder="Enter quantity"
+           min="1">
+</div>
+</body>
+</html>

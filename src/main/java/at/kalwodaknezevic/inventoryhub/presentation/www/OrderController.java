@@ -5,6 +5,7 @@ import at.kalwodaknezevic.inventoryhub.service.ArticleService;
 import at.kalwodaknezevic.inventoryhub.service.EmployeeService;
 import at.kalwodaknezevic.inventoryhub.service.OrderService;
 import at.kalwodaknezevic.inventoryhub.service.SupplierService;
+import io.github.wimdeblauwe.htmx.spring.boot.mvc.HxRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -52,7 +53,7 @@ public class OrderController implements ControllerSupport {
     @GetMapping(ROUTE_NEW)
     public String showCreateForm(Model model) {
         CreateOrderForm form = new CreateOrderForm();
-        form.getOrderItems().add(new OrderItemForm()); // Add an initial OrderItemForm
+        form.getOrderItems().add(new OrderItemForm());
         model.addAttribute("newOrder", form);
         var suppliers = supplierService.getAll();
         var employees = employeeService.getAll();
@@ -85,6 +86,15 @@ public class OrderController implements ControllerSupport {
     @GetMapping("/duration")
     public String handleDurationSubmission(@RequestParam Duration value) {
         return redirect(BASE_URL);
+    }
+
+    @GetMapping("/addOrderItem")
+    @HxRequest
+    public String addOrderItem(Model model, @RequestParam int index) {
+        model.addAttribute("orderItem", new OrderItemForm());
+        model.addAttribute("articles", articleService.getAll());
+        model.addAttribute("index", index);
+        return "orders/orderItemForm";
     }
 
     @Override

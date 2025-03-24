@@ -1,6 +1,6 @@
 package at.kalwodaknezevic.inventoryhub.presentation.www;
 
-import at.kalwodaknezevic.inventoryhub.domain.Article.ArticleId;
+import at.kalwodaknezevic.inventoryhub.domain.ApiKey;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrderItemForm {
     @NotNull
-    private ArticleId articleId;
+    private ApiKey apiKey;
 
     @Min(1)
     @NotNull

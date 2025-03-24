@@ -4,6 +4,7 @@ import at.kalwodaknezevic.inventoryhub.FixturesFactory;
 import at.kalwodaknezevic.inventoryhub.commands.OrderCommands.CreateOrderCommand;
 import at.kalwodaknezevic.inventoryhub.domain.*;
 import at.kalwodaknezevic.inventoryhub.foundation.JavaTimeFactory;
+import at.kalwodaknezevic.inventoryhub.persistance.ArticleRepository;
 import at.kalwodaknezevic.inventoryhub.persistance.EmployeeRepository;
 import at.kalwodaknezevic.inventoryhub.persistance.OrderRepository;
 import at.kalwodaknezevic.inventoryhub.persistance.SupplierRepository;
@@ -30,6 +31,7 @@ class OrderServiceTest {
     private @Mock SupplierRepository supplierRepository;
     private @Mock EmployeeRepository employeeRepository;
     private @Mock JavaTimeFactory javaTimeFactory;
+    private @Mock ArticleRepository articleRepository;
 
     private OrderService orderService;
     private Employee employee;
@@ -44,7 +46,7 @@ class OrderServiceTest {
         assumeThat(supplierRepository).isNotNull();
         assumeThat(employeeRepository).isNotNull();
         assumeThat(javaTimeFactory).isNotNull();
-        orderService = new OrderService(orderRepository, supplierRepository, employeeRepository, javaTimeFactory);
+        orderService = new OrderService(orderRepository, supplierRepository, employeeRepository, javaTimeFactory, articleRepository);
         Address address = FixturesFactory.spengergasse20(FixturesFactory.austria());
         employee = FixturesFactory.johnDoeEmployee(address);
         supplier = FixturesFactory.johnDoeSupplier(address);

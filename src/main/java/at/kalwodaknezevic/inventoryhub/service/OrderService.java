@@ -71,7 +71,7 @@ public class OrderService {
 
         List<OrderItem> orderItems = form.getOrderItems().stream()
                 .map(itemForm -> new OrderItem(
-                        articleRepository.findById(itemForm.getArticleId())
+                        articleRepository.findByApiKey(itemForm.getApiKey())
                                 .orElseThrow(() -> new NoSuchElementException("Article not found")),
                         itemForm.getQuantity()))
                 .collect(Collectors.toList());
